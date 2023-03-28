@@ -1,0 +1,25 @@
+step1 - npm i  
+step2 - create .env file with following data
+
+     port = 8500
+     mongoUrl =mongodb+srv://Anandhu:anandhu@cluster0.j8dbuza.mongodb.net/Authorize?retryWrites=true&w=majority 
+     normalkey = normalKey
+     refreshKey = refreshKey
+     GOOGLE_CLIENT_ID = 436272277002-skaqvbc0n9m5pk47rfpff727poj1ih5q.apps.googleusercontent.com
+     GOOGLE_CLIENT_SECRET = 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
+     call_back_url = http://127.0.0.1:5500/Frontend/login.html
+
+
+step3 - .gitignore file with following data 
+
+     node_modules
+    .env
+
+
+step4 - npm run server
+
+
+
+
+
+    
