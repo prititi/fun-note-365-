@@ -30,12 +30,12 @@ app.use("/oauth/google",googleOauthRouter);
 
 
 
-app.get("/",authenticate,async(req,res)=>{
+app.get("/",async(req,res)=>{
     try{
     //console.log(req.cookies, "this is authtoken from cookies")
-    res.send(req.body)
+    //res.send(req.body)
 
-    // res.render("index.ejs")
+     res.render("index.ejs")
     }catch(err){console.log(err)}
 })
 
