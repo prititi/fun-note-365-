@@ -31,7 +31,7 @@ async (req,res)=>{
 let newUser = new UserModel(req.user);
 let data = await newUser.save();
 let Id = data._id
-console.log(Id,"saved id");
+//console.log(Id,"saved id");
 
 //create and send auth and refresh token
 const  authToken = jwt.sign({ userId: Id }, process.env.normalKey,{ expiresIn: '1h' });
