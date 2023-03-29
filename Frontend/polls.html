@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/polls.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+
+
+
+    <header>
+        <div id="hiddenside">
+            <div id="sidebarcontainer">
+                <div>
+                    <div id="sidebar">
+                        <div>
+                            <button class="sliderbtn" id="sliderbutton">
+                                <div class="hamburger">
+                                </div>
+                            </button>
+                            <ul>
+                                <li style="background-color: #CFD8DC;"><a href="./index.html"><i
+                                            class="fa fa-bars newfa"></i><img src="./images/E.png"
+                                            style="width: 150px;height: 45px;position: absolute;" alt=""></a></li>
+                                <li><a href="./index.html"><i class="fa fa-house"></i>Home</a></li>
+                                <li id="men_p"><a href="" target="_blank" class="icolortoblack"><i
+                                            class="fa-solid fa-signal fa"></i>Live Polls</a></li>
+                                <li id="women_P"><a href="" target="_blank" class="icolortoblack"><i
+                                            class="fa-solid fa-square-poll-vertical fa"></i>Live Q&A</a></li>
+                                <li id="kid_P"><a href="" target="_blank" class="icolortoblack"><i
+                                            class="fa-solid fa-list fa"></i>Qizzes</a></li>
+                                <li id="fot_w"><a href="" target="_blank" class="icolortoblack"><i
+                                            class="fa-solid fa-sack-dollar fa"></i>Pricing</a></li>
+                                <li><a href=""><i class="fa-solid fa-pen-to-square fa"></i>Surveys</a></li>
+                                <li><a href="" class="icolortoblack"><i class="fa-solid fa-user-secret fa"></i>Admin
+                                        Panel</a></li>
+                                <li><a href=""><i class="fa fa-address-card"></i>Sign Up</a></li>
+                                <li><a href=""><i class="fa fa-right-to-bracket"></i>Log In</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="category_img">
+                        <a href="./index.html"><img src="./images/E.png" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fixedHeader" id="fixedheadertop">
+            <div id="category_container">
+                <div id="navleftdiv">
+                    <div class="category_img">
+                        <a href="./index.html"><img src="./images/E.png" /></a>
+                    </div>
+                    <div class="categories">
+                        <li class="categ">Products</li>
+                        <li class="categ">Solutions</li>
+                        <li class="res_category">Resources</li>
+                        <li class="res_category">Pricing</li>
+                    </div>
+                </div>
+                <div id="registerdiv">
+                    <a href="">Log In</a>
+                    <a href="">Sign Up</a>
+                </div>
+            </div>
+
+            <div class="boxDropdown">
+                <div>
+                    <div class="category">
+                        <ul>
+                            <li>Product Tour</li>
+                            <li>Live Polls</li>
+                            <li>Live Q&A</li>
+                            <li>Word Cloud</li>
+                            <li>Quizzes</li>
+                            <li>Surveys</li>
+                            <li>Analytics</li>
+                            <li>Integration</li>
+                        </ul>
+                    </div>
+                    <div class="dropdown_img">
+                        <div>
+                            <img src="./images/dorpdown_product_img.png" alt="products img" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="boxDropdown">
+                <div>
+                    <div class="category" id="secondbox">
+                        <ul>
+                            <li>Remote Meetings</li>
+                            <li>Hybrid Meetings</li>
+                            <li>Virtual Meetings</li>
+                            <li>All-hands Meetings</li>
+                            <li>Webinars</li>
+                            <li>Conference</li>
+                        </ul>
+                    </div>
+                    <div class="dropdown_img">
+                        <img src="./images/dorpdown_product_img+2.png" alt="Solutions img" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="outer">
+        <div class="nav">
+            <h2><i class="fa-solid fa-bars"></i></h2>
+            <h2>Anonymous</h2>
+        </div>
+
+        <div class="nav-mid">
+            <h2><i class="fas fa-comments-alt"></i></h2>
+            <h2>Q&A</h2>
+            <h2><i class="fas fa-poll"></i></h2>
+            <h2>Polls</h2>
+        </div>
+        <div class="nav-last">
+            <h2><i class="fa-regular fa-user"></i></h2>
+        </div>
+    </div>
+    <div class="question">
+        <h4>Answer Here</h4>
+        <!-- display data -->
+    </div>
+    <div class="display">
+        <form id="response-form" action="">
+            <input id="res" type="text" placeholder="Enter Your Response here">
+            <input id="sub" type="submit" value="Response">
+        </form>
+    </div>
+
+</body>
+
+</html>
