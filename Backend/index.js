@@ -1,6 +1,7 @@
 const express = require('express');
 require("dotenv").config();
-var cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser');
+const cors = require('cors')
 const helmet = require("helmet");
 const morgan = require('morgan');
 const { connection ,client } = require('./configs/connection');
@@ -15,6 +16,7 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use(express.static("./views/public"))
 app.use(express.json());
+app.use(cors())
 //middleWares
 //app.use(morgan('common'));
 app.use(helmet());
@@ -58,7 +60,7 @@ app.listen(process.env.port,async()=>{
     console.log("connected to redis")
     }
     catch(err){
-        console.log("error | connection ++++++++++",err)
+        console.log("error | connection",err)
     }
     console.log(`server started @ http://localhost:${process.env.port}`)
 })

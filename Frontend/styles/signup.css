@@ -1,23 +1,28 @@
 :root{
     --main-color:rgb(4, 12, 121);
+    --background:#f3f3f3;
 
 } 
- 
+ body{
+    background-color: var(--background);
+ }
  
  *{
     margin: 0px;
     padding: 0px;
 }
 .container{
-    background-color: rgb(219, 130, 21);
-    width: 100%;
+    /* background-color: rgb(219, 130, 21); */
+    width: 100vw;
     height: auto;
+    display: flex;
 }
 #left{
     width: 25%;
     height: 100vh;
     background-color: var(--main-color);
     padding: 100px;
+
     
 }
 #left>*{
@@ -38,4 +43,237 @@
 }
 #left div{
     background-color: white;
+    padding: 10px;
+    border-radius: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+#left input{
+    width: 60%;
+    padding: 40px;
+    border:0px;
+    border-radius: 50px;
+    font-size: xx-large;
+    
+    text-align: center;
+
+}
+#left input:focus{
+    outline: none;
+}
+ .fa-solid{
+    color: var(--main-color);
+    font-size: xx-large;
+   
+}
+.fa-hashtag{
+    font-size: 50px;
+    margin-left: 20px;
+}
+#enter{
+    margin: 0px;
+    background-color: var(--main-color);
+    cursor: pointer;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+ 
+
+}
+#code{
+    background-color: #fff;
+}
+#enter:hover{
+    background-color: #000;
+}
+#enter> .fa-solid{
+    color: #fff;
+}
+
+
+#right{
+    width: 75%;
+    height: 150vh;
+    background-color: #f3f3f3;
+   
+    
+}
+
+/* start  */
+#right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+ 
+    color: var(--main-color);
+    font-family: sans-serif;
+  }
+  
+  #container {
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    padding: 32px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    
+   
+  }
+  
+ 
+  
+
+  
+  h1 {
+    font-size: 32px;
+    margin-bottom: 16px;
+    
+  }
+  
+  p {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    display: block;
+    width: 100%;
+    border: 1px solid #ccc;
+    font-size: x-large;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 10px;
+  }
+  .submit{
+    padding: 25px 30px;
+    border-radius: 10px;
+  }
+  button {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    border: 0px ;
+    border-radius: 4px;
+    background-color: var(--main-color);
+    color: #fff;
+    font-size: x-large;
+    cursor: pointer;
+  }
+  #container{
+  width: 700px;
+ 
+  }
+  #container>img{
+    width: 80px;
+    margin: 20px;
+    
+  }
+  #dontHaveAccount{
+    color: #494745;
+    font-size: x-large;
+    margin: 30px;
+  }
+  #dontHaveAccount a{
+    color: var(--main-color);
+  }
+#errorDisplay{
+color: red;
+font-size: x-large;
+height: 60px;
+width: auto;
+margin-top: 5px;
+
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 10px;
+
+}
+.redBorder{
+    border: 1px solid red;
+}
+#google{
+    background-color: #fff;
+    
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: x-large;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 30px;
+    border-radius: 10px;
+   
+   
+}
+a{
+    text-decoration: none;
+}
+#google>img{
+    height: 50px;
+    margin-right: 10px;
+}
+.box{
+    padding: 25px 30px;
+    border-radius: 10px;
+   
+}
+.box:focus{
+outline: none;
+}
+/* end */
+
+
+@media all and (max-width:599px){
+    /* mobile */
+    body{
+        background-color: chartreuse;
+    }
+    #right{
+        width: 100%;
+    }
+    .container{
+        flex-direction: column-reverse;
+    }
+    #container{
+        width: 90%;
+        background-color: #5cd362;
+        margin: 0px;
+        }
+}
+
+@media all and (max-width:1200px){
+    /* tablet */
+    body{
+        background-color: var(--main-color);
+    }
+    .container{
+        flex-direction: column-reverse;
+        
+    }
+    #left{
+        width: 75%;
+        height: auto;
+    }
+    #right{
+        width: 100%;
+    }
+    #left h1{
+        margin-top: 20px;
+    }
+
 }
