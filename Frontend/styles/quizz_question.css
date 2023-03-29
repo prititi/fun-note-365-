@@ -1,0 +1,135 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+#quizz_cont{
+    width: 100%;
+    height: 100vh;
+}
+#quizz_cont>form{
+    width: 90%;
+    margin: auto;
+}
+#quizz_cont>form>h1{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin: 15px 0;
+    color:#FF1744 ;
+}
+.question_div{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    transition: ease-in-out .3s;
+}
+.question_div p{
+    font-size: 18px;
+    margin-right: 10px;
+}
+.question_div input{
+    width:100%;
+    height: 30px;
+    border-radius: 8px;
+    padding-left: 10px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background: linear-gradient(90deg, rgb(86, 46, 196) 0%, rgb(35, 201, 203) 100%);
+    color: white;
+    font-size: 16px;
+    margin: 5px;
+}
+.question_div:hover{
+ transform: scale3d(1.02,1.02,1.02);
+}
+
+.options>div{
+    display: flex;
+    align-items: center;
+    transition: ease-in-out 0.3s;
+    width:50%;
+    margin: auto;
+}
+.options>div:hover{
+    transform: scale3d(1.02,1.02,1.02);
+}
+.options>div p{
+    font-size: 18px;
+    margin-right: 10px;
+}
+.options>div input{
+    width:100%;
+    height: 30px;
+    border-radius: 8px;
+    padding-left: 10px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background: linear-gradient(90deg, rgb(86, 46, 196) 0%, rgb(35, 201, 203) 100%);
+    color: white;
+    font-size: 16px;
+    transition: ease-in-out 0.5s;
+    margin: 5px;
+}
+.options>div:last-of-type input{
+    background: #B0BEC5;
+    color: #FF1744;
+    width: 100px;
+}
+.controller_div{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.controller_div button{
+    margin: 30px 0px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 15px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #B0BEC5;
+    transition: ease-in-out  0.5s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.controller_div button:hover{
+    color: white;
+    background-color: #FF1744;
+  
+}
+
+.one_que{
+    /* border: 2px solid red; */
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.one_que>div{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    width: 50%;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 10px;
+}
+.one_que>div>p:first-of-type{
+    margin-right: 10px;
+}
+#qp{
+    text-align: center;
+    margin: 10px 0;
+}
+/* #qdbtn{
+    position: relative;
+    top:5px;
+    right:-100px;
+} */

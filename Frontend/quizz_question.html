@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Quizz</title>
+    <link rel="stylesheet" href="./styles/quizz_question.css" />
+  </head>
+  <body>
+    <div id="quizz_cont">
+      <form id="quizz_form">
+        <h1>Enter Your Questions :</h1>
+        <div id="allquestion">
+          <div class="question_div">
+            <p id="quest_num"></p>
+            <input
+              type="text"
+              placeholder="Enter your question"
+              id="que_stion"
+            />
+          </div>
+          <div class="options">
+            <div>
+              <p>A.</p>
+              <input type="text" placeholder="option A" id="option_a" />
+            </div>
+            <div>
+              <p>B.</p>
+              <input type="text" placeholder="option B" id="option_b" />
+            </div>
+            <div>
+              <p>C.</p>
+              <input type="text" placeholder="option C" id="option_c" />
+            </div>
+            <div>
+              <p>D.</p>
+              <input type="text" placeholder="option D" id="option_d" />
+            </div>
+            <div>
+              <p>Correct Answer</p>
+              <input type="text" placeholder="Option" id="correct_ans" />
+            </div>
+          </div>
+        </div>
+        <div class="controller_div">
+          <button type="submit">Create Quizz</button>
+          <button id="add_ques">Add New Question</button>
+        </div>
+      </form>
+      <!-- <div id="edit_que">
+        <form>
+          <p>Enter Your Questions :</p>
+          <div id="allquestion">
+            <div class="question_div">
+              <p id="quest_num"></p>
+              <input
+                type="text"
+                placeholder="Enter your question"
+                id="que_stion"
+              />
+            </div>
+            <div class="options">
+              <div>
+                <p>A.</p>
+                <input type="text" placeholder="option A" id="option_a" />
+              </div>
+              <div>
+                <p>B.</p>
+                <input type="text" placeholder="option B" id="option_b" />
+              </div>
+              <div>
+                <p>C.</p>
+                <input type="text" placeholder="option C" id="option_c" />
+              </div>
+              <div>
+                <p>D.</p>
+                <input type="text" placeholder="option D" id="option_d" />
+              </div>
+              <div>
+                <p>Correct Answer</p>
+                <input type="text" placeholder="Option" id="correct_ans" />
+              </div>
+            </div>
+          </div>
+          <div class="controller_div">
+            <button type="submit">Update Question</button>
+          </div>
+        </form>
+      </div> -->
+      <h1 id="qp">Quizz Preview</h1>
+      <div id="que_preview">
+        <!-- <div class="one_que">
+          <div>
+            <p>1.</p>
+            <h2>First Question</h2>
+          </div>
+          <div>
+            <p>A:-</p>
+            <p>option a</p>
+          </div>
+          <div>
+            <p>B:-</p>
+            <p>option B</p>
+          </div>
+          <div>
+            <p>C:-</p>
+            <p>option c</p>
+          </div>
+          <div>
+            <p>D:-</p>
+            <p>option d</p>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </body>
+  <script src="./scripts/quizz_question.js"></script>
+</html>
