@@ -3,6 +3,20 @@ let baseUrl = "http://localhost:8500"
 let form = document.querySelector("#form");
 
 
+//google auth 
+let googleBtn = document.querySelector("#google");
+googleBtn.addEventListener("click",(e)=>{
+    e.preventDefault();
+    window.location.href="http://localhost:8500/oauth/google"
+    
+})
+
+storeEventCode()
+
+
+
+
+
 form.addEventListener("submit",async(e)=>{
 try{
 e.preventDefault();
@@ -29,7 +43,7 @@ let obj ={
     cPassword:form.cpw.value
 }
 
-let res = await fetch(`${baseUrl}/users/register`, {
+let res = await fetch(`${baseUrl}/register`, {
     method: 'POST',
     body: JSON.stringify(obj),
     headers: {
@@ -57,7 +71,7 @@ let res = await fetch(`${baseUrl}/users/register`, {
    
     
    
-
+}
 
 }catch(err){console.log(err);alert("something went wrong, please try again later")}
 
@@ -88,6 +102,23 @@ function errorAlert(msg){
     }, 5000);
 }
 
+
+//function for event code 
+function storeEventCode(){
+    let arrow = document.getElementById("enter");
+    arrow.addEventListener("click",(e)=>{
+        e.preventDefault();
+    let code = document.getElementById("code");
+    sessionStorage.setItem("eventCode", code.value);
+    let c = sessionStorage.getItem("eventCode");
+    if(c){
+        window.location.href="./search.html"
+    }
+    
+   
+    })
+}
+// storeEventCode()
 
 ///<button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Fade In Modal</button>
 
