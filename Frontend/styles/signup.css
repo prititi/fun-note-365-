@@ -42,8 +42,9 @@
     font-size: x-large;
 }
 #left div{
+    width: 100%;
     background-color: white;
-    padding: 10px;
+    padding: 5px;
     border-radius: 70px;
     display: flex;
     flex-direction: row;
@@ -53,7 +54,7 @@
 }
 #left input{
     width: 60%;
-    padding: 40px;
+    padding: 30px;
     border:0px;
     border-radius: 50px;
     font-size: xx-large;
@@ -84,7 +85,7 @@
 
 }
 #code{
-    background-color: #fff;
+    background-color:#fff;
 }
 #enter:hover{
     background-color: #000;
@@ -237,6 +238,14 @@ outline: none;
 }
 /* end */
 
+/*modal start*/
+
+/*modal end*/
+
+
+
+
+
 
 @media all and (max-width:599px){
     /* mobile */
@@ -256,7 +265,7 @@ outline: none;
         }
 }
 
-@media all and (max-width:1200px){
+@media all and (max-width:1700px){
     /* tablet */
     body{
         background-color: var(--main-color);

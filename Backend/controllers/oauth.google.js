@@ -26,12 +26,23 @@ googleOauthRouter.get( '/callback',
         session:false //we are not using session, if you want to use session you can remove this.
 }),
 async (req,res)=>{
-//req.user
-
+//console.log(req.user)
+let Id ;
+let email = req.user.email;
+let userExists = await UserModel.findOne({email});
+if(userExists){
+    //console.log("user exists",userExists)
+    Id = userExists._id;
+   
+}
+else{
 let newUser = new UserModel(req.user);
 let data = await newUser.save();
-let Id = data._id
-//console.log(Id,"saved id");
+Id = data._id
+}
+
+
+
 
 //create and send auth and refresh token
 const  authToken = jwt.sign({ userId: Id }, process.env.normalKey,{ expiresIn: '1h' });
