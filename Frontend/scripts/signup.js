@@ -28,28 +28,29 @@ let obj ={
     password:form.pw.value,
     cPassword:form.cpw.value
 }
-let regRoute = baseUrl+"/register"
 
-fetch(regRoute, {
-  method: 'POST',
-  body: JSON.stringify(obj),
-  headers: {
-    'Content-type': 'application/json; charset=UTF-8',
-  },
-})
-  .then((response) => {
-   response.json()
-     if(response.status=="402"){ response.json();console.log("second")}
-    
-})
-  .then((json) => {
+let res = await fetch(`${baseUrl}/users/register`, {
+    method: 'POST',
+    body: JSON.stringify(obj),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  });
+  if(res.ok){
+    let data = await res.json();
+    let authToken = data.authToken;
+    sessionStorage.setItem("authToken", authToken);
+    alert("registered succesfully");
+    window.location.href = "./login.html";
+  }
+  else {
+   if(res.status==409){
+      alert("user already exists, login please");
+      window.location.href = "./login.html";
+  }
+   else if(res.status==401){alert(" password not matching")}
+  }
 
-    
-    console.log(json);alert(json.status)
-
-});
-
- }
 
 
 
@@ -58,7 +59,7 @@ fetch(regRoute, {
    
 
 
-}catch(err){console.log(err);alert("some error happened")}
+}catch(err){console.log(err);alert("something went wrong, please try again later")}
 
 //event listener ends here
 })
