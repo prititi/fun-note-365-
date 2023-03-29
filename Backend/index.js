@@ -10,17 +10,21 @@ const { regRouter } = require('./controllers/register');
 const {userRouter}=require("./controllers/users");
 const {authenticate}=require('./controllers/authenticate');
 const { refreshRouter } = require('./controllers/refreshToken');
-const { application } = require('express');
+const socketFunc = require('./controllers/socket')
 const { googleOauthRouter } = require('./controllers/oauth.google');
 const app = express();
+app.use(cors())
+
 app.set('view engine', 'ejs');
 app.use(express.static("./views/public"))
-app.use(express.json());
-app.use(cors())
-//middleWares
 //app.use(morgan('common'));
 app.use(helmet());
 app.use(cookieParser());
+app.use(express.json());
+const httpServer = require("http").createServer(app);
+const io = require("socket.io")(httpServer,{cors:{origin:"*"}})
+//middleWares
+
 
 //routes 
 app.use('/register',regRouter);
@@ -41,6 +45,8 @@ app.get("/",async(req,res)=>{
     }catch(err){console.log(err)}
 })
 
+//socket.io 
+socketFunc(io)
 
 
 
@@ -52,7 +58,8 @@ app.get("/",async(req,res)=>{
 
 
 
-app.listen(process.env.port,async()=>{
+
+httpServer.listen(process.env.port,async()=>{
     try{
     await connection;
     console.log("connected to remote db")
