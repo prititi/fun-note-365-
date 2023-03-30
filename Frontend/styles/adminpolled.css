@@ -17,30 +17,6 @@
     margin-left: 10%;
     /* border: 1px solid red; */
 }
-
-#child3{
-    padding: 30px 30px 30px 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-#child3>div{
-    /* border: 2px solid red; */
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    /* padding-top: 0px; */
-}
-
-#child3>div>div{
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    /* border: 2px solid blue; */
-    margin: 30px 30px;
-    border-radius: 10px;
-    height: 80px;
-    cursor: pointer;
-}
-
 #navbar #child3{
     /* width: 30%; */
     /* margin-left: 10%; */
@@ -48,6 +24,82 @@
     /* border: 1px solid red; */
 }
 
+
+#navbar #child1 a{
+    color: white;
+    text-decoration: none;
+}
+#navbar #child3 a{
+    color: white;
+    text-decoration: none;
+}
+#navbar #child2{
+    /* width: 60%; */
+    margin-right: 10%;
+}
+#navbar #child2 a{
+    color: white;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+#search{
+    height: 35px;
+    width:200px;
+    background:  hsla(0, 0%, 99%, 0.863);
+    color: black;
+    border: none;
+    border-radius: 7px;
+    padding-left: 15px;
+    font-size: 19px;
+}
+#child2 button{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: none;
+    font-size: 19px;
+    color: #2339b8;
+    font-weight: bold;
+}
+
+
+
+
+
+#open-text{
+    height: 40px;
+    width:80%;
+    border: none;
+    border-bottom: 1px solid grey;
+    margin: 30px 0px 0px 30px;
+    /* padding-left: 20px; */
+    font-size: 19px;
+    
+}
+#live-polls #child1 #launch{
+    margin:35% 0px 10px 55%;
+    height: 40px;
+    width: 100px;
+    font-size: 18px;
+    background-color: white;
+    border-radius: 7px;
+    border:0.5px solid grey;
+}
+#launch:hover{
+    cursor: pointer;
+}
+#save{
+    margin: 0px 10px 0px 10px;
+    height: 40px;
+    width: 80px;
+    font-size: 18px;
+    border: none;
+    background-color: rgb(55, 209, 55);
+    border-radius: 7px;
+    color: white;
+}
 #live-polls #child2 p{
     margin-left: 15%;
     font-size: 19px;
@@ -103,45 +155,6 @@
     margin-left: 30px;
 }
 
-#navbar #child1 a{
-    color: white;
-    text-decoration: none;
-}
-#navbar #child3 a{
-    color: white;
-    text-decoration: none;
-}
-#navbar #child2{
-    /* width: 60%; */
-    margin-right: 10%;
-}
-#navbar #child2 a{
-    color: white;
-    font-size: 15px;
-    margin-left: 10px;
-    margin-right: 10px;
-    text-decoration: none;
-}
-#search{
-    height: 35px;
-    width:200px;
-    background:  hsla(0, 0%, 99%, 0.863);
-    color: black;
-    border: none;
-    border-radius: 7px;
-    padding-left: 15px;
-    font-size: 19px;
-}
-#child2 button{
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    border: none;
-    font-size: 19px;
-    color: #2339b8;
-    font-weight: bold;
-}
-
 #events{
     height: 50px;
     /* border: 1px solid red; */
@@ -165,7 +178,7 @@
     width: 90%;
     margin: auto;
     height: 70vh;
-    margin-top: 80px;
+    margin-top: 40px;
 }
 #live-polls #child1{
     height: auto;
@@ -195,62 +208,3 @@
     border-radius: 10px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
-#open-text{
-    height: 40px;
-    width:80%;
-    border: none;
-    border-bottom: 1px solid grey;
-    margin: 30px 0px 0px 30px;
-    /* padding-left: 20px; */
-    font-size: 19px;
-    
-}
-#live-polls #child1 #launch{
-    margin:35% 0px 10px 55%;
-    height: 40px;
-    width: 100px;
-    font-size: 18px;
-    background-color: white;
-    border-radius: 7px;
-    border:0.5px solid grey;
-}
-#launch:hover{
-    cursor: pointer;
-}
-#save{
-    margin: 0px 10px 0px 10px;
-    height: 40px;
-    width: 80px;
-    font-size: 18px;
-    border: none;
-    background-color: rgb(55, 209, 55);
-    border-radius: 7px;
-    color: white;
-}
-
-
-
-#crete-pollbox{
-    position: fixed;
-    height: 55vh;
-    width: 43%;
-    margin: auto;
-    top:23%;
-    left: 29%;
-    display: none;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 7px;
-}
-
-#crete-pollbox h4{
-    margin: 30px;
-    font-size: 18px;
-}
-#crete-pollbox p{
-    margin: 10px 0px 10px 30px;
-    font-size: 18px;
-}
-
-
-
