@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    overflow-x: hidden;
+    /* background: url('./head_white.png') no-repeat; */
+}
+
+header {
+    width: 100%;
+    padding: 70px;
+    background: url('../productimages/head.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    padding: 1rem 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 3rem;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+    
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    z-index: 2;
+}
+
+.buttons button {
+    cursor: pointer;
+    margin: 5px;
+    padding: 0.5em 1em;
+    min-width: 90px;
+    outline: none;
+    border-radius: 0.9rem;
+    border: 2px solid rgba(0, 0, 0, 0.7);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.7);
+    transition: 400ms;
+}
+
+.buttons button:hover {
+    transform: translate(4px, 4px);
+    border: 2px solid #76FF03;
+    box-shadow: 2px 2px 0 #76FF03;
+}
+
+.connected {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.connected.active {
+    color: green;
+}
+
+canvas#myChart {
+    margin: 10px auto;
+    width: 400px;
+    height: 350px;
+    z-index: 2;
+}

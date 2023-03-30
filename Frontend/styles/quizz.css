@@ -1,81 +1,160 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  width: 100%;
+  height: 100vh;
+  background-image: url(../images/24365906.jpg);
+  background-size: 100% 110%;
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
+
+/* -----------------user details div styles-------------------- */
+#user_details {
+  position: absolute;
+  width: 100%;
+  top: 37%;
+}
+.question_div {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  transition: ease-in-out 0.3s;
+}
+.question_div p {
+  font-size: 18px;
+  margin-right: 10px;
+  color: white;
+}
+.question_div input {
+  width: 70%;
+  height: 30px;
+  border-radius: 8px;
+  padding-left: 10px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background: linear-gradient(
+    90deg,
+    rgb(86, 46, 196) 0%,
+    rgb(35, 201, 203) 100%
+  );
+  color: white;
+  font-size: 16px;
+  margin: 5px;
+}
+.question_div:nth-child(2) input {
+  width: 63%;
+}
+.question_div:hover {
+  transform: scale3d(1.02, 1.02, 1.02);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+.controller_div {
+  width: 100%;
+  margin: auto;
+  padding-left: 45%;
+}
+.controller_div button {
+  margin: 30px 0px;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 15px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #b0bec5;
+  transition: ease-in-out 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.controller_div button:hover {
+  color: white;
+  background-color: #ff1744;
+}
+
+input::placeholder {
+  color: rgb(235, 233, 233);
+}
+
+/* -----------------user details div styles-------------------- */
+
 .main {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(../images/24365906.jpg);   
-    background-size: 100% 130%;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-    width: 35rem;
-    display: flex;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; 
-    background-color: white;  
-    border-radius: 10px;
-    overflow: hidden;
-    flex-direction: column;
+  width: 35rem;
+  display: flex;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-direction: column;
 }
 
 .col {
-    text-align: justify;
-    padding: 15px;
-    width: 95%;
+  text-align: justify;
+  padding: 15px;
+  width: 95%;
 }
 
 #submit {
-    width: 100%;
-    background: linear-gradient(90deg, rgb(86, 46, 196) 0%, rgb(35, 201, 203) 100%);
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgb(86, 46, 196) 0%,
+    rgb(35, 201, 203) 100%
+  );
 
-    transition: 0.5s;
-    color: white;
-    outline: none;
-    border: none;
-    font-size: 25px;
-    display: block;
-    padding: 10px;
-    cursor: pointer;
+  transition: 0.5s;
+  color: white;
+  outline: none;
+  border: none;
+  font-size: 25px;
+  display: block;
+  padding: 10px;
+  cursor: pointer;
 }
 
 #submit:hover {
-    cursor: pointer;
-    transform: scale3d(1.1,1.1,1.1);
+  cursor: pointer;
+  transform: scale3d(1.1, 1.1, 1.1);
 }
 
 .box {
-    box-shadow: 0px -1px 1px grey;
-    width: 100%;
+  box-shadow: 0px -1px 1px grey;
+  width: 100%;
 }
-
 
 /* ---------css for glowing effect------------- */
 .glowing-border {
-    border-radius: 10px;
-    box-shadow:  0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #C62828, 0 0 70px #C62828, 0 0 80px #C62828, 0 0 100px #C62828;
-    animation: glowing 2.5s ease-in-out infinite;
-  }
+  border-radius: 10px;
+  box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #c62828,
+    0 0 70px #c62828, 0 0 80px #c62828, 0 0 100px #c62828;
+  animation: glowing 2.5s ease-in-out infinite;
+}
 
-  @keyframes glowing {
-    0% {
-      border-color: #fff;
-      box-shadow:0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #C62828, 0 0 70px #C62828, 0 0 80px #C62828, 0 0 100px #C62828;
-    }
-    50% {
-      border-color:#fff;
-      box-shadow:none;
-    }
-    100% {
-      border-color: #fff;
-      box-shadow:0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #C62828, 0 0 70px #C62828, 0 0 80px #C62828, 0 0 100px #C62828;
-    }
+@keyframes glowing {
+  0% {
+    border-color: #fff;
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #c62828,
+      0 0 70px #c62828, 0 0 80px #c62828, 0 0 100px #c62828;
   }
-  
+  50% {
+    border-color: #fff;
+    box-shadow: none;
+  }
+  100% {
+    border-color: #fff;
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #c62828,
+      0 0 70px #c62828, 0 0 80px #c62828, 0 0 100px #c62828;
+  }
+}

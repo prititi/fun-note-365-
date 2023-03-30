@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Machine</title>
+    <link rel="icon" type="image/png" href="./images/E.png">
+    <link rel="stylesheet" href="./styles/main.css">
+    <!-- CONFETTI  -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js" defer></script>
+    <script src="./scripts/confetti.js" defer></script>
+    <!-- CHART JS  -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="./scripts/main.js" defer></script>
+</head>
+<body>
+    <header class="flex">
+        <h1>Reservoir Humans</h1>
+    </header>
+    <div class="container flex">
+        <div class="connected"></div>
+        <canvas id="myChart" width="400" height="350"></canvas>
+        <div class="buttons">
+            <button data-index="0">Mr. White</button>
+            <button data-index="1">Mr. Orange</button>
+            <button data-index="2">Mr. Blonde</button>
+            <button data-index="3">Mr. Pink</button>
+            <button data-index="4">Mr. Brown</button>
+            <button data-index="5">Mr. Blue</button>
+        </div>
+    </div>
+</body>
+</html>
