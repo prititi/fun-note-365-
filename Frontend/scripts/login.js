@@ -7,7 +7,7 @@ let form = document.querySelector("#form");
 let googleBtn = document.querySelector("#google");
 googleBtn.addEventListener("click",(e)=>{
     e.preventDefault();
-    alert("hi")
+    
     window.location.href="http://localhost:8500/oauth/google"
     
 })
