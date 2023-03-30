@@ -53,7 +53,7 @@ res.cookie("refreshToken",refreshToken);
 
 //user saved
 
-res.redirect("http://127.0.0.1:5500/Frontend/login.html") //redirect to any page
+res.redirect("https://www.amazon.com/") //redirect to any page
 }
 
 );
