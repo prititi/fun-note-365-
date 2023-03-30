@@ -10,8 +10,16 @@
   <body>
     <div id="quizz_cont">
       <form id="quizz_form">
+        <h1>Enter Your Quizz Room Name :</h1>
+        <div class="question_div">
+          <input
+            type="text"
+            placeholder="Enter Quizz Room Name (this room name will be used by participents to access quizz)"
+            id="quizz_room_name"
+          />
+        </div>
         <h1>Enter Your Questions :</h1>
-        <div id="allquestion">
+        <div>
           <div class="question_div">
             <p id="quest_num"></p>
             <input
@@ -44,74 +52,76 @@
           </div>
         </div>
         <div class="controller_div">
-          <button type="submit">Create Quizz</button>
-          <button id="add_ques">Add New Question</button>
+          <button type="submit" id="create_quizz">Create Quizz</button>
+          <button type="submit" id="add_ques">Add / New Question</button>
+        </div>
+        <div class="controller_div" >
+          <button type="submit" id="edit_btn" style="margin-top: 0px;">Edit Question</button>
+          <button type="submit" id="deleteing_div_btn" style="margin-top: 0px;">Delete a Question</button>
         </div>
       </form>
-      <!-- <div id="edit_que">
+      <div id="deletingdiv">
+        <div class="options">
+          <div>
+            <p>Delete a question, Enter question number:-</p>
+            <input type="text" placeholder="Q Number" id="delete_question_num" />
+          </div>
+        </div>
+        <div class="controller_div" style="justify-content: center;">
+          <button  id="deleteqbtn">Delete Question</button>
+        </div>
+      </div>
+      <div id="edit_que">
         <form>
-          <p>Enter Your Questions :</p>
-          <div id="allquestion">
+          <h1 style="text-align: center;margin: 10px 0;">Update Your Questions :</h1>
+          <div>
             <div class="question_div">
-              <p id="quest_num"></p>
+              <p id="quest_num">Question Number:- </p>
+              <input style="width:74%;"
+                type="text"
+                placeholder="Enter your question Number"
+                id="que_stion_number" required
+              />
+            </div>
+            <div class="question_div">
+              <p id="quest_num">Question:- </p>
               <input
                 type="text"
-                placeholder="Enter your question"
-                id="que_stion"
+                placeholder="Enter your question "
+                id="E_que_stion" required
               />
             </div>
             <div class="options">
               <div>
                 <p>A.</p>
-                <input type="text" placeholder="option A" id="option_a" />
+                <input type="text" placeholder="option A" id="E_option_a"  required/>
               </div>
               <div>
                 <p>B.</p>
-                <input type="text" placeholder="option B" id="option_b" />
+                <input type="text" placeholder="option B" id="E_option_b" required />
               </div>
               <div>
                 <p>C.</p>
-                <input type="text" placeholder="option C" id="option_c" />
+                <input type="text" placeholder="option C" id="E_option_c" required />
               </div>
               <div>
                 <p>D.</p>
-                <input type="text" placeholder="option D" id="option_d" />
+                <input type="text" placeholder="option D" id="E_option_d" required />
               </div>
               <div>
                 <p>Correct Answer</p>
-                <input type="text" placeholder="Option" id="correct_ans" />
+                <input type="text" placeholder="Option" id="E_correct_ans" required />
               </div>
             </div>
           </div>
           <div class="controller_div">
-            <button type="submit">Update Question</button>
+            <button type="submit" id="E_submit">Update Question</button>
           </div>
         </form>
-      </div> -->
+      </div>
       <h1 id="qp">Quizz Preview</h1>
       <div id="que_preview">
-        <!-- <div class="one_que">
-          <div>
-            <p>1.</p>
-            <h2>First Question</h2>
-          </div>
-          <div>
-            <p>A:-</p>
-            <p>option a</p>
-          </div>
-          <div>
-            <p>B:-</p>
-            <p>option B</p>
-          </div>
-          <div>
-            <p>C:-</p>
-            <p>option c</p>
-          </div>
-          <div>
-            <p>D:-</p>
-            <p>option d</p>
-          </div>
-        </div> -->
+       
       </div>
     </div>
   </body>

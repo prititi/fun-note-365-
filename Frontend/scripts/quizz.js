@@ -31,8 +31,36 @@ const dummyquestions= [{
     correct: "b",
 }
 ];
-// const quizData =JSON.parse(localStorage.getItem("allquestions")) ||dummyquestions;
+// const quizData =JSON.parse(localStorage.getItem("Quizquestions")) ||dummyquestions;
+
 const quizData =dummyquestions;
+//js for user details
+let mainsection=document.querySelector(".main");
+let user_details_div=document.querySelector("#user_details");
+let user_name=document.querySelector("#user_name");
+let Quizz_room_name=document.querySelector("#Quizz_room_name");
+let roombtn=document.querySelector("#roombtn");
+let participant_name;
+let participant_room;
+mainsection.style.display="none";
+user_details_div.style.display="block";
+roombtn.addEventListener("click",()=>{
+    if (JSON.parse(localStorage.getItem(Quizz_room_name.value))) {
+        if(!user_name.value){
+            alert("Plese Enter your name in Order to participate in Quizz")
+        }else{
+            alert("starting your Quizz")
+            participant_name=user_name.value;
+            participant_room=Quizz_room_name.value;
+            user_details_div.style.display="none";
+            mainsection.style.display="flex";
+        }
+      } else {
+        alert("Incorrect Quizz Room Name,Kindly enter exact Quizz Room Name (case sensitive)")
+      }
+})
+
+//quizz controlling js
 let index = 0;
 let correct = 0,
 incorrect = 0,
@@ -88,7 +116,7 @@ allInputs.forEach(
 const quizEnd = () => {
 document.getElementsByClassName("container")[0].innerHTML = `
     <div class="col">
-        <h3 class="w-100"> Hii, you've scored ${correct} / ${total} </h3>
+        <h3 class="w-100"> Hii ${participant_name}, you've scored ${correct} / ${total} </h3>
     </div>
 `
 }
