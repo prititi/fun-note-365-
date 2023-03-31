@@ -1,3 +1,6 @@
+let baseurl="http://localhost:8500/";
+const userid="prashant@9305";
+const permitted_quiz_rooms=3;
 let add_new_que = document.getElementById("add_ques");
 let create_quizz = document.getElementById("create_quizz");
 let question_form = document.getElementById("quizz_form");
@@ -10,6 +13,7 @@ let quizz_room_name = document.getElementById("quizz_room_name");
 let room_quizz;
 let quest_num = document.getElementById("quest_num");
 let que_preview = document.getElementById("que_preview");
+let max_time = document.getElementById("max_time");
 let qp = document.getElementById("qp");
 let qarr = localStorage.getItem("allquestions") || "";
 let qn = localStorage.getItem("que_number") || 1;
@@ -32,14 +36,28 @@ create_quizz.addEventListener("click", (e) => {
     if(quizz_room_name.value==""){
       alert("Please fill the Quizz Room Name")
     }else{
-      room_quizz=quizz_room_name.value;
-    localStorage.setItem(room_quizz, JSON.stringify(questionarr));
+      if(fetch_total_quiz(userid)){
+        room_quizz=quizz_room_name.value;
+    let obj={
+      roomname:room_quizz,
+      Author:`${userid}`,
+      quiz:questionarr,
+      timeout:Number(max_time.value)
+    }
+    //creating quiz using mongodb
+    fetch_create_quiz(obj)
     questionarr = [];
     preview_of_ques(questionarr);
     localStorage.setItem("allquestions", "");
     localStorage.setItem("que_number", "");
     quest_num.innerText = `1.`;
+    quizz_room_name.value="";
+    max_time.value="";
     alert("Quizz Created Successfully");
+      }else{
+        // message to upgrade his plan
+        alert(`You have reached limit ${permitted_quiz_rooms} of creating quiz rooms,kindly upgrade your plan to continue. `)
+      }
     }
   } else {
     alert("Add Questions To Create Quizz");
@@ -254,3 +272,48 @@ deleteqbtn.addEventListener("click", (e) => {
   preview_of_ques(questionarr);
   delete_div.style.display = "none";
 });
+
+// fetching functions 
+
+async function fetch_create_quiz(obj) {
+  const url = `${baseurl}quiz/createQuiz`;
+  const data = obj;
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    const data = await response.json();
+    alert(data.msg);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+async function fetch_total_quiz(userid) {
+  const url = `${baseurl}quiz/totalquizes/${userid}`;
+  try {
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    const data = await response.json();
+    alert(data.msg);
+    console.log(data.count); // count of quiz rooms user has created;
+    if(data.count<=permitted_quiz_rooms){
+      return true;
+    }else{
+      return false;
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+
