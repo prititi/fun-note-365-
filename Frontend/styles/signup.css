@@ -4,7 +4,7 @@
 
 } 
  body{
-    background-color: var(--main-color);
+    background-color:var(--background);
  }
  
  *{
@@ -19,7 +19,7 @@
 }
 #left{
     width: 25%;
-    height: 100vh;
+    height: 120vh;
     background-color: var(--main-color);
     padding: 0px 20px;
     

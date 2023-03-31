@@ -7,8 +7,8 @@ const cookieParser = require('cookie-parser')
 refreshRouter.post("/",async(req,res)=>{
     try {
     
-        //let incToken = req.headers.refreshtoken;
-        let incToken = req.cookies.refreshToken;
+        let incToken = req.headers.refreshtoken;
+        //let incToken = req.cookies.refreshToken;
         
         await jwt.verify(incToken, process.env.refreshKey, function(err, decoded) {
         if(err){res.status(401).json({msg:"login please,refresh token expired"})}

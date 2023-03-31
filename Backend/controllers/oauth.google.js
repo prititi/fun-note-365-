@@ -26,7 +26,7 @@ googleOauthRouter.get( '/callback',
         session:false //we are not using session, if you want to use session you can remove this.
 }),
 async (req,res)=>{
-console.log(req.user)
+//console.log(req.user)
 let Id ;
 let email = req.user.email;
 let userExists = await UserModel.findOne({email});
@@ -52,6 +52,8 @@ res.cookie("refreshToken",refreshToken);
 
 
 //user saved
+
+
 
 res.redirect("https://www.amazon.com/") //redirect to any page
 }

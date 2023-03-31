@@ -52,9 +52,11 @@ let res = await fetch(`${baseUrl}/login`, {
   if(res.ok){
     let data = await res.json();
     let authToken = data.authToken;
-    sessionStorage.setItem("authToken", authToken);
-    alert("registered succesfully");
-    window.location.href = "./login.html";
+    let refreshToken = data.refreshToken;
+    localStorage.setItem("authToken", authToken);
+    localStorage.setItem("refreshToken", refreshToken);
+    alert("login successfull");
+    window.location.href = "./index.html";
   }
   else {
    if(res.status==401){
