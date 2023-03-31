@@ -10,8 +10,8 @@
     <!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Google Fonts --><link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
     <!-- MDB -->
-    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" /> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" /> 
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous"> -->
     <!-- cdns end -->
 
 <!-- vanilla css--><link rel="stylesheet" href="styles/payment.css">
@@ -21,48 +21,57 @@
 <body >
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <div  id="mainContainer"  class="container">
-        <div class="view-account">
-            <section class="module">
+        <div  class="view-account">
+            <section  class="module">
                 <div class="module-inner">
-                    <div style="background-color: brown;" class="side-bar">
-                        <div class="user-info">
-                            <img class="img-profile img-circle img-responsive center-block" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+
+                    <div id="mainProfile" class="side-bar ">
+                        <!-- <div id="userInfoDiv" class="user-info">
+                            <img id="profilePic" class="img-profile img-circle img-responsive center-block" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
                             <ul class="meta list list-unstyled">
-                                <li class="name">Rebecca Sanders
+                                <li id="name" class="name">Rebecca Sanders
                                     <label class="label label-info">UX Designer</label>
                                 </li>
                                 <li class="email"><a href="#">Rebecca.S@website.com</a></li>
                                 <li class="activity">Last logged in: Today at 2:18pm</li>
+                                <li class="activity">Selected Plan :  <label style="background-color: green;color: white;border-radius: 5px;padding: 0px 5px;" class="label label-info">UX Designer</label> </li>
+                                <li class="activity"> No of events : 234</li>
+                                <li class="activity"> No of polls : 24</li>
+                                <li class="activity"> No of events : unlimited</li>
+
+
+
+                                <li class="activity">Payment:  <label style="background-color: rgb(214, 47, 5);color: white;border-radius: 5px;padding: 0px 7px;" class="label label-info">$ 100</label> </li>
+                                <li id="changePlan" class="activity"> <label style="background-color: rgb(138, 0, 0);color: white;border-radius: 5px;padding: 5px 15px;margin: 40px;cursor: pointer;" class="label label-info">Change Plan</label> </li>
+                                
                             </ul>
                         </div>
-                        <nav class="side-menu">
-                            <ul class="nav">
+                        <nav  class="side-menu">
+                             <ul class="nav">
                                 <li><a href="#"><span class="fa fa-user"></span> Profile</a></li>
                                 <li><a href="#"><span class="fa fa-cog"></span> Settings</a></li>
                                 <li class="active"><a href="#"><span class="fa fa-credit-card"></span> Billing</a></li>
-                                <li><a href="#"><span class="fa fa-envelope"></span> Messages</a></li>
+                                <li><a href="#s"><span class="fa fa-envelope"></span> Messages</a></li>
                                 
                                 <li><a href="user-drive.html"><span class="fa fa-th"></span> Drive</a></li>
                                 <li><a href="#"><span class="fa fa-clock-o"></span> Reminders</a></li>
-                            </ul>
-                        </nav>
+                            </ul> 
+                        </nav> -->
                     </div>
                     
-                    <div style="" class="content-panel">
-                        <h2 class="title">Billing</h2>
+                    <div id="right" class="content-panel">
+                        <!-- <h2 class="title">Billing</h2> -->
                         <div class="billing">
                             <div class="secure text-center margin-bottom-md">
                                 <h3 class="margin-bottom-md text-success">
                                         <span class="fs1 icon" aria-hidden="true" data-icon=""></span>
-                                        Secure credit card payment<br>
-                                        <small>This is a secure 128-bit SSL encrypted payment</small>
+                                        <br>
+                                        <!-- <small>This is a secure 128-bit SSL encrypted payment</small> -->
                                     </h3>
                                 <div class="accepted-cards">
-                                    <ul class="list-inline">
-                                        <li><img src="https://www.uxfordev.com/demo/1.0.6/assets/images/payment-icon-set/icons/visa-curved-32px.png" alt="Visa"></li>
-                                        <li><img src="https://www.uxfordev.com/demo/1.0.6/assets/images/payment-icon-set/icons/mastercard-curved-32px.png" alt="MasterCard"></li>
-                                        <li><img src="https://www.uxfordev.com/demo/1.0.6/assets/images/payment-icon-set/icons/maestro-curved-32px.png" alt="Maestro"></li>
-                                        <li><img src="https://www.uxfordev.com/demo/1.0.6/assets/images/payment-icon-set/icons/american-express-curved-32px.png" alt="American Express"></li>
+                                    <ul id="cardImages" class="list-inline">
+                                        <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4Hm9UeUyXQMPsdP9DiYSu9q-WESdjfOV5F2F0BLtWvkWcHiOqYns9m3-9kv1_duOqyw&usqp=CAU" alt="Visa"></li>
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -70,21 +79,21 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Name on Card</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" placeholder="Your name">
+                                        <input id="nameOnCard" type="text" class="form-control" placeholder="Your name">
                                         <p class="help-block">As it appears on the card</p>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label">Card Number </label>
+                                    <label  class="col-sm-3 control-label">Card Number </label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" placeholder="••••  ••••  ••••  ••••">
+                                        <input id="cardNumber" type="text" class="form-control" placeholder="••••  ••••  ••••  ••••">
                                         <p class="help-block">The 16 digits on the front of your credit card.</p>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div  class="form-group">
                                     <label class="col-sm-3 control-label">Expiration Date</label>
-                                    <div class="col-sm-9 form-inline">
-                                        <select class="form-control">
+                                    <div id="date" class="col-sm-9 form-inline">
+                                        <select id="ExpMonth" class="form-control">
                                             <option value="01">01</option>
                                             <option value="01">02</option>
                                             <option value="01">03</option>
@@ -93,17 +102,21 @@
                                             <option value="01">06</option>
                                             <option value="01">07</option>
                                             <option value="01">08</option>
+                                            <option value="01">09</option>
+                                            <option value="01">10</option>
+                                            <option value="01">11</option>
+                                            <option value="01">12</option>
                                         </select>
                                         <span class="divider">/</span>
-                                        <select class="form-control">
-                                            <option value="01">2015</option>
-                                            <option value="01">2016</option>
-                                            <option value="01">2017</option>
-                                            <option value="01">2018</option>
-                                            <option value="01">2019</option>
-                                            <option value="01">2020</option>
-                                            <option value="01">2021</option>
-                                            <option value="01">2022</option>
+                                        <select id="expYear" class="form-control">
+                                            <option value="01">2023</option>
+                                            <option value="01">2024</option>
+                                            <option value="01">2025</option>
+                                            <option value="01">2026</option>
+                                            <option value="01">2027</option>
+                                            <option value="01">2028</option>
+                                            <option value="01">2029</option>
+                                            <option value="01">2030</option>
                                         </select>
                                         <p class="help-block">The date your credit card expires. Find this on the front of your credit card.</p>
                                     </div>
@@ -111,7 +124,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Security Code</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" style="width: 120px;" placeholder="CVC">
+                                        <input id="cvv" type="text" class="form-control" style="width: 120px;" placeholder="CVV">
                                         <p class="help-block">The last 3 digits displayed on the back of your credit card.</p>
                                     </div>
                                 </div>
@@ -119,33 +132,33 @@
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">Address</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" placeholder="Address">
+                                            <input id="address" type="text" class="form-control" placeholder="Address">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-5 col-sm-offset-3">
-                                            <input type="text" class="form-control" placeholder="City">
+                                            <input id="city" type="text" class="form-control" placeholder="City">
                                         </div>
                                         <div class="col-sm-4">
-                                            <input type="text" class="form-control" placeholder="Zip/Postal">
+                                            <input id="pincode" type="text" class="form-control" placeholder="Zip/Postal">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-5 col-sm-offset-3">
-                                            <input type="text" class="form-control" placeholder="Country">
+                                            <input id="country" type="text" class="form-control" placeholder="Country">
                                         </div>
                                         <div class="col-sm-4">
-                                            <input type="text" class="form-control" placeholder="State">
+                                            <input id="state" type="text" class="form-control" placeholder="State">
                                         </div>
                                     </div>
                                 </div>
                                 <hr>
                                 <div class="action-wrapper text-center">
-                                    <h4 class="notes margin-bottom-sm">
+                                    <!-- <h4 class="notes margin-bottom-sm">
                                             You'll be charged <span class="text-stronger">$99/year</span> 
-                                        </h4>
+                                        </h4> -->
                                     <div class="action-btn">
-                                        <button class="btn btn-success btn-lg">
+                                        <button id="payBtn" class="btn btn-success btn-lg">
                                             Make Payment
                                             <i class="fa fa-chevron-right"></i>
                                         </button>

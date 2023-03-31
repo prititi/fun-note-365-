@@ -13,6 +13,7 @@ const { refreshRouter } = require('./controllers/refreshToken');
 const socketFunc = require('./controllers/socket')
 const { googleOauthRouter } = require('./controllers/oauth.google');
 const {quizRouter}=require("./controllers/quizz.Routes")
+const { eventRouter } = require('./controllers/adminpol.route');
 const app = express();
 app.use(cors())
 
@@ -33,6 +34,7 @@ app.use('/register',regRouter);
 app.use("/login",loginRouter);
 app.use("/refreshToken",refreshRouter);
 app.use("/users",userRouter);
+app.use("/events",eventRouter)
 //google oAuth routers
 app.use("/oauth/google",googleOauthRouter);
 

@@ -7,15 +7,18 @@
 body {
     font-family: sans-serif;
     overflow-x: hidden;
-    /* background: url('./head_white.png') no-repeat; */
+    height: 500px;
+    
+    
 }
 
 header {
     width: 100%;
     padding: 70px;
-    background: url('../productimages/head.png') no-repeat;
+    background: url('../productimages/voting\ gif.gif') no-repeat;
     background-size: cover;
     background-position: center;
+    height: 170px;
 }
 
 h1 {
@@ -28,6 +31,7 @@ h1 {
     color: #fff;
     text-align: center;
     display: inline-block;
+    background-color: black;
     
 }
 
@@ -36,6 +40,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
     
 }
 
@@ -49,6 +54,8 @@ h1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     z-index: 2;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 .buttons button {
@@ -61,12 +68,15 @@ h1 {
     border: 2px solid rgba(0, 0, 0, 0.7);
     box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.7);
     transition: 400ms;
+    background:linear-gradient(to right,#E1F5FE,#81D4FA);;
+    color: black;
 }
 
 .buttons button:hover {
     transform: translate(4px, 4px);
     border: 2px solid #76FF03;
     box-shadow: 2px 2px 0 #76FF03;
+    
 }
 
 .connected {
