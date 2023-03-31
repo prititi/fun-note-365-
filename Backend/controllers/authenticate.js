@@ -7,13 +7,14 @@ const cookieParser = require('cookie-parser');
 const authenticate =async (req,res,next)=>{
 try {
     
-    // let incToken = req.headers.authtoken;
-    let incToken = req.cookies.authToken;
-    
+     let incToken = req.headers.authtoken;
+     
+    //let incToken = req.cookies.authToken;
+    console.log(incToken, "this is incToken**************")
 
 
     await jwt.verify(incToken, process.env.normalKey, function(err, decoded) {
-    if(err){res.status(401).json(err)}
+     if(err){res.status(401).json(err);}
     else{
         //console.log(decoded);        
         req.body.userId =decoded.userId;

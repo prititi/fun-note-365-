@@ -4,7 +4,7 @@
 
 } 
  body{
-    background-color: var(--background);
+    background-color:var(--background);
  }
  
  *{
@@ -13,16 +13,16 @@
 }
 .container{
     /* background-color: rgb(219, 130, 21); */
-    width: 100vw;
-    height: auto;
+    width: 100%;
+    height: 800px;
     display: flex;
 }
 #left{
     width: 25%;
-    height: 100vh;
+    height: 120vh;
     background-color: var(--main-color);
-    padding: 100px;
-
+    padding: 0px 20px;
+    
     
 }
 #left>*{
@@ -30,34 +30,36 @@
     display: flex;
     margin-top: 20px;
     flex-direction: column;
- 
+    
     justify-content: center;
 }
 #left h1{
-    font-size: 60px;
+    font-size:xx-large;
     color: #fff;
-    margin-top: 300px;
+    margin-top: 150px;
 }
 #left p{
     font-size: x-large;
 }
 #left div{
     width: 100%;
+    height: 70px;
     background-color: white;
-    padding: 5px;
+    padding: 7px;
     border-radius: 70px;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: center; 
     justify-content: space-evenly;
     
 }
 #left input{
     width: 60%;
-    padding: 30px;
+    margin-top: 10px;
+    padding: 10px;
     border:0px;
     border-radius: 50px;
-    font-size: xx-large;
+    font-size: x-large;
     
     text-align: center;
 
@@ -67,11 +69,11 @@
 }
  .fa-solid{
     color: var(--main-color);
-    font-size: xx-large;
+    font-size: x-large;
    
 }
 .fa-hashtag{
-    font-size: 50px;
+    font-size: xx-large;
     margin-left: 20px;
 }
 #enter{
@@ -79,8 +81,8 @@
     background-color: var(--main-color);
     cursor: pointer;
     border-radius: 50%;
-    height: 100px;
-    width: 100px;
+    height: 50px;
+    width: 50px;
  
 
 }
@@ -108,16 +110,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
- 
+    height: auto;
+    padding-top: 0px;
+    
     color: var(--main-color);
-    font-family: sans-serif;
+    
   }
   
   #container {
     text-align: center;
-    max-width: 800px;
+    max-width: 500px;
     width: 100%;
     padding: 32px;
     box-sizing: border-box;
@@ -146,15 +148,15 @@
     display: block;
     width: 100%;
     border: 1px solid #ccc;
-    font-size: x-large;
+    font-size: large;
     box-sizing: border-box;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     background-color: #fff;
-    padding: 25px 30px;
+    padding: 15px 30px;
     border-radius: 10px;
   }
   .submit{
-    padding: 25px 30px;
+    padding: 15px 30px;
     border-radius: 10px;
   }
   button {
@@ -168,18 +170,24 @@
     font-size: x-large;
     cursor: pointer;
   }
-  #container{
-  width: 700px;
- 
-  }
+
   #container>img{
-    width: 80px;
-    margin: 20px;
+    width: 60px;
+    margin: 0px;
     
+  }
+  #container>h1{
+    font-size: x-large;
+    color: var(--main-color);
+  }
+  #container{
+    
+    padding-top: 0px;
+    margin-top: 0px;
   }
   #dontHaveAccount{
     color: #494745;
-    font-size: x-large;
+    font-size: large;
     margin: 30px;
   }
   #dontHaveAccount a{
@@ -187,8 +195,8 @@
   }
 #errorDisplay{
 color: red;
-font-size: x-large;
-height: 60px;
+font-size: large;
+height: 10px;
 width: auto;
 margin-top: 5px;
 
@@ -198,9 +206,9 @@ align-items: center;
 border-radius: 10px;
 
 }
-.redBorder{
+/* .redBorder{
     border: 1px solid red;
-}
+} */
 #google{
     background-color: #fff;
     
@@ -209,14 +217,14 @@ border-radius: 10px;
     padding: 8px 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: x-large;
+    font-size: large;
     box-sizing: border-box;
-    margin-bottom: 16px;
-    color: #000;
+    margin-bottom: 10px;
+    color: #494745;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 25px 30px;
+    padding: 15px 30px;
     border-radius: 10px;
    
    
@@ -225,7 +233,7 @@ a{
     text-decoration: none;
 }
 #google>img{
-    height: 50px;
+    height: 30px;
     margin-right: 10px;
 }
 .box{
@@ -250,26 +258,26 @@ outline: none;
 @media all and (max-width:599px){
     /* mobile */
     body{
-        background-color: chartreuse;
+        
     }
     #right{
         width: 100%;
     }
     .container{
+        padding-top: 0px;
         flex-direction: column-reverse;
     }
     #container{
         width: 90%;
-        background-color: #5cd362;
+        
         margin: 0px;
         }
 }
 
-@media all and (max-width:1700px){
+@media all and (max-width:1200px){
     /* tablet */
-    body{
-        background-color: var(--main-color);
-    }
+  
+        
     .container{
         flex-direction: column-reverse;
         

@@ -5,19 +5,52 @@
 body{
    
 }
-#mainContainer{
+#profilePic{
+    border-radius: 50%;
+}
+
+
+#mainProfile{
+       padding: 0px;
+       width: auto;
+      
+}
+#right{
+
+    margin-left: 300px;
+    width: auto;
+    padding-left: 150px;
+    padding-right: 0px;
+}
+select{
+    margin: 10px;
+}
+#date{
+ 
+    display: flex;
+    flex-direction: row;
     
-    padding: 50px;
+    
+    align-items: center;
+}
+input[type="text"]{
+margin: 10px;
+}
+#cardImages{
+
+    display: flex;
     
 }
 
-body{
-    background:#f158d8;
-        
-}
+
+
+
+
+
+
 .view-account{
     background:#FFFFFF; 
-    margin-top:20px;
+   
 }
 .view-account .pro-label {
     font-size: 13px;
@@ -192,6 +225,7 @@ body{
     margin-right: 5px;
     display: inline-block
 }
+
 
 .view-account .content-panel .mails-wrapper .mail-item {
     position: relative;
@@ -609,4 +643,10 @@ body{
     body{
         background-color: #e9ec52;
     }
+
+ #right{
+     
+     margin-left: 10px;
+    
+ }
 }

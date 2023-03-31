@@ -6,7 +6,7 @@ const connected = document.querySelector('.connected');
 const ctx = document.querySelector('#myChart').getContext('2d');
 // 3 CHART DATA
 let chartData = {
-    labels : ['Mr. White', 'Mr. Orange', 'Mr. Blonde', 'Mr. Pink', 'Mr. Brown', 'Mr. Blue'],
+    labels : ['Mr. Inder', 'Mr. Anandhu', 'Mr. Prashant', 'Mr. Harshit', 'Mr. Swapnil', 'Miss. Priti'],
     datasets: [{
         label:'peoples',
         data:[0,0,0,0,0,0],
@@ -17,6 +17,7 @@ let chartData = {
             'rgba(255,99,102,0.2)',
             'rgba(255,99,92,0.2)',
             'rgba(255,99,82,0.2)',
+            
         ],
         borderColor:[
             'rgba(255,100,132,1)',
