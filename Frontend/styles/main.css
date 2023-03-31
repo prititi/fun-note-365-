@@ -18,7 +18,7 @@ header {
     background: url('../productimages/voting\ gif.gif') no-repeat;
     background-size: cover;
     background-position: center;
-    height: 170px;
+    height: 370px;
 }
 
 h1 {
@@ -70,6 +70,7 @@ h1 {
     transition: 400ms;
     background:linear-gradient(to right,#E1F5FE,#81D4FA);;
     color: black;
+    font-weight: 700;
 }
 
 .buttons button:hover {
@@ -94,4 +95,12 @@ canvas#myChart {
     width: 400px;
     height: 350px;
     z-index: 2;
+}
+#back{
+   
+    margin:55px 0px 23px -486px;
+    width: 157%;
+    height: 47px;
+    font-size: 20px;
+    
 }
