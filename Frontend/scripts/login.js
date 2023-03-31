@@ -7,7 +7,7 @@ let form = document.querySelector("#form");
 let googleBtn = document.querySelector("#google");
 googleBtn.addEventListener("click",(e)=>{
     e.preventDefault();
-    alert("hi")
+    
     window.location.href="http://localhost:8500/oauth/google"
     
 })
@@ -47,9 +47,11 @@ let res = await fetch(`${baseUrl}/login`, {
   if(res.ok){
     let data = await res.json();
     let authToken = data.authToken;
-    sessionStorage.setItem("authToken", authToken);
-    alert("registered succesfully");
-    window.location.href = "./login.html";
+    let refreshToken = data.refreshToken;
+    localStorage.setItem("authToken", authToken);
+    localStorage.setItem("refreshToken", refreshToken);
+    alert("login successfull");
+    window.location.href = "./index.html";
   }
   else {
    if(res.status==401){

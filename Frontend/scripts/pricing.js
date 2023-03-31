@@ -102,5 +102,6 @@ function planSelected(plan){
     
     sessionStorage.setItem("plan",JSON.stringify(plan));
     let planData = sessionStorage.getItem("plan");
-    alert(planData);
+    if(planData){window.location.href="./payment.html"}
+    
 }
