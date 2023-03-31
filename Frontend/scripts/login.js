@@ -13,11 +13,6 @@ googleBtn.addEventListener("click",(e)=>{
 })
 
 
-
-
-
-
-
 form.addEventListener("submit",async(e)=>{
 try{
 e.preventDefault();
