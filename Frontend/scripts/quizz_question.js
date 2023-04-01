@@ -34,36 +34,51 @@ create_quizz.addEventListener("click", (e) => {
   e.preventDefault();
   if (questionarr.length > 0) {
     if (quizz_room_name.value == "") {
-      alert("Please fill the Quizz Room Name");
+      // alert("Please fill the Quizz Room Name");
+      swal({
+        title: "Please fill the Quizz Room Name",
+        text: "In Order To Create Quizz.",
+        icon: "success",
+      });
     } else {
       if (fetch_total_quiz(userid)) {
         room_quizz = quizz_room_name.value;
         let now = new Date();
-    let hours = now.getHours().toString().padStart(2, "0");
-    let minutes = now.getMinutes().toString().padStart(2, "0");
-    let seconds = now.getSeconds().toString().padStart(2, "0");
-    let day = now.getDate().toString().padStart(2, "0");
-    let month = (now.getMonth() + 1).toString().padStart(2, "0");
-    let year = now.getFullYear();
+        let hours = now.getHours().toString().padStart(2, "0");
+        let minutes = now.getMinutes().toString().padStart(2, "0");
+        let seconds = now.getSeconds().toString().padStart(2, "0");
+        let day = now.getDate().toString().padStart(2, "0");
+        let month = (now.getMonth() + 1).toString().padStart(2, "0");
+        let year = now.getFullYear();
         let obj = {
           roomname: room_quizz,
           Author: `${userid}`,
           quiz: questionarr,
           timeout: Number(max_time.value),
           time: hours + ":" + minutes + ":" + seconds,
-          date: day + "/" + month + "/" + year
+          date: day + "/" + month + "/" + year,
         };
         //creating quiz using mongodb
         fetch_create_quiz(obj);
       } else {
         // message to upgrade his plan
-        alert(
-          `You have reached limit ${permitted_quiz_rooms} of creating quiz rooms,kindly upgrade your plan to continue. `
-        );
+        // alert(
+        //   `You have reached limit ${permitted_quiz_rooms} of creating quiz rooms,kindly upgrade your plan to continue. `
+        // );
+        swal({
+          title: `You have reached limit ${permitted_quiz_rooms} of creating quiz rooms,`,
+          text: "Kindly upgrade your plan to continue.",
+          icon: "success",
+        });
       }
     }
   } else {
-    alert("Add Questions To Create Quizz");
+    // alert("Add Questions To Create Quizz");
+    swal({
+      title: "Add Questions First",
+      text: "In Order To Create Quizz.",
+      icon: "success",
+    });
   }
 });
 //adding questions
@@ -77,15 +92,24 @@ add_new_que.addEventListener("click", (e) => {
     !option_d.value ||
     !correct_ans.value
   ) {
-    alert("Plese fill all fields");
+    // alert("Plese fill all fields");
+    swal({
+      title: "Plese fill all fields",
+      text: "To Continue...",
+      icon: "success",
+    });
   } else if (
     correct_ans.value.toLowerCase() !== "a" &&
     correct_ans.value.toLowerCase() !== "b" &&
     correct_ans.value.toLowerCase() !== "c" &&
     correct_ans.value.toLowerCase() !== "d"
   ) {
-    console.log(correct_ans.value.toLowerCase());
-    alert("Please Enter Correct answer field properly");
+    // alert("Please Enter Correct answer field properly");
+    swal({
+      title: "Please Enter Correct answer field properly",
+      text: "To Continue...",
+      icon: "success",
+    });
   } else {
     let obj = {
       question: Question.value,
@@ -109,7 +133,12 @@ add_new_que.addEventListener("click", (e) => {
     quest_num.innerText = `${qnum}.`;
     localStorage.setItem("que_number", qnum);
     question_form.reset();
-    alert("question added");
+    // alert("question added");
+    swal({
+      title: "Question Added",
+      text: "You Can now Create Quizz Or Add More Questions To It.",
+      icon: "success",
+    });
   }
 });
 
@@ -121,7 +150,12 @@ edit_btn.addEventListener("click", (e) => {
   if (questionarr.length > 0) {
     edit_que.style.display = "block";
   } else {
-    alert("First Add Question In Order To Edit");
+    // alert("First Add Question In Order To Edit");
+    swal({
+      title: "First Add Question In Order To Edit",
+      text: "",
+      icon: "success",
+    });
   }
 });
 
@@ -145,14 +179,24 @@ function submitForm(event) {
     !E_option_d.value ||
     !E_correct_ans.value
   ) {
-    alert("Plese fill all fields");
+    // alert("Plese fill all fields");
+    swal({
+      title: "Plese fill all fields",
+      text: "",
+      icon: "success",
+    });
   } else if (
     E_correct_ans.value.toLowerCase() !== "a" &&
     E_correct_ans.value.toLowerCase() !== "b" &&
     E_correct_ans.value.toLowerCase() !== "c" &&
     E_correct_ans.value.toLowerCase() !== "d"
   ) {
-    alert("Please Enter Correct answer field properly");
+    // alert("Please Enter Correct answer field properly");
+    swal({
+      title: "Please Enter Correct answer field properly",
+      text: "",
+      icon: "success",
+    });
   } else {
     const obj = {
       question: E_que_stion.value,
@@ -253,7 +297,12 @@ let deleteing_div_btn = document.getElementById("deleteing_div_btn");
 deleteing_div_btn.addEventListener("click", (e) => {
   e.preventDefault();
   if (questionarr.length == 0) {
-    alert("Add Questions First to Delete");
+    // alert("Add Questions First to Delete");
+    swal({
+      title: "Add Questions First to Delete",
+      text: "",
+      icon: "success",
+    });
   } else {
     if (delete_div.style.display === "block") {
       delete_div.style.display = "none";
@@ -288,7 +337,7 @@ async function fetch_create_quiz(obj) {
       },
     });
     const data = await response.json();
-    if(data.ok){
+    if (data.ok) {
       questionarr = [];
       preview_of_ques(questionarr);
       localStorage.setItem("allquestions", "");
@@ -296,18 +345,20 @@ async function fetch_create_quiz(obj) {
       quest_num.innerText = `1.`;
       quizz_room_name.value = "";
       max_time.value = "";
-      Swal.fire({
-        title:`${data.msg} and link:http://127.0.0.1:5502/Frontend/quizz.html`,
-        showClass: {
-          popup: 'animate__animated animate__fadeInDown'
-        },
-        hideClass: {
-          popup: 'animate__animated animate__fadeOutUp'
-        }
-      })
-    }else{
-      alert(data.msg)
-    } 
+      // alert(`${data.msg} and link:http://127.0.0.1:5502/Frontend/quizz.html`)
+      swal({
+        title: `${data.msg}`,
+        text: "link:http://127.0.0.1:5502/Frontend/quizz.html",
+        icon: "success",
+      });
+    } else {
+      // alert(data.msg)
+      swal({
+        title: `${data.msg}`,
+        text: "",
+        icon: "success",
+      });
+    }
   } catch (error) {
     console.log("Error:", error);
   }
@@ -335,65 +386,67 @@ async function fetch_total_quiz(userid) {
 }
 
 //js for master div and all btns controllers
-let master_quizz=document.getElementById("master_quizz");
-let master_room=document.getElementById("master_room");
-let ranking_btn=document.getElementById("ranking_btn");
-let delete_qr=document.getElementById("delete_qr");
-let quizz_cont=document.getElementById("quizz_cont");
-let delete_Qr=document.getElementById("delete_Qr");
-let deletesubquiz=document.getElementById("deletesubquiz");
-let delete_qr_btn=document.getElementById("delete_qr_btn");
-
+let master_quizz = document.getElementById("master_quizz");
+let master_room = document.getElementById("master_room");
+let ranking_btn = document.getElementById("ranking_btn");
+let delete_qr = document.getElementById("delete_qr");
+let quizz_cont = document.getElementById("quizz_cont");
+let delete_Qr = document.getElementById("delete_Qr");
+let deletesubquiz = document.getElementById("deletesubquiz");
+let delete_qr_btn = document.getElementById("delete_qr_btn");
 
 const previousQuizes = document.getElementById("previous_quizes");
-const participantList = document.getElementById('participant-list');
-master_quizz.addEventListener("click",()=>{
-  if(quizz_cont.style.display=="block"){
-    master_quizz.innerText="Create Quiz"
-    quizz_cont.style.display="none";
-  }else{
-    quizz_cont.style.display="block";
-    master_quizz.innerText="Hide Create Quiz Panel"
+const participantList = document.getElementById("participant-list");
+master_quizz.addEventListener("click", () => {
+  if (quizz_cont.style.display == "block") {
+    master_quizz.innerText = "Create Quiz";
+    quizz_cont.style.display = "none";
+  } else {
+    quizz_cont.style.display = "block";
+    master_quizz.innerText = "Hide Create Quiz Panel";
   }
-})
-master_room.addEventListener("click",()=>{
-  
-  if(previousQuizes.style.display=="block"){
-    master_room.innerText="Previous Quizs and Quiz Rooms";
-    previousQuizes.style.display="none";
-  }else{
-    previousQuizes.style.display="block";
-    master_room.innerText="Hide Quiz Rooms";
-    fetch_previous_quiz(userid)
+});
+master_room.addEventListener("click", () => {
+  if (previousQuizes.style.display == "block") {
+    master_room.innerText = "Previous Quizs and Quiz Rooms";
+    previousQuizes.style.display = "none";
+  } else {
+    previousQuizes.style.display = "block";
+    master_room.innerText = "Hide Quiz Rooms";
+    fetch_previous_quiz(userid);
   }
-})
-ranking_btn.addEventListener("click",()=>{
-
-  if(participantList.style.display=="block"){
-    ranking_btn.innerText="See Rankings of Quiz Participents"
-    participantList.style.display="none";
-  }else{
-    participantList.style.display="block";
-    ranking_btn.innerText="Hide Rankings"
-    fetch_rankings('demo2')
+});
+ranking_btn.addEventListener("click", () => {
+  if (participantList.style.display == "block") {
+    ranking_btn.innerText = "See Rankings of Quiz Participents";
+    participantList.style.display = "none";
+  } else {
+    participantList.style.display = "block";
+    ranking_btn.innerText = "Hide Rankings";
+    fetch_rankings("demo2");
   }
-})
-delete_qr.addEventListener("click",()=>{
-  if(deletesubquiz.style.display=="block"){
-    delete_qr.innerText="Delete a Quiz / Quiz Room";
-    deletesubquiz.style.display="none";
-  }else{
-    deletesubquiz.style.display="block";
-    delete_qr.innerText="Hide Delete Quiz Panel";
+});
+delete_qr.addEventListener("click", () => {
+  if (deletesubquiz.style.display == "block") {
+    delete_qr.innerText = "Delete a Quiz / Quiz Room";
+    deletesubquiz.style.display = "none";
+  } else {
+    deletesubquiz.style.display = "block";
+    delete_qr.innerText = "Hide Delete Quiz Panel";
   }
-  delete_qr_btn.addEventListener("click",()=>{
-    if(!delete_Qr.value){
-      alert("Please Enter Quizz Room First !")
-    }else{
-      fetch_delete_quiz(delete_Qr.value) ;
+  delete_qr_btn.addEventListener("click", () => {
+    if (!delete_Qr.value) {
+      // alert("Please Enter Quizz Room First !")
+      swal({
+        title: "Please Enter Quizz Room First !",
+        text: "",
+        icon: "success",
+      });
+    } else {
+      fetch_delete_quiz(delete_Qr.value);
     }
-  })
-})
+  });
+});
 
 async function fetch_previous_quiz(userid) {
   const url = `${baseurl}quiz/totalquizes/${userid}`;
@@ -406,12 +459,12 @@ async function fetch_previous_quiz(userid) {
     });
     const data = await response.json();
     //here call the rendring function
-    if(data.rooms.length>0){
-      renderQuiz(data.rooms)
-    }else{
-      previousQuizes.innerHTML=null;
-      let heading=document.createElement("h1");
-      heading.innerText="You Have Not Created Any Quizz Room Till Now";
+    if (data.rooms.length > 0) {
+      renderQuiz(data.rooms);
+    } else {
+      previousQuizes.innerHTML = null;
+      let heading = document.createElement("h1");
+      heading.innerText = "You Have Not Created Any Quizz Room Till Now";
       previousQuizes.appendChild(heading);
     }
   } catch (error) {
@@ -420,67 +473,67 @@ async function fetch_previous_quiz(userid) {
 }
 
 function renderQuiz(Data) {
+  previousQuizes.innerHTML = null;
+  let heading = document.createElement("h1");
+  heading.innerText = "All Of Your Previous Quiz Rooms";
+  previousQuizes.appendChild(heading);
 
-  previousQuizes.innerHTML=null;
-  let heading=document.createElement("h1");
-    heading.innerText="All Of Your Previous Quiz Rooms";
-    previousQuizes.appendChild(heading);
+  Data.forEach((quizData) => {
+    const quizContainer = document.createElement("div");
+    quizContainer.classList.add("quiz-container");
 
- Data.forEach((quizData)=>{
-  
-  const quizContainer = document.createElement("div");
-  quizContainer.classList.add("quiz-container");
+    const roomnameEl = document.createElement("p");
+    roomnameEl.textContent = `Room Name: ${quizData.roomname}`;
+    quizContainer.appendChild(roomnameEl);
 
-  const roomnameEl = document.createElement("p");
-  roomnameEl.textContent = `Room Name: ${quizData.roomname}`;
-  quizContainer.appendChild(roomnameEl);
+    const authorEl = document.createElement("p");
+    authorEl.textContent = `Author: ${quizData.Author}`;
+    quizContainer.appendChild(authorEl);
+    const timeforq = document.createElement("p");
+    timeforq.textContent = `Maximum Time: ${quizData.timeout} minutes`;
+    quizContainer.appendChild(timeforq);
+    const time = document.createElement("p");
+    time.textContent = `Created At: ${quizData.time}`;
+    quizContainer.appendChild(time);
+    const date = document.createElement("p");
+    date.textContent = `Created On: ${quizData.date}`;
+    quizContainer.appendChild(date);
 
-  const authorEl = document.createElement("p");
-  authorEl.textContent = `Author: ${quizData.Author}`;
-  quizContainer.appendChild(authorEl);
-  const timeforq = document.createElement("p");
-  timeforq.textContent = `Maximum Time: ${quizData.timeout} minutes`;
-  quizContainer.appendChild(timeforq);
-  const time = document.createElement("p");
-  time.textContent = `Created At: ${quizData.time}`;
-  quizContainer.appendChild(time);
-  const date = document.createElement("p");
-  date.textContent = `Created On: ${quizData.date}`;
-  quizContainer.appendChild(date);
+    quizData.quiz.forEach((questionData, index) => {
+      const questionEl = document.createElement("p");
+      questionEl.textContent = `Question ${index + 1}: ${
+        questionData.question
+      }`;
+      quizContainer.appendChild(questionEl);
 
-  quizData.quiz.forEach((questionData, index) => {
-    const questionEl = document.createElement("p");
-    questionEl.textContent = `Question ${index + 1}: ${questionData.question}`;
-    quizContainer.appendChild(questionEl);
+      const optionsEl = document.createElement("ul");
+      optionsEl.classList.add("options");
 
-    const optionsEl = document.createElement("ul");
-    optionsEl.classList.add("options");
+      const optionAEl = document.createElement("li");
+      optionAEl.textContent = `A. ${questionData.a}`;
+      optionsEl.appendChild(optionAEl);
 
-    const optionAEl = document.createElement("li");
-    optionAEl.textContent = `A. ${questionData.a}`;
-    optionsEl.appendChild(optionAEl);
+      const optionBEl = document.createElement("li");
+      optionBEl.textContent = `B. ${questionData.b}`;
+      optionsEl.appendChild(optionBEl);
 
-    const optionBEl = document.createElement("li");
-    optionBEl.textContent = `B. ${questionData.b}`;
-    optionsEl.appendChild(optionBEl);
+      const optionCEl = document.createElement("li");
+      optionCEl.textContent = `C. ${questionData.c}`;
+      optionsEl.appendChild(optionCEl);
 
-    const optionCEl = document.createElement("li");
-    optionCEl.textContent = `C. ${questionData.c}`;
-    optionsEl.appendChild(optionCEl);
+      const optionDEl = document.createElement("li");
+      optionDEl.textContent = `D. ${questionData.d}`;
+      optionsEl.appendChild(optionDEl);
+      const correct = document.createElement("li");
+      correct.setAttribute("class", "answer_que");
+      correct.textContent = `Answer. ${questionData.correct}`;
+      optionsEl.appendChild(correct);
 
-    const optionDEl = document.createElement("li");
-    optionDEl.textContent = `D. ${questionData.d}`;
-    optionsEl.appendChild(optionDEl);
-    const correct = document.createElement("li");
-    correct.setAttribute("class","answer_que")
-    correct.textContent = `Answer. ${questionData.correct}`;
-    optionsEl.appendChild(correct);
+      quizContainer.appendChild(optionsEl);
+    });
 
-    quizContainer.appendChild(optionsEl);
+    previousQuizes.appendChild(quizContainer);
   });
-
-  previousQuizes.appendChild(quizContainer);
- })
 }
 
 // js for displaying ranking
@@ -497,12 +550,12 @@ async function fetch_rankings(room_quizz) {
     });
     const data = await response.json();
     //here call the rendring function
-    if(data.participents.length>0){
-      renderRanks(data.participents)
-    }else{
-      participantList.innerHTML=null;
-      let heading=document.createElement("h1");
-      heading.innerText="No One Have Participated In Your Quiz Room";
+    if (data.participents.length > 0) {
+      renderRanks(data.participents);
+    } else {
+      participantList.innerHTML = null;
+      let heading = document.createElement("h1");
+      heading.innerText = "No One Have Participated In Your Quiz Room";
       participantList.appendChild(heading);
     }
   } catch (error) {
@@ -510,48 +563,48 @@ async function fetch_rankings(room_quizz) {
   }
 }
 
-function renderRanks(participants){
-  participantList.innerHTML=null;
-  let heading=document.createElement("h1");
-  heading.innerText="Ranking Participents Those Who Have Participated In Your Quiz Room";
+function renderRanks(participants) {
+  participantList.innerHTML = null;
+  let heading = document.createElement("h1");
+  heading.innerText =
+    "Ranking Participents Those Who Have Participated In Your Quiz Room";
   participantList.appendChild(heading);
-participants.sort((a, b) => {
-  if (b.correct_ans === a.correct_ans) {
-    return a.name.localeCompare(b.name);
+  participants.sort((a, b) => {
+    if (b.correct_ans === a.correct_ans) {
+      return a.name.localeCompare(b.name);
+    }
+    return b.correct_ans - a.correct_ans;
+  });
+  let n = 1;
+  for (const participant of participants) {
+    const participantItem = document.createElement("li");
+
+    const rank = document.createElement("h2");
+    rank.innerText = `Rank: ${n++}`;
+    participantItem.appendChild(rank);
+
+    const name = document.createElement("p");
+    name.innerText = `Name: ${participant.name}`;
+    participantItem.appendChild(name);
+
+    const correctAns = document.createElement("p");
+    correctAns.innerText = `Correct Answers: ${participant.correct_ans}`;
+    participantItem.appendChild(correctAns);
+
+    const totalQue = document.createElement("p");
+    totalQue.innerText = `Total Questions: ${participant.total_que}`;
+    participantItem.appendChild(totalQue);
+
+    const time = document.createElement("p");
+    time.innerText = `Time: ${participant.time}`;
+    participantItem.appendChild(time);
+
+    const date = document.createElement("p");
+    date.innerText = `Date: ${participant.date}`;
+    participantItem.appendChild(date);
+
+    participantList.appendChild(participantItem);
   }
-  return b.correct_ans - a.correct_ans;
-});
-let n=1;
-for (const participant of participants) {
-  const participantItem = document.createElement('li');
-  
-  const rank = document.createElement('h2');
-  rank.innerText =`Rank: ${n++}`;
-  participantItem.appendChild(rank);
-
-  const name = document.createElement('p');
-  name.innerText =`Name: ${participant.name}`;
-  participantItem.appendChild(name);
-  
-  const correctAns = document.createElement('p');
-  correctAns.innerText = `Correct Answers: ${participant.correct_ans}`;
-  participantItem.appendChild(correctAns);
-  
-  const totalQue = document.createElement('p');
-  totalQue.innerText = `Total Questions: ${participant.total_que}`;
-  participantItem.appendChild(totalQue);
-  
-  const time = document.createElement('p');
-  time.innerText = `Time: ${participant.time}`;
-  participantItem.appendChild(time);
-  
-  const date = document.createElement('p');
-  date.innerText = `Date: ${participant.date}`;
-  participantItem.appendChild(date);
-  
-  participantList.appendChild(participantItem);
-}
-
 }
 
 // js for deleting quizz rooms
@@ -567,7 +620,12 @@ async function fetch_delete_quiz(roomName) {
     });
     const data = await response.json();
     //here call the rendring function
-    alert(data.msg);
+    // alert(data.msg);
+    swal({
+      title: `${data.msg}`,
+      text: "",
+      icon: "success",
+    });
   } catch (error) {
     console.log("Error:", error);
   }
