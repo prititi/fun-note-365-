@@ -1,5 +1,7 @@
 let baseUrl = "http://localhost:8500";
-let plan = localStorage.getItem("plan")
+let plan = localStorage.getItem("plan");
+plan = JSON.parse(plan);
+console.log(plan)
 let userInfoDiv = document.getElementById("mainProfile");
 
 
@@ -16,12 +18,19 @@ let userInfoDiv = document.getElementById("mainProfile");
               'refreshToken':localStorage.getItem('refreshToken')
             },
           })
+        if(response.ok==true){
+            let data = await response.json();
+        //_______________________________
+        displayProfile(data,plan)
         
-        let data = await response.json();
         //_______________________________
-        displayProfile(data)
+        }
+        else{
+            window.location.href = "./login.html"
+        }
+       
+        
 
-        //_______________________________
         
     }catch(err){console.log("error in get regest ",err)}
 }getUser();
@@ -34,7 +43,7 @@ let userInfoDiv = document.getElementById("mainProfile");
 <li class="activity">Last logged in: Today at 2:18pm</li>
 </ul> */}
 
-function displayProfile(obj){
+function displayProfile(obj,plan){
 userInfoDiv.innerHTML=`                        <div id="userInfoDiv" class="user-info">
 <img id="profilePic" class="img-profile img-circle img-responsive center-block" src="${obj.profilePic}" alt="">
 <ul class="meta list list-unstyled">
@@ -43,14 +52,14 @@ userInfoDiv.innerHTML=`                        <div id="userInfoDiv" class="user
     </li>
     <li class="email"><a href="#">${obj.email}</a></li>
     
-    <li class="activity">Selected Plan :  <label style="background-color: green;color: white;border-radius: 5px;padding: 0px 5px;" class="label label-info">UX Designer</label> </li>
-    <li class="activity"> No of events : 234</li>
-    <li class="activity"> No of polls : 24</li>
-    <li class="activity"> No of events : unlimited</li>
+    <li class="activity">Selected Plan :   <label style="background-color: green;color: white;border-radius: 5px;padding: 0px 5px;" class="label label-info">${plan.type}</label> </li>
+    <li class="activity"> No of participants :${plan.features.participants}</li>
+    <li class="activity"> No of polls : ${plan.features.poll}</li>
 
 
 
-    <li class="activity">Payment:  <label style="background-color: rgb(214, 47, 5);color: white;border-radius: 5px;padding: 0px 7px;" class="label label-info">$ 100</label> </li>
+
+    <li class="activity">Payment:  <label style="background-color: rgb(214, 47, 5);color: white;border-radius: 5px;padding: 0px 7px;" class="label label-info">₹ ${plan.price}</label> </li>
     <li id="changePlan" class="activity"> <label style="background-color: rgb(138, 0, 0);color: white;border-radius: 5px;padding: 5px 15px;margin: 40px;cursor: pointer;" class="label label-info">Change Plan</label> </li>
     
 </ul>
@@ -109,6 +118,7 @@ let state = document.getElementById("state").value;
 //payment btn
 let payBtn = document.getElementById("payBtn");
 payBtn.addEventListener("click",async (e)=>{
+    try{
     e.preventDefault();
     let obj = {
         //address 
@@ -123,8 +133,35 @@ pincode : document.getElementById("pincode").value,
 country : document.getElementById("country").value,
 state : document.getElementById("state").value,
     }
+    
+    let response = await fetch(`${baseUrl}/payment`, {
+        method: 'PATCH',
+        body: JSON.stringify({
+          type:plan.type,
+          payment:plan.price,
+          limit:plan.features.participants
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+          'authToken':localStorage.getItem("authToken"),
+          'refreshToken':localStorage.getItem("refreshToken")
+        }
+      })
+    
+        let data = await response.json();
+        //alert(JSON.stringify(data,null,2));
+        Swal.fire({
+            icon: 'success',
+            title: `congrats ${data.name}`,
+            text: `your payment of ₹${data.plan.payment} is successfull`,
+            footer: `you have upgraded to ${data.plan.type} plan`
+          })
+   
+   
 
-    alert(JSON.stringify(obj,null,2))
+    
+
+    }catch(err){console.log(err)}
 })
 
 

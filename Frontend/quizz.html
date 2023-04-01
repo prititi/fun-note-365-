@@ -6,9 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizz</title>
     <link rel="stylesheet" href="./styles/quizz.css" />
-</head>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+    <!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+</head>
 <body>
+    <header >
+        <a href="./index.html">
+        <i id="fa-solid" class="fa-solid fa-house"></i>
+        </a>
+        <a href="./index.html">
+        <img style="width:80px;height: 40px;" src="./images/e2.png" alt="">
+        </a>
+        <a href="./login.html">
+        <i id="fa-solid"  class="fa-solid fa-user"></i>
+        </a>
+    </header>
    <div id="timercatiner">
     <div id="timer">
         <h2>Time Left: <span id="time"></span></h2>
@@ -16,7 +29,7 @@
    </div>
     <div id="user_details">
         <div class="question_div">
-            <p id="quest_num">Name:</p>
+            <p class="quest_num">Name:</p>
             <input
               type="text"
               placeholder="Enter your Name"
@@ -24,7 +37,7 @@
             />
         </div>
         <div class="question_div">
-            <p id="quest_num">Room Name:</p>
+            <p class="quest_num">Room Name:</p>
             <input
               type="text"
               placeholder="Enter your Quizz Room Name"
@@ -32,7 +45,7 @@
             />
         </div>
         <div class="controller_div">
-            <button id="roombtn">Start Quizz</button>
+            <button id="roombtn">Start Quiz</button>
           </div>
     </div>
     <section class="main">

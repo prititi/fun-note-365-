@@ -1,18 +1,26 @@
 
-const { questionModel } = require("../Models/questionmodel");
+const express = require("express");
+const app = express();
+const socketio = require("socket.io");
+const http = require("http");
+const { connection, questionModel } = require("./model/questionmodel");
 
-module.exports = function (io) {
-    //Socket.IO
-    io.on('connection', function (socket) {
-       console.log("one new user connected")
-        //ON Events
-       
-            socket.emit("message","hi from socketFunc")
-                
+
+// server connection 
+
+const server = http.createServer(app);
+const io = socketio(server);
+
+
+// const defaultNPS = io.of("/");
+
+
+io.on("connection",(socket)=>{
+    console.log("client connected")
+
     socket.on("details",async msg=>{
         console.log(msg)
         var data = await questionModel.find({room:msg.room})
-        // console.log(data)
             if(data.length!=0)
             {
                 console.log('update');
@@ -25,10 +33,11 @@ module.exports = function (io) {
     })
 
     socket.on("voter",async room=>{
-        console.log(room,"from backend");
+        console.log(room);
         socket.join(room);
         var x = await questionModel.find({room});
         io.to(room).emit('data',x)
+
     })
 
     socket.on("send",async(res)=>{
@@ -36,10 +45,12 @@ module.exports = function (io) {
         var x = await questionModel.updateMany({room:res.room},res)
         console.log(x)
     })
-       socket.on("hello",msg=>{
-        console.log(msg)
-       }) 
-        //End ON Events
-    });
-    
-};
+})
+
+
+const PORT = 8080;
+
+server.listen(PORT, async ()=>{
+    await connection
+    console.log("server is running on port"+PORT)
+});

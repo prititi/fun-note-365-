@@ -7,9 +7,47 @@ body {
   font-family: "Poppins", sans-serif;
   background-image: url("../images/3188416.jpg");
 }
+/* section */
 
+section {
+  width: 100%;
+  z-index: 10;
+  padding: 10px 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: fixed;
+  top: 0;
+}
+#fa-solid {
+  color: #ff1744;
+  font-size: xx-large;
+  cursor: pointer;
+}
+#mastercontainer {
+  width: 100%;
+  margin-top: 100px;
+}
+/* ------------all btn contorling div styles--------------- */
+
+#allbtnsdiv {
+  /* margin-top: 8%; */
+  margin-bottom: 6%;
+}
+#allbtnsdiv h2 {
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+  margin: 15px 0;
+  color: #ff1744;
+}
+
+/* ----------------quiz container div styles----------------- */
 #quizz_cont {
   width: 100%;
+  display: none;
 }
 #quizz_cont > form {
   width: 90%;
@@ -113,10 +151,10 @@ body {
 .controller_div button:hover {
   color: white;
   background-color: #ff1744;
+  cursor: pointer;
 }
 
 .one_que {
-  /* border: 2px solid red; */
   width: 90%;
   margin: auto;
   margin-top: 30px;
@@ -151,7 +189,7 @@ input::placeholder {
 }
 
 #deletingdiv {
-    display: none;
+  display: none;
 }
 #deletingdiv > div > div {
   display: flex;
@@ -161,25 +199,233 @@ input::placeholder {
 }
 
 /* ---------------preview styling-------------- */
-.preview_question_tab{
-    background-color: #FFC107;
-    transition: ease-in-out .3s;
+.preview_question_tab {
+  background-color: #ffc107;
+  transition: ease-in-out 0.3s;
 }
-.even_option{
-    background-color: #90CAF9;
-    transition: ease-in-out .3s;
+.even_option {
+  background-color: #90caf9;
+  transition: ease-in-out 0.3s;
+}
+.odd_option {
+  background-color: #b0bec5;
+  transition: ease-in-out 0.3s;
+}
+.ans_option {
+  background-color: #a5d6a7;
+  transition: ease-in-out 0.3s;
+}
+.preview_question_tab:hover,
+.even_option:hover,
+.odd_option:hover,
+.ans_option:hover {
+  background-color: #ff1744;
+  transform: scale3d(1.02, 1.02, 1.02);
+}
 
-}
-.odd_option{
-    background-color: #B0BEC5;
-    transition: ease-in-out .3s;
+/* ----------------styles for previous quiz data-------------- */
 
+#previous_quizes h1 {
+  color: #ff1744;
+  font-size: 30px;
+  text-align: center;
 }
-.ans_option{
-    background-color: #A5D6A7;
-    transition: ease-in-out .3s;
+
+.quiz-container {
+  /* border: 2px solid white; */
+  padding: 20px 40px;
+  color: white;
+  font-size: 17px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  width: 90%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 10px 50px;
 }
-.preview_question_tab:hover,.even_option:hover,.odd_option:hover,.ans_option:hover{
-    background-color: #ff1744;
-    transform: scale3d(1.02,1.02,1.02);
+
+.quiz-container p:nth-child(1) {
+  color: #ffc107;
+  font-size: 27px;
+  text-align: center;
+  font-weight: bold;
+}
+.quiz-container ul {
+  list-style: none;
+}
+.answer_que {
+  margin-bottom: 15px;
+}
+.quiz-container li,
+.quiz-container p {
+  transition: ease-in-out 0.2s;
+}
+.quiz-container li:hover,
+.quiz-container p:hover {
+  color: #ff1744;
+}
+
+/* -------------styles for rankings------------ */
+#ranks {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+#participant-list h1 {
+  color: #ff1744;
+  font-size: 30px;
+  text-align: center;
+  margin: 10px;
+}
+#participant-list li {
+  padding: 20px 40px;
+  list-style: none;
+  line-height: 1.5;
+  font-size: 17px;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 10px 50px;
+  transition: ease-in-out 0.3s;
+  margin: 20px 0;
+}
+#participant-list li h2 {
+  text-align: center;
+  color: #90caf9;
+}
+#participant-list li h2:hover {
+  color: #ffc107;
+}
+#participant-list li p:hover {
+  color: #ff1744;
+}
+
+/* ---------------styles for deleting quiz room---------- */
+.hdelete {
+  text-align: center;
+  margin: 20px 0;
+  color: #ff1744;
+}
+#deletesubquiz {
+  display: none;
+}
+
+/* ----------------styles for footer ----------------------- */
+#footer {
+  background-color: #673ab7;
+  color: white;
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+#footer a {
+  color: white;
+  text-decoration: none;
+}
+#footer a:hover {
+  color: rgb(238, 10, 124);
+  transform: scale3d(1.1, 1.1, 1.1);
+  transition: ease-in-out 0.4s;
+}
+#footersubcontainer {
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  line-height: 2;
+}
+
+#footersubcontainer a {
+  color: white;
+  text-decoration: underline;
+}
+#footersubcontainer a:nth-child(2) {
+  margin-left: 15px;
+}
+#footerbase {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 4%;
+  line-height: 2;
+}
+#footerbase > div:nth-child(1) {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+.aboutus a {
+  display: block;
+}
+#socilmedia {
+  display: flex;
+  justify-content: space-between;
+}
+#copyrights {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+#easypolls {
+  margin-left: 15px;
+}
+
+/* -----------------media quries----------------- */
+
+/* footer responsive */
+@media screen and (max-width: 650px) {
+  body {
+    font-size: 14px;
+  }
+  .question_div,
+  .options > div {
+    width: 100%;
+  }
+  .controller_div {
+    width: 90%;
+  }
+  .controller_div button {
+    width: 45%;
+  }
+  #previous_quizes {
+    width: 90%;
+    margin: auto;
+  }
+  .one_que > div {
+    width: 100%;
+  }
+  #allbtnsdiv > h2 {
+    font-size: 20px;
+    width: 90%;
+    margin: auto;
+  }
+  #footersubcontainer div {
+    display: block;
+    margin-top: 10px;
+  }
+
+  #footerbase {
+    flex-direction: column;
+    margin: 0;
+    text-align: center;
+  }
+
+  #footerbase > div:nth-child(1) {
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+  }
+
+  #footerbase > div:nth-child(1) .aboutus {
+    margin-bottom: 20px;
+  }
+
+  #socilmedia {
+    margin-bottom: 20px;
+  }
 }

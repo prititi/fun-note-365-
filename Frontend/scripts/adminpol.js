@@ -108,4 +108,20 @@ async function addPoll(obj){
   } catch (error) {
       console.log(error)
   }
+
 }
+
+
+let Rating= document.getElementById("Rating")
+Rating.addEventListener("click",()=>{
+  window.location.href="./rating.html"
+})
+
+let Quiz= document.getElementById("Quiz")
+Quiz.addEventListener("click",()=>{
+  window.location.href="./quizz_question.html"
+})
+
+
+
+

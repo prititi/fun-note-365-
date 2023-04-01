@@ -20,3 +20,9 @@ for (let x = 0; x < boxDropdown.length; x++) {
 }
 
 
+let buttons= document.getElementById("getStart")
+buttons.addEventListener("click",()=>{
+    // alert("hi")
+    window.location.href="./adminpol.html"
+})
+

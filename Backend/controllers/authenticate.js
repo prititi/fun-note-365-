@@ -10,7 +10,7 @@ try {
      let incToken = req.headers.authtoken;
      
     //let incToken = req.cookies.authToken;
-    console.log(incToken, "this is incToken**************")
+    
 
 
     await jwt.verify(incToken, process.env.normalKey, function(err, decoded) {

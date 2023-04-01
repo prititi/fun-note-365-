@@ -1,0 +1,214 @@
+*{
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    padding: 0px;
+    margin: 0px;
+    color: rgb(240, 174, 88);
+    
+}
+body {
+
+    font-family: "Poppins", sans-serif;
+  }
+
+section {
+    width: 100%;
+    z-index: 10;
+    padding: 10px 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: fixed;
+    top: 0;
+  }
+  #fa-solid {
+    color: #ff1744;
+    font-size: xx-large;
+    cursor: pointer;
+  }
+  #mastercontainer {
+    width: 100%;
+    margin-top: 100px;
+  }
+
+#grandP{
+    height: 580px;
+    margin-top:70px ;
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+    background-image: url('https://gifdb.com/images/high/question-quiz-animated-icons-cxg5cqr29m1bn5o7.webp');
+    /* border: 1px solid black; */
+}
+
+
+#parent{
+    
+
+padding: 50px 150px;
+
+    width: 600px;
+    /* height: 600px; */
+    margin: auto;
+    margin-top: 120px;
+    /* background-image: linear-gradient(to right,#d9a7c7 ,#fffcdc); */
+    background-color: transparent;
+    
+    border-radius: 30px;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    /* border:1px dotted black; */
+}
+
+.options{
+    cursor: pointer;
+    /* border: 1px solid red; */
+    display: inline-block;
+    
+    
+}
+
+.options:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+    border: 1px solid rgb(235, 227, 222);
+    background-color: rgb(253, 248, 240);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+
+#main{
+    margin-top: 50px;
+    width: auto;
+    margin: auto;
+    /* border: 1px solid black; */
+}
+
+#c1{
+    display: block;
+    width: 200px;
+    margin: auto;
+}
+
+button{
+    display: block;
+    margin: auto;
+}
+
+  /* ----------------styles for footer ----------------------- */
+  #footer{
+    background-color: #673AB7;
+    color: white;
+    padding-bottom: 20px;
+    margin-top: 20px;
+  }
+  #footer a{
+    color: white;
+    text-decoration: none;
+  }
+  #footer a:hover{
+    color: rgb(238, 10, 124);
+    transform: scale3d(1.1,1.1,1.1);
+    transition: ease-in-out 0.4s;
+  }
+  #footersubcontainer{
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 2;
+  }
+  
+  #footersubcontainer a{
+    color: white;
+    text-decoration: underline; 
+  }
+  #footersubcontainer a:nth-child(2){
+    margin-left: 15px;
+  }
+  #footerbase{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 4%;
+    line-height: 2;
+  }
+  #footerbase>div:nth-child(1){
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+  }
+  .aboutus a{
+    display: block;
+  }
+  #socilmedia{
+    display: flex;
+    justify-content: space-between;
+  }
+  #copyrights{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  #easypolls{
+    margin-left: 15px;
+  }
+  
+  /* -----------------media quries----------------- */
+  
+
+/* footer responsive */
+@media screen and (max-width: 650px) {
+    body {
+        font-size: 14px;
+      }
+      .question_div,.options > div {
+        width: 100%;
+      }
+      .controller_div {
+        width: 90%;
+      }
+      .controller_div button{
+        width: 45%;
+      }
+      #previous_quizes{
+        width: 90%;
+        margin: auto;
+      }
+        .one_que > div{
+          width: 100%;
+        }
+        #allbtnsdiv>h2{
+          font-size:20px;
+          width:90% ;
+          margin: auto;
+        }
+    #footersubcontainer div{
+      display: block;
+      margin-top: 10px;
+    }
+  
+    #footerbase{
+      flex-direction: column;
+      margin: 0;
+      text-align: center;
+    }
+  
+    #footerbase > div:nth-child(1){
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+    }
+  
+    #footerbase > div:nth-child(1) .aboutus {
+      margin-bottom: 20px;
+    }
+  
+    #socilmedia{
+      margin-bottom: 20px;
+    }
+  
+  }
