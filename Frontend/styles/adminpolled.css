@@ -209,3 +209,77 @@
     border-radius: 10px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
+
+@media screen and (min-width:100px) and (max-width:1000px){
+   
+    body {
+        font-size: 14px;
+      }
+      #fixedheadertop{
+        display: none;
+      }
+      #hiddenside{
+        display: block;
+      }
+      div.categories li{
+        font-size: 4vw;
+      }
+    #footersubcontainer div{
+      display: block;
+      margin-top: 10px;
+    }
+  
+    #footerbase{
+      flex-direction: column;
+      margin: 0;
+      text-align: center;
+    }
+  
+    #footerbase > div:nth-child(1){
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+    }
+  
+    #footerbase > div:nth-child(1) .aboutus {
+      margin-bottom: 20px;
+    }
+  
+    #socilmedia{
+      margin-bottom: 20px;
+    }
+  
+  
+
+
+    #child3 > div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #live-polls {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 90%;
+        margin: 300px auto auto;
+        height: 70vh;
+    }
+
+
+    #live-polls #child3 {
+        height: auto;
+        width: 90%;
+        border-radius: 10px;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    }
+
+    #live-polls #child2 {
+        height: auto;
+        width: 100%;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    }
+
+}

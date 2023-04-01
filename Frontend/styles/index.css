@@ -350,47 +350,7 @@
   
 
 /* footer responsive */
-@media screen and (max-width: 650px) {
-    body {
-        font-size: 14px;
-      }
-      #fixedheadertop{
-        display: none;
-      }
-      /* for side nav bar */
-      #hiddenside{
-        display: block;
-      }
-      div.categories li{
-        font-size: 4vw;
-      }
-        /* for side nav bar */
-    #footersubcontainer div{
-      display: block;
-      margin-top: 10px;
-    }
-  
-    #footerbase{
-      flex-direction: column;
-      margin: 0;
-      text-align: center;
-    }
-  
-    #footerbase > div:nth-child(1){
-      flex-direction: column;
-      width: 100%;
-      justify-content: center;
-    }
-  
-    #footerbase > div:nth-child(1) .aboutus {
-      margin-bottom: 20px;
-    }
-  
-    #socilmedia{
-      margin-bottom: 20px;
-    }
-  
-  }
+
   
 
 
@@ -799,4 +759,98 @@
     color: whitesmoke;
     padding-top: 150px;
     font-size: 60px;
+}
+
+
+@media screen and (max-width: 650px) {
+  body {
+      font-size: 14px;
+    }
+    #fixedheadertop{
+      display: none;
+    }
+    #hiddenside{
+      display: block;
+    }
+    div.categories li{
+      font-size: 4vw;
+    }
+  #footersubcontainer div{
+    display: block;
+    margin-top: 10px;
+  }
+
+  #footerbase{
+    flex-direction: column;
+    margin: 0;
+    text-align: center;
+  }
+
+  #footerbase > div:nth-child(1){
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+  }
+
+  #footerbase > div:nth-child(1) .aboutus {
+    margin-bottom: 20px;
+  }
+
+  #socilmedia{
+    margin-bottom: 20px;
+  }
+
+
+
+
+
+  .heading1 {
+    width: 90%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    border: 1px solid blue;
+    border-radius: 20px;
+    background-color: rgb(26, 115, 232);
+    align-items: center;
+}
+#code {
+  width: 50%;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.heading1 h1 {
+margin-left: 40px;
+color: antiquewhite;
+font-size: 25px;
+}
+
+
+.heading2 {
+  width: 90%;
+  /* border: 1px solid blue; */
+  text-align: center;
+  margin: auto;
+  font-size: 37px;
+}
+
+.heading-img {
+  /* width: 1000px;
+  height: 100px;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+  margin-top: 45px; */
+  /* border: 1px solid green; */
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+
+
+
 }
