@@ -34,8 +34,7 @@ errorAlert("Please use a strong password with atleast 8 charectors")
 errorAlert("Please enter a valid email")
 }
 else {
-//success
-//alert("success")
+
 let obj ={
     name : form.name.value,
     email : form.email.value,
@@ -54,15 +53,41 @@ let res = await fetch(`${baseUrl}/register`, {
     let data = await res.json();
     let authToken = data.authToken;
     sessionStorage.setItem("authToken", authToken);
-    alert("registered succesfully");
-    window.location.href = "./login.html";
+    
+Swal.fire(
+  'registered successfully',
+  '',
+  'success'
+)
+setTimeout(() => {
+  window.location.href = "./login.html";
+}, 2000);
+
+   
   }
   else {
    if(res.status==409){
-      alert("user already exists, login please");
-      window.location.href = "./login.html";
+        
+Swal.fire(
+  'user already exists , please login',
+  '',
+  'warning'
+)
+setTimeout(() => {
+  window.location.href = "./login.html";
+}, 2000);
+      // alert("user already exists, login please");
+      // window.location.href = "./login.html";
   }
-   else if(res.status==401){alert(" password not matching")}
+   else if(res.status==401){
+
+   Swal.fire(
+  'password not matching',
+  '',
+  'error'
+)
+  
+  }
   }
 
 
@@ -73,7 +98,16 @@ let res = await fetch(`${baseUrl}/register`, {
    
 }
 
-}catch(err){console.log(err);alert("something went wrong, please try again later")}
+}catch(err){
+  console.log(err);
+  alert("something went wrong, please try again later")
+  Swal.fire(
+    'something went wrong, please try again later',
+    '',
+    'error'
+  )
+
+}
 
 //event listener ends here
 })
@@ -86,7 +120,7 @@ function ValidateEmail(mail)
   {
     return (true)
   }
-    //alert("You have entered an invalid email address!")
+    
     return (false)
 }
 
@@ -122,3 +156,8 @@ function storeEventCode(){
 
 ///<button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Fade In Modal</button>
 
+// Swal.fire(
+//     'registered successfully',
+//     '',
+//     'success'
+//   )

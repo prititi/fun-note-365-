@@ -1,14 +1,65 @@
 
 let baseUrl = "http://localhost:8500"
 let form = document.querySelector("#form");
-
+storeEventCode()
 
 //google auth 
 let googleBtn = document.querySelector("#google");
 googleBtn.addEventListener("click",(e)=>{
     e.preventDefault();
-    
-    window.location.href="http://localhost:8500/oauth/google"
+    //_______________________________________
+
+    Swal.fire({
+      // title: "Enter Your registered email",
+      // input: 'text',
+      html:"<img style='width:50px;margin :10px' src='https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png'>      <input id='e1' type='email' placeholder='email associated with google' >",
+      
+      inputAttributes: {
+        autocapitalize: 'off'
+      },
+      showCancelButton: true,
+      confirmButtonText: 'continue',
+      showLoaderOnConfirm: true,
+      preConfirm: (login) => {
+        return fetch(`http://localhost:8500/login/${document.getElementById("e1").value}`)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(response.statusText)
+            }
+            return response.json()
+          })
+          .catch(error => {
+            Swal.showValidationMessage(
+              `Request failed: ${error}`
+            )
+          })
+      },
+      allowOutsideClick: () => !Swal.isLoading()
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.setItem("authToken",result.value.authToken);
+        localStorage.setItem("refreshToken",result.value.refreshToken);
+        localStorage.setItem("userData",result.value.userData);
+        
+        Swal.fire({
+          title: `${result.value.msg}`,
+          imageUrl: result.value.userData.profilePic
+        })
+        setTimeout(()=>{ window.location.href='./index.html'},2000)
+       
+      }
+    })
+
+
+
+
+
+
+
+
+
+//_____________________________________________
+    //window.location.href="http://localhost:8500/oauth/google"
     
 })
 
@@ -109,3 +160,19 @@ function errorAlert(msg){
 
 ///<button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Fade In Modal</button>
 
+
+//function for event code 
+function storeEventCode(){
+  let arrow = document.getElementById("enter");
+  arrow.addEventListener("click",(e)=>{
+      e.preventDefault();
+  let code = document.getElementById("code");
+  sessionStorage.setItem("eventCode", code.value);
+  let c = sessionStorage.getItem("eventCode");
+  if(c){
+      window.location.href="./search.html"
+  }
+  
+ 
+  })
+}
