@@ -403,12 +403,12 @@
     font-size: 23px;
     font-family:'Times New Roman', Times, serif;
 }
-.getStart{
+#getStart{
     margin-left: 47px;
     margin-top: 20px;
     display: flex;
 }
-.getStart button{
+#getStart button{
     width: 40%;
     height: 60px;
     background-color: #673AB7;
@@ -418,12 +418,13 @@
     border: 1px solid #673AB7;
     border-radius: 5px;
     margin-left: 20px;
+    cursor: pointer;
 }
-.getStart a{
+#getStart a{
     color: #39ac37;
     margin: 21px 0px 0px 32;
 }
-.getStart button:hover{
+#getStart button:hover{
     background-color: black;
     border: 1px solid black;
 }
@@ -495,9 +496,9 @@
     margin-left: 64px;
    
 }
-img{
+/* img{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-}
+} */
 .live_poll1 a{
     color: #39ac37;
 }

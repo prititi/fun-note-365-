@@ -1,4 +1,5 @@
 let baseurl = "http://localhost:8500/";
+const userid = "prashant@9305";
 const dummyquestions = [
   {
     question: "Which of the following is a client site language?",
@@ -33,7 +34,17 @@ const dummyquestions = [
     correct: "b",
   },
 ];
-// const quizData =JSON.parse(localStorage.getItem("Quizquestions")) ||dummyquestions;
+
+// swal({
+//   title: 'Logged In successfully!',
+//   text: 'You are logged in successfully.',
+//   icon: 'success'
+// })
+// swal({
+//   title: 'Logged In successfully!',
+//   text: 'You are logged in successfully.',
+//   icon: 'error'
+// })
 
 let quizData;
 //js for user details
@@ -51,20 +62,26 @@ user_details_div.style.display = "block";
 roombtn.addEventListener("click", () => {
   if (Quizz_room_name.value) {
     if (!user_name.value) {
-      alert("Plese Enter your name in Order to participate in Quizz");
+      // alert("Plese Enter your name in Order to participate in Quizz");
+      swal({
+        title: "Plese Enter Your Name",
+        text: "In Order To Participate In Quizz.",
+        icon: "success",
+      });
     } else {
       participant_name = user_name.value;
       participant_room = Quizz_room_name.value;
-      fetch_start_quiz(participant_room) 
+      fetch_start_quiz(participant_room);
     }
   } else {
-    alert(
-      "Please enter Quizz Room Name,to continue (case sensitive)"
-    );
+    // alert("Please enter Quizz Room Name,to continue (case sensitive)");
+    swal({
+      title: "Plese Enter Quiz Room Name",
+      text: "In Order To Participate In Quizz (case sensitive)",
+      icon: "success",
+    });
   }
 });
-
-
 
 //quizz controlling js
 function start_quizz() {
@@ -122,6 +139,7 @@ function start_quizz() {
         <h3 class="w-100"> Hii ${participant_name}, you've scored ${correct} / ${total} </h3>
     </div>
 `;
+
     let now = new Date();
     let hours = now.getHours().toString().padStart(2, "0");
     let minutes = now.getMinutes().toString().padStart(2, "0");
@@ -138,9 +156,10 @@ function start_quizz() {
       time: hours + ":" + minutes + ":" + seconds,
       date: day + "/" + month + "/" + year,
       quizRoom: participant_room,
+      Author: userid,
     };
-    timercatiner.style.display="none";
-    fetch_save_pariticipents(uobj)
+    timercatiner.style.display = "none";
+    fetch_save_pariticipents(uobj);
   };
   loadQuestion(index);
 }
@@ -148,8 +167,6 @@ function start_quizz() {
 // fetching functions
 async function fetch_save_pariticipents(obj) {
   const url = `${baseurl}quiz/saveParticipent`;
-
-
   try {
     const response = await fetch(url, {
       method: "POST",
@@ -159,60 +176,88 @@ async function fetch_save_pariticipents(obj) {
       },
     });
     const data = await response.json();
-    alert(data.msg);
+    // alert(data.msg);
+    swal({
+      title: `${data.msg}`,
+      text: "Redirecting To HomePage...",
+      icon: "success",
+    });
+    await new Promise((resolve) => setTimeout(resolve, 2500));
+    window.location.href = "./index.html";
   } catch (error) {
-   console.log(error)
+    console.log(error);
   }
 }
 
 async function fetch_start_quiz(roomname) {
-    const url = `${baseurl}quiz/startQuiz/${roomname}`;
-    try {
-      const response = await fetch(url, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        }
+  const url = `${baseurl}quiz/startQuiz/${roomname}`;
+  try {
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    if (data.ok) {
+      quizData = data.quiz.quiz;
+      // alert(data.msg);
+      swal({
+        title: `${data.msg}`,
+        text: "",
+        icon: "success",
       });
-      const data = await response.json();
-      if(data.ok){
-        quizData=data.quiz.quiz;
-        alert(data.msg);
-        user_details_div.style.display = "none";
-        mainsection.style.display = "flex";
-        start_quizz();
-        let n=data.quiz.timeout;
-        countdownmaneger(n)
-      }else{
-        alert(data.msg);
-      }
-    } catch (error) {
-      console.log(error);
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      user_details_div.style.display = "none";
+      mainsection.style.display = "flex";
+      // start_quizz();
+      // let n = data.quiz.timeout;
+      // countdownmaneger(n);
+      let n = data.quiz.timeout;
+      countdownmaneger(n);
+      start_quizz();
+    } else {
+      // alert(data.msg);
+      swal({
+        title: `${data.msg}`,
+        text: "",
+        icon: "success",
+      });
     }
+  } catch (error) {
+    console.log(error);
   }
+}
 
-function countdownmaneger(n){
-    timercatiner.style.display="block";
-    let timertext=document.getElementById("time")
-  const starting_time=1;
-  let time=starting_time*60;
-  let timerintervel=setInterval(updateCountdown,1000)
-    function updateCountdown() {
-     const minutes=Math.floor(time/60);
-     let seconds=time%60;
-     if (seconds < 0) {
-        clearInterval(timerintervel);
-       timertext.innerHTML = "EXPIRED";
-       document.getElementsByClassName("container")[0].innerHTML = `
+function countdownmaneger(n) {
+  timercatiner.style.display = "block";
+  let timertext = document.getElementById("time");
+  const starting_time = 1;
+  let time = starting_time * 60;
+  let timerintervel = setInterval(updateCountdown, 1000);
+  async function updateCountdown() {
+    const minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+    if (seconds < 0) {
+      clearInterval(timerintervel);
+      timertext.innerHTML = "EXPIRED";
+      document.getElementsByClassName("container")[0].innerHTML = `
        <div class="col">
            <h3 class="w-100"> Hii ${participant_name}, Sorry Quizz Time got over </h3>
        </div>
    `;
-      }else{
-        seconds=seconds < 10 ? '0' + seconds:seconds ;
-        timertext.innerHTML=`${minutes}:${seconds}`;
-        time--;
-      }
-     
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      swal({
+        title: `Redirecting You To HomePage`,
+        text: "Please Wait....",
+        icon: "success",
+      });
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      window.location.href = "./index.html";
+    } else {
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+      timertext.innerHTML = `${minutes}:${seconds}`;
+      time--;
     }
+  }
 }
