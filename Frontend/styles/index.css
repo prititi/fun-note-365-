@@ -357,12 +357,14 @@
       #fixedheadertop{
         display: none;
       }
+      /* for side nav bar */
       #hiddenside{
         display: block;
       }
       div.categories li{
         font-size: 4vw;
       }
+        /* for side nav bar */
     #footersubcontainer div{
       display: block;
       margin-top: 10px;

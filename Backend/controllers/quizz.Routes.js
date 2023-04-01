@@ -54,12 +54,12 @@ quizRouter.get("/startQuiz/:roomname", async (req, res) => {
     let roomExists = await Room.findOne({ roomname: Roomname });
     if (!roomExists) {
       return res.status(200).send({
-        msg: `${Roomname} is invalid, Kindly try with some diffrent RoomName(CaseSensitive)`,
+        msg: `${Roomname} Is Invalid Room Name, Kindly Try With Some Diffrent RoomName(CaseSensitive)`,
         ok: false,
       });
     } else {
       res.status(200).send({
-        msg: `Starting your quiz in room name ${Roomname}`,
+        msg: `Starting your quiz in Room Name ${Roomname}`,
         quiz: roomExists,
         ok: true,
       });

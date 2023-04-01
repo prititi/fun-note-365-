@@ -24,7 +24,7 @@ loginRouter.post("/",async(req,res)=>{
     const  authToken = jwt.sign({ userId: userData._id }, process.env.normalKey,{ expiresIn: '1h' });
     const  refreshToken = jwt.sign({ userId: userData._id }, process.env.refreshKey,{ expiresIn: "21 days" });
 
-    res.cookie('authToken',authToken,{expires:new Date(Date.now()+50000000)})
+    res.cookie('authToken',authToken)
     res.cookie("refreshToken",refreshToken);
     res.send({msg:`Hi ${userData.name}, Welcome back`,authToken,refreshToken})
     
@@ -35,6 +35,31 @@ loginRouter.post("/",async(req,res)=>{
    } catch (error) {console.log("error | loginrouter | post",error)}
 })
 
+
+//googleLogin
+
+loginRouter.get("/:email",async(req,res)=>{
+   try {
+   let email =req.params.email;
+   
+   if(!email ){res.status(422).json("please fill all the fields")}
+   else{
+    let userData = await UserModel.findOne({"email":email});
+   
+    //_________create and send token
+    const  authToken = jwt.sign({ userId: userData._id }, process.env.normalKey,{ expiresIn: '1h' });
+    const  refreshToken = jwt.sign({ userId: userData._id }, process.env.refreshKey,{ expiresIn: "21 days" });
+
+    res.cookie('authToken',authToken,{expires:new Date(Date.now()+50000000)})
+    res.cookie("refreshToken",refreshToken);
+    res.send({msg:`Hi ${userData.name}, Welcome back`,authToken,refreshToken,userData})
+    
+    //________token send ___________
+    
+    
+   }
+   } catch (error) {console.log("error | loginrouter | post",error)}
+})
 
 
 

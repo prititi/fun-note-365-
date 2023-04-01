@@ -100,8 +100,8 @@ displayBasicPlans(basicPlans)
 
 function planSelected(plan){
     
-    sessionStorage.setItem("plan",JSON.stringify(plan));
-    let planData = sessionStorage.getItem("plan");
+    localStorage.setItem("plan",JSON.stringify(plan));
+    let planData = localStorage.getItem("plan");
     if(planData){window.location.href="./payment.html"}
     
 }
