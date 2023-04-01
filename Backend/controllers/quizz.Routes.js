@@ -6,16 +6,19 @@ quizRouter.post("/createQuiz", async (req, res) => {
     let quiz = req.body;
     let Roomname = quiz.roomname;
     let roomExists = await Room.findOne({ roomname: Roomname });
+    // let roomExists = await Room.find();
     if (roomExists) {
-      return res.status(409).send({
+      return res.status(200).send({
         msg: `${Roomname} is already in use Kindly try with some diffrent room name`,
+        rooms:roomExists,
         ok: false,
       });
     }
     let quizroom = new Room(quiz);
     let result = await quizroom.save();
     res.status(200).send({
-      msg: `Quiz Created Successfully with room name ${quiz.roomname}`,
+      msg: `Quiz Created Successfully with room named ${quiz.roomname}`,
+      roomname:quiz.roomname,
       ok: true,
     });
   } catch (error) {
@@ -30,7 +33,7 @@ quizRouter.get("/totalquizes/:Author", async (req, res) => {
      return res.status(200).send({
         msg: `${Author} has not created any quiz rooms yet` ,
         count:0,
-        ok: true,
+        ok: false,
       });
     }
     let roomWord = roomExists.length == 1 ? "room" : "rooms";
@@ -38,6 +41,7 @@ quizRouter.get("/totalquizes/:Author", async (req, res) => {
     res.status(200).send({
       msg: message,
       count: roomExists.length,
+      rooms:roomExists,
       ok: true
     });
   } catch (error) {
@@ -49,7 +53,7 @@ quizRouter.get("/startQuiz/:roomname", async (req, res) => {
     let Roomname = req.params.roomname;
     let roomExists = await Room.findOne({ roomname: Roomname });
     if (!roomExists) {
-      return res.status(409).send({
+      return res.status(200).send({
         msg: `${Roomname} is invalid, Kindly try with some diffrent RoomName(CaseSensitive)`,
         ok: false,
       });
@@ -90,10 +94,29 @@ quizRouter.get("/getParticipent", async (req, res) => {
     res.status(500).send({ msg: error.message, ok: false });
   }
 });
+quizRouter.get("/getParticipent/:author", async (req, res) => {
+  try {
+    let Author=req.params.author;
+    let allpritcipents = await QuizResult.find({Author});
+    res.status(200).send({
+      msg: `Details of all participents`,
+      participents: allpritcipents,
+      ok: true,
+    });
+  } catch (error) {
+    res.status(500).send({ msg: error.message, ok: false });
+  }
+});
 quizRouter.delete("/expireQuiz/:roomname", async (req, res) => {
   try {
     let Roomname = req.params.roomname;
     let d = await Room.findOneAndDelete({ roomname: Roomname });
+    if(!d){
+      return res.status(200).send({
+        msg: `Quiz Room Not Found, Please Enter Correct Quiz Room Name (CaseSensitive)`,
+        ok: false,
+      }); 
+    }
     res.status(200).send({
       msg: `Quiz Deleted`,
       ok: true,

@@ -6,132 +6,245 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create Quizz</title>
     <link rel="stylesheet" href="./styles/quizz_question.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   </head>
   <body>
-    <div id="quizz_cont">
-      <form id="quizz_form">
-        <h1>Enter Your Quizz Room Name :</h1>
-        <div class="question_div">
-          <input
-            type="text"
-            placeholder="Enter Quizz Room Name (this room name will be used by participents to access quizz)"
-            id="quizz_room_name"
-          />
-        </div>
-        <h1>Enter Your Quizz's Max Time :</h1>
-        <div class="question_div">
-          <input
-            type="text"
-            placeholder="Enter Time in Minutes,Number only ( eg- 2 )"
-            id="max_time"
-          />
-        </div>
-        <h1>Enter Your Questions :</h1>
-        <div>
-          <div class="question_div">
-            <p id="quest_num"></p>
-            <input
-              type="text"
-              placeholder="Enter your question"
-              id="que_stion"
-            />
-          </div>
-          <div class="options">
-            <div>
-              <p>A.</p>
-              <input type="text" placeholder="option A" id="option_a" />
-            </div>
-            <div>
-              <p>B.</p>
-              <input type="text" placeholder="option B" id="option_b" />
-            </div>
-            <div>
-              <p>C.</p>
-              <input type="text" placeholder="option C" id="option_c" />
-            </div>
-            <div>
-              <p>D.</p>
-              <input type="text" placeholder="option D" id="option_d" />
-            </div>
-            <div>
-              <p>Correct Answer</p>
-              <input type="text" placeholder="Option" id="correct_ans" />
-            </div>
-          </div>
-        </div>
+    <section >
+      <a href="./index.html">
+      <i id="fa-solid" class="fa-solid fa-house"></i>
+      </a>
+      <a href="./index.html">
+      <img style="width:80px;height: 50px;" src="./images/e2.png" alt="">
+      </a>
+      <a href="./login.html">
+      <i id="fa-solid"  class="fa-solid fa-user"></i>
+      </a>
+      </section>
+    <div id="mastercontainer">
+      <div id="allbtnsdiv">
+        <h2>Click On Button To Do A Perticular Task</h2>
         <div class="controller_div">
-          <button type="submit" id="create_quizz">Create Quizz</button>
-          <button type="submit" id="add_ques">Add / New Question</button>
+          <button type="submit" id="master_quizz">Create Quiz</button>
+          <button type="submit" id="master_room">Previous Quizs and Quiz Rooms</button>
         </div>
         <div class="controller_div" >
-          <button type="submit" id="edit_btn" style="margin-top: 0px;">Edit Question</button>
-          <button type="submit" id="deleteing_div_btn" style="margin-top: 0px;">Delete a Question</button>
-        </div>
-      </form>
-      <div id="deletingdiv">
-        <div class="options">
-          <div>
-            <p>Delete a question, Enter question number:-</p>
-            <input type="text" placeholder="Q Number" id="delete_question_num" />
-          </div>
-        </div>
-        <div class="controller_div" style="justify-content: center;">
-          <button  id="deleteqbtn">Delete Question</button>
+          <button type="submit" id="ranking_btn" style="margin-top: 0px;">See Rankings of Quiz Participents</button>
+          <button type="submit" id="delete_qr" style="margin-top: 0px;">Delete a Quiz / Quiz Room</button>
         </div>
       </div>
-      <div id="edit_que">
-        <form>
-          <h1 style="text-align: center;margin: 10px 0;">Update Your Questions :</h1>
+
+      <div id="quizz_cont">
+        <form id="quizz_form">
+          <h1>Enter Your Quiz Room Name :</h1>
+          <div class="question_div">
+            <input
+              type="text"
+              placeholder="Enter Quizz Room Name (this room name will be used by participents to access quizz)"
+              id="quizz_room_name"
+            />
+          </div>
+          <h1>Enter Your Quiz's Max Time :</h1>
+          <div class="question_div">
+            <input
+              type="text"
+              placeholder="Enter Time in Minutes,Number only ( eg- 2 )"
+              id="max_time"
+            />
+          </div>
+          <h1>Enter Your Questions :</h1>
           <div>
             <div class="question_div">
-              <p id="quest_num">Question Number:- </p>
-              <input style="width:74%;"
-                type="text"
-                placeholder="Enter your question Number"
-                id="que_stion_number" required
-              />
-            </div>
-            <div class="question_div">
-              <p id="quest_num">Question:- </p>
+              <p id="quest_num"></p>
               <input
                 type="text"
-                placeholder="Enter your question "
-                id="E_que_stion" required
+                placeholder="Enter your question"
+                id="que_stion"
               />
             </div>
             <div class="options">
               <div>
                 <p>A.</p>
-                <input type="text" placeholder="option A" id="E_option_a"  required/>
+                <input type="text" placeholder="option A" id="option_a" />
               </div>
               <div>
                 <p>B.</p>
-                <input type="text" placeholder="option B" id="E_option_b" required />
+                <input type="text" placeholder="option B" id="option_b" />
               </div>
               <div>
                 <p>C.</p>
-                <input type="text" placeholder="option C" id="E_option_c" required />
+                <input type="text" placeholder="option C" id="option_c" />
               </div>
               <div>
                 <p>D.</p>
-                <input type="text" placeholder="option D" id="E_option_d" required />
+                <input type="text" placeholder="option D" id="option_d" />
               </div>
               <div>
                 <p>Correct Answer</p>
-                <input type="text" placeholder="Option" id="E_correct_ans" required />
+                <input type="text" placeholder="Option" id="correct_ans" />
               </div>
             </div>
           </div>
           <div class="controller_div">
-            <button type="submit" id="E_submit">Update Question</button>
+            <button type="submit" id="create_quizz">Create Quiz</button>
+            <button type="submit" id="add_ques">Add / New Question</button>
+          </div>
+          <div class="controller_div" >
+            <button type="submit" id="edit_btn" style="margin-top: 0px;">Edit Question</button>
+            <button type="submit" id="deleteing_div_btn" style="margin-top: 0px;">Delete a Question</button>
           </div>
         </form>
+        <div id="deletingdiv">
+          <div class="options">
+            <div>
+              <p>Delete a question, Enter question number:-</p>
+              <input type="text" placeholder="Q Number" id="delete_question_num" />
+            </div>
+          </div>
+          <div class="controller_div" style="justify-content: center;">
+            <button  id="deleteqbtn">Delete Question</button>
+          </div>
+        </div>
+        <div id="edit_que">
+          <form>
+            <h1 style="text-align: center;margin: 10px 0;">Update Your Questions :</h1>
+            <div>
+              <div class="question_div">
+                <p id="quest_num">Question Number:- </p>
+                <input style="width:74%;"
+                  type="text"
+                  placeholder="Enter your question Number"
+                  id="que_stion_number" required
+                />
+              </div>
+              <div class="question_div">
+                <p id="quest_num">Question:- </p>
+                <input
+                  type="text"
+                  placeholder="Enter your question "
+                  id="E_que_stion" required
+                />
+              </div>
+              <div class="options">
+                <div>
+                  <p>A.</p>
+                  <input type="text" placeholder="option A" id="E_option_a"  required/>
+                </div>
+                <div>
+                  <p>B.</p>
+                  <input type="text" placeholder="option B" id="E_option_b" required />
+                </div>
+                <div>
+                  <p>C.</p>
+                  <input type="text" placeholder="option C" id="E_option_c" required />
+                </div>
+                <div>
+                  <p>D.</p>
+                  <input type="text" placeholder="option D" id="E_option_d" required />
+                </div>
+                <div>
+                  <p>Correct Answer</p>
+                  <input type="text" placeholder="Option" id="E_correct_ans" required />
+                </div>
+              </div>
+            </div>
+            <div class="controller_div">
+              <button type="submit" id="E_submit">Update Question</button>
+            </div>
+          </form>
+        </div>
+        <h1 id="qp">Quizz Preview</h1>
+        <div id="que_preview">
+         
+        </div>
       </div>
-      <h1 id="qp">Quizz Preview</h1>
-      <div id="que_preview">
-       
+      <div id="previous_quizes">
+
       </div>
+      <div id="ranks">
+        <div id="participant-list">
+
+        </div>
+      </div>
+      <div id="deletequizroom">
+        <div id="deletesubquiz">
+          <h1 class="hdelete">Enter Quiz Room Name To Delete (CaseSensitive)</h1>
+          <div class="question_div" style="display: flex;height: 55px ;justify-content: space-between;align-items: center;">
+            <input
+              type="text"
+              placeholder="Enter Quizz Room Name"
+              id="delete_Qr"
+            />
+            <div class="controller_div" >
+              <button id="delete_qr_btn" style="margin-top: 0px;">Delete Quiz Room</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
+       <!-- ------------------footer ---------------------- -->
+       <footer id="footer">
+        <div id="footersubcontainer">
+            <h1><i class="fa-solid fa-chart-simple"></i> EasyPolls</i></h1>
+            <div>
+                <a href="">Sign Up</a>
+                <a href="">Log In</a>
+            </div>
+        </div>
+        <div id="footerbase">
+            <div>
+                <div class="aboutus">
+                    <h2>Product</h2>
+                    <a href="">Product Tour</a>
+                    <a href="">Q&A</a>
+                    <a href="">Polls</a>
+                    <a href="">Quizzes</a>
+                    <a href="">Analytics</a>
+                    <a href="">Integration</a>
+                </div>
+                <div class="aboutus">
+                    <h2>Integration</h2>
+                    <a href="">Webex</a>
+                    <a href="">PowerPoint</a>
+                    <a href="">Microsoft Teams</a>
+                    <a href="">Google Slides</a>
+                    <a href="">Live Video</a>
+                    <a href="">Embed Slido</a>
+                </div>
+                <div class="aboutus">
+                    <h2>Pricing</h2>
+                    <a href="">One-time Plans</a>
+                    <a href="">Annual Plans</a>
+                    <a href="">Education</a>
+                    <a href="">Enterprise</a>
+                </div>
+            </div>
+            <div>
+                <h2>CONNECT WITH US</h2>
+                <p>
+                    Subscribe and be the first to hear about new products, sales, and
+                    more.
+                </p>
+                <div id="socilmedia">
+                    <a href=""><i class="fa-brands fa-square-instagram fa-3x"></i></a>
+                    <a href=""><i class="fa-brands fa-square-facebook fa-3x"></i></a>
+                    <a href=""><i class="fa-brands fa-youtube fa-3x"></i></a>
+                    <a href=""><i class="fa-brands fa-square-twitter fa-3x"></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin fa-3x"></i></a>
+                    <a href=""><i class="fa-brands fa-tiktok fa-3x"></i></a>
+                </div>
+                <h2>Customer Care ></h2>
+                <p>Phone: 5am-8pm PT Mon-Fri, Closed Sat/Sun</p>
+                <p>Chat: 5am-8pm PT Sat/Sun, 4am-9pm PT Mon-Fri</p>
+            </div>
+        </div>
+        <div id="copyrights">
+            <p>&copy; Copyright 2023 </p>
+            <p id="easypolls">EasyPolls</p>
+        </div>
+    </footer>
   </body>
   <script src="./scripts/quizz_question.js"></script>
 </html>
