@@ -1,4 +1,4 @@
-let baseurl = "http://localhost:8500/";
+let baseurl = "https://fun-chat-ht6d.onrender.com/";
 const userid = "prashant@9305";
 const dummyquestions = [
   {
