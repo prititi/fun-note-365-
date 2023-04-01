@@ -108,4 +108,18 @@ function errorAlert(msg){
 
 
 ///<button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Fade In Modal</button>
+const socket = io("http://localhost:8500/",{transports:["websocket"]});
+var button = document.querySelector("#enter");
 
+button.addEventListener("click",async ()=>{
+  var enterid = document.querySelector("#code").value;
+  if(enterid[0]=='@')
+  {
+    console.log("enter")
+     socket.emit("voter",enterid)
+    
+  }
+
+})
+
+socket.emit("hello",'hello')
