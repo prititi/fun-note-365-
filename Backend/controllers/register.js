@@ -23,7 +23,7 @@ regRouter.post("/",async(req,res)=>{
    }
 
    }
-   } catch (error) {console.log("error | regRouter | post",error);res.send(500).json("something went wrong...")}
+   } catch (error) {console.log("error | regRouter | post",error);res.status(500).json("something went wrong...")}
 })
 
 

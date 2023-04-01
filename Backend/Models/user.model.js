@@ -7,6 +7,13 @@ const userSchema = mongoose.Schema({
     email : {type:  mongoose.SchemaTypes.Email,required:true},
     password : {type:String,min:10,required:true},
     profilePic:{type:String,default:"https://i.pinimg.com/originals/7d/34/d9/7d34d9d53640af5cfd2614c57dfa7f13.png"} ,
+    plan:{
+         type:{type: String,enum : ['basic','medium',"advanced"],default: 'basic'},
+         payment:{type:Number,default:0},
+         limit:{type:Number,default:0}
+
+
+        }
 },{versionKey:false,timestamps:true});
 
 userSchema.pre('save',async function(next){
