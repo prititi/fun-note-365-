@@ -117,6 +117,10 @@ Rating.addEventListener("click",()=>{
   window.location.href="./rating.html"
 })
 
+let Quiz= document.getElementById("Quiz")
+Quiz.addEventListener("click",()=>{
+  window.location.href="./quizz_question.html"
+})
 
 
 
