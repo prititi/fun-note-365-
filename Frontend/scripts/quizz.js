@@ -1,4 +1,5 @@
 let baseurl = "http://localhost:8500/";
+const userid="prashant@9305"
 const dummyquestions = [
   {
     question: "Which of the following is a client site language?",
@@ -55,16 +56,12 @@ roombtn.addEventListener("click", () => {
     } else {
       participant_name = user_name.value;
       participant_room = Quizz_room_name.value;
-      fetch_start_quiz(participant_room) 
+      fetch_start_quiz(participant_room);
     }
   } else {
-    alert(
-      "Please enter Quizz Room Name,to continue (case sensitive)"
-    );
+    alert("Please enter Quizz Room Name,to continue (case sensitive)");
   }
 });
-
-
 
 //quizz controlling js
 function start_quizz() {
@@ -138,9 +135,10 @@ function start_quizz() {
       time: hours + ":" + minutes + ":" + seconds,
       date: day + "/" + month + "/" + year,
       quizRoom: participant_room,
+      Author:userid
     };
-    timercatiner.style.display="none";
-    fetch_save_pariticipents(uobj)
+    timercatiner.style.display = "none";
+    fetch_save_pariticipents(uobj);
   };
   loadQuestion(index);
 }
@@ -148,8 +146,6 @@ function start_quizz() {
 // fetching functions
 async function fetch_save_pariticipents(obj) {
   const url = `${baseurl}quiz/saveParticipent`;
-
-
   try {
     const response = await fetch(url, {
       method: "POST",
@@ -161,58 +157,57 @@ async function fetch_save_pariticipents(obj) {
     const data = await response.json();
     alert(data.msg);
   } catch (error) {
-   console.log(error)
+    console.log(error);
   }
 }
 
 async function fetch_start_quiz(roomname) {
-    const url = `${baseurl}quiz/startQuiz/${roomname}`;
-    try {
-      const response = await fetch(url, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
-      const data = await response.json();
-      if(data.ok){
-        quizData=data.quiz.quiz;
-        alert(data.msg);
-        user_details_div.style.display = "none";
-        mainsection.style.display = "flex";
-        start_quizz();
-        let n=data.quiz.timeout;
-        countdownmaneger(n)
-      }else{
-        alert(data.msg);
-      }
-    } catch (error) {
-      console.log(error);
+  const url = `${baseurl}quiz/startQuiz/${roomname}`;
+  try {
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    if (data.ok) {
+      quizData = data.quiz.quiz;
+      alert(data.msg);
+      user_details_div.style.display = "none";
+      mainsection.style.display = "flex";
+      start_quizz();
+      let n = data.quiz.timeout;
+      countdownmaneger(n);
+    } else {
+      alert(data.msg);
     }
+  } catch (error) {
+    console.log(error);
   }
+}
 
-function countdownmaneger(n){
-    timercatiner.style.display="block";
-    let timertext=document.getElementById("time")
-  const starting_time=1;
-  let time=starting_time*60;
-  let timerintervel=setInterval(updateCountdown,1000)
-    function updateCountdown() {
-     const minutes=Math.floor(time/60);
-     let seconds=time%60;
-     if (seconds < 0) {
-        clearInterval(timerintervel);
-       timertext.innerHTML = "EXPIRED";
-       document.getElementsByClassName("container")[0].innerHTML = `
+function countdownmaneger(n) {
+  timercatiner.style.display = "block";
+  let timertext = document.getElementById("time");
+  const starting_time = 1;
+  let time = starting_time * 60;
+  let timerintervel = setInterval(updateCountdown, 1000);
+  function updateCountdown() {
+    const minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+    if (seconds < 0) {
+      clearInterval(timerintervel);
+      timertext.innerHTML = "EXPIRED";
+      document.getElementsByClassName("container")[0].innerHTML = `
        <div class="col">
            <h3 class="w-100"> Hii ${participant_name}, Sorry Quizz Time got over </h3>
        </div>
    `;
-      }else{
-        seconds=seconds < 10 ? '0' + seconds:seconds ;
-        timertext.innerHTML=`${minutes}:${seconds}`;
-        time--;
-      }
-     
+    } else {
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+      timertext.innerHTML = `${minutes}:${seconds}`;
+      time--;
     }
+  }
 }
