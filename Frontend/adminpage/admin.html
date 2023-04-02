@@ -227,4 +227,41 @@
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="./admin.js"></script>
   </body>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    let authToken = localStorage.getItem("authToken");
+    if (authToken) { 
+      const userid = JSON.parse(localStorage.getItem("userData"));
+      if(userid.name=="admin"&&userid.email=="admin@gmail.com"){
+
+      }else{
+        Swal.fire({
+            title: 'Login Using Admin Credentials You are not Authorized To a',
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+        })
+
+        setTimeout(() => { window.location.href = "../index.html" }, 2000)
+      }
+    }
+    else {
+        Swal.fire({
+            title: 'Login to Your account to visit this page',
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+        })
+
+        setTimeout(() => { window.location.href = "../index.html" }, 2000)
+
+
+    }
+</script>
 </html>
