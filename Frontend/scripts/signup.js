@@ -1,5 +1,5 @@
 
-let baseUrl = "http://localhost:8500"
+let baseUrl = "https://fun-chat-ht6d.onrender.com"
 let form = document.querySelector("#form");
 
 
@@ -7,7 +7,7 @@ let form = document.querySelector("#form");
 let googleBtn = document.querySelector("#google");
 googleBtn.addEventListener("click",(e)=>{
     e.preventDefault();
-    window.location.href="http://localhost:8500/oauth/google"
+    window.location.href='https://fun-chat-ht6d.onrender.com/oauth/google'
     
 })
 

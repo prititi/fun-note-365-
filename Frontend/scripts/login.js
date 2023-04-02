@@ -21,7 +21,7 @@ googleBtn.addEventListener("click",(e)=>{
       confirmButtonText: 'continue',
       showLoaderOnConfirm: true,
       preConfirm: (login) => {
-        return fetch(`http://localhost:8500/login/${document.getElementById("e1").value}`)
+        return fetch(`${baseUrl}/login/${document.getElementById("e1").value}`)
           .then(response => {
             if (!response.ok) {
               throw new Error(response.statusText)
@@ -39,7 +39,7 @@ googleBtn.addEventListener("click",(e)=>{
       if (result.isConfirmed) {
         localStorage.setItem("authToken",result.value.authToken);
         localStorage.setItem("refreshToken",result.value.refreshToken);
-        localStorage.setItem("userData",result.value.userData);
+        localStorage.setItem("userData",JSON.stringify(result.value.userData));
         
         Swal.fire({
           title: `${result.value.msg}`,

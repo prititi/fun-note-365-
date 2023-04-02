@@ -45,7 +45,7 @@ loginRouter.get("/:email",async(req,res)=>{
    if(!email ){res.status(422).json("please fill all the fields")}
    else{
     let userData = await UserModel.findOne({"email":email});
-   
+    if(!userData){res.status(401).json("user doesn't exists")}
     //_________create and send token
     const  authToken = jwt.sign({ userId: userData._id }, process.env.normalKey,{ expiresIn: '1h' });
     const  refreshToken = jwt.sign({ userId: userData._id }, process.env.refreshKey,{ expiresIn: "21 days" });
