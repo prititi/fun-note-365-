@@ -7,25 +7,273 @@ body {
   font-family: "Poppins", sans-serif;
   background-image: url("../images/3188416.jpg");
 }
-/* section */
+/* header &navbar */
 
-section {
-  width: 100%;
-  z-index: 10;
-  padding: 10px 90px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: whitesmoke;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  position: fixed;
-  top: 0;
+  /* -----------navbar css-------------- */
+  header ul,footer ul{
+    list-style-type: none;
+  }
+  header a, footer a{
+    text-decoration: none;
+  }
+  header{
+    position:fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  .fixedHeader{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    
+  }
+  #category_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color:#ECEFF1;
+  }
+  div.categories{
+    height: 65px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  div.categories li{
+    display: flex;
+    margin-right:-5px;
+    font-size: 1.5vw;
+    height: 70%;
+    align-items: center;
+  }
+  div.categories li.categ,div.categories li.active{
+    padding:13px;
+    font-weight: bold;
+  }
+  div.categories li.res_category{
+    padding:13px;
+    font-weight: bold;
+  }
+  div.categories li.res_category:hover{
+    height: 100%;
+    cursor: pointer;
+    background: linear-gradient(90deg, rgb(86, 46, 196) 0%, rgb(35, 201, 203) 100%);
+    color:white;
+  }
+  div.categories li.categ:hover{
+    height: 100%;
+    cursor: pointer;
+    background: linear-gradient(90deg, rgb(86, 46, 196) 0%, rgb(35, 201, 203) 100%);
+    /* color:white; */
+  }
+  #navleftdiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .category_img{
+    width: 30%;
+    padding:0px 10px;
+    background-color:#FAFAFA;
+  }
+  .category_img>a>img{
+    margin-top: 3px;
+    height: 60px;
+  }
+  #registerdiv{
+    margin-right:20px ;
+    border-radius: 5px;
+  }
+  #registerdiv>a{
+    margin-right: 4px;
+    margin-left: 4px;
+    border: none;
+    font-size: 18px;
+    padding: 17px 15px;
+    color: white;
+    font-weight: bold;
+    background-color:#673AB7 ;
+    border-radius: 6px;
+  }
+  #registerdiv>a:hover{
+    color: #fff;
+    background-color: black;
+  }
+  /* Categories */
+  /* Box Dropdown */
+  div.boxDropdown{
+    width:50%;
+    position: absolute;
+    margin-top: -20px;
+    margin-left: 22%;
+    display:none; 
+    z-index:10;
+    background:rgb(209, 209, 209); 
+  }
+  div.boxDropdown > div{
+    display:flex;
+    background:white;
+    position: absolute;
+    z-index:10;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    left:-15px;
+    top:0;
+    flex-direction: row;
+  }
+  .category{
+    padding:0px 20px;
+    width: 150px;
+  }
+  
+  .category>ul>li{
+    font-size: 15px;
+    line-height: 2.5;
+    font-weight: bold;
+  }
+  .dropdown_img img{
+    height:450px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .dropdown_img{
+    margin-bottom: -4px;
+  }
+  .workingLinks{
+    font-weight: bold;
+  }
+  .boxDropdown ul li:hover{
+    transform: scale3d(1.1,1.1,1.1);
+    transition:ease-in-out .4s;
+    cursor: pointer;
+    color: #FF1744;
 }
-#fa-solid {
-  color: #ff1744;
-  font-size: xx-large;
-  cursor: pointer;
-}
+  /* navbar and dropdown styles ends here */
+
+  /* -------------------sidenavbar-------------- */
+  #hiddenside{
+    display: none;
+  }
+  #sidebarcontainer{
+    display: flex;
+    justify-content:space-between;
+    padding: 0 10px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
+  }
+  #sidebarcontainer  div.category_img img{
+    margin-right: 10px;
+  }
+    #sidebar .fa{
+        color: #E0E0E0;
+    }
+    #sidebar .newfa{
+        color: #0d0c0c;
+    }
+    #sidebar{
+      display: block;
+        position: fixed;
+        top:0;
+        width: 230px;
+        height: 100vh;
+        background:#3F51B5;
+        left: -230px;
+        transition: .6s;
+        z-index: 200;
+    }
+    #sidebar.inandout{
+        left: 0;
+    }
+    #sidebar div{
+        font-size: 22px;
+        color: gray;
+        text-align: left;
+       
+        line-height: 40px;
+        user-select: none;
+    }
+    #sidebar ul a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        line-height: 50px;
+        font-size: 20px;
+        color: white;
+        padding-left: 30px;
+        box-sizing: border-box;
+        border-top: 1px solid rgb(255,255,255,.1);
+        transition: .9s;
+    }
+   #sidebar ul li:hover{
+        padding-left: 15px;
+        transition:ease-in-out .4s;
+        cursor: pointer;
+    }
+    #sidebar ul a i{
+        margin-right: 30px;
+    }
+    .icolortoblack i{
+      color: #263238;
+    }
+    .sliderbtn{
+        position: absolute;
+        z-index: 20;
+        top: 19px;
+        right:-45px ;
+        width: 45px;
+        height: 35px;
+        outline: none;
+        border: none;
+        transition: .4s;
+    }
+    .hamburger{
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 30px;
+        height: 3px ;
+        background: #262626;
+    }
+    .hamburger::after{
+        top: 12px;
+        
+    }
+    .hamburger::before{
+        top: -12px;
+        
+    }
+    .hamburger::after,
+    .hamburger::before{
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 3px;
+    background: #262626;
+    left: 0;
+    transition: .6s;
+    z-index: 100;
+    
+    }
+    .sliderbtn.active .hamburger{
+       background: none;
+    }
+    .sliderbtn.active .hamburger::after{
+       transform: rotate(-45deg);
+       top: 0;
+       
+    }
+    .sliderbtn.active .hamburger::before{
+        transform: rotate(45deg);
+        top: 0;
+    }
+     /* -------------------sidenavbar styles ends here-------------- */
+ 
+
+
 #mastercontainer {
   width: 100%;
   margin-top: 100px;
@@ -411,6 +659,15 @@ input::placeholder {
 @media screen and (max-width: 650px) {
   body {
     font-size: 14px;
+  }
+  #fixedheadertop{
+    display: none;
+  }
+  #hiddenside{
+    display: block;
+  }
+  div.categories li{
+    font-size: 4vw;
   }
   .question_div,
   .options > div {

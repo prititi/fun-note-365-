@@ -1,8 +1,31 @@
+let boxDropdown = document.querySelectorAll('.boxDropdown');
+for (let x = 0; x < document.querySelectorAll('li.categ').length; x++) {
+    let list = document.querySelectorAll('li.categ')[x];
+    let boxDropdown_list =  document.querySelectorAll('.boxDropdown')[x];
+    list.addEventListener('mouseenter',() =>{
+        boxDropdown_list.style.display = 'block';
+    })
+    list.addEventListener('mouseleave',() =>{
+        boxDropdown_list.style.display = 'none';
+    })
+}
+for (let x = 0; x < boxDropdown.length; x++) {
+    const box = boxDropdown[x];
+    box.addEventListener('mouseenter',() =>{
+        box.style.display = 'block';
+    })
+    box.addEventListener('mouseleave',() =>{
+        box.style.display = 'none';
+    })
+}
+
+
 let baseurl = "https://fun-chat-ht6d.onrender.com/";
 // let baseurl = "http://localhost:8500/";
 const userid = JSON.parse(localStorage.getItem("userData"))._id;
+// const userid = "priti";
 const permitted_quiz_rooms =JSON.parse(localStorage.getItem("userData")).plan.limit;
-
+// const permitted_quiz_rooms=5;
 
 let loding_container = document.getElementById("loding_container");
 let add_new_que = document.getElementById("add_ques");
@@ -552,8 +575,8 @@ function renderQuiz(Data) {
 
 async function fetch_rankings(room_quizz) {
   loding_container.style.display="block";
-  // const url = `${baseurl}quiz/getParticipent/${userid}`;
-  const url = `${baseurl}quiz/getParticipent`;
+  const url = `${baseurl}quiz/getParticipent/${userid}`;
+  // const url = `${baseurl}quiz/getParticipent`;
   try {
     const response = await fetch(url, {
       method: "GET",
