@@ -14,5 +14,11 @@ window.onbeforeunload = function()
     };
 
 
+    const codeBtn = document.getElementById("enter");
+codeBtn.addEventListener("click", () => {
+    const code = document.getElementById("input").value;
+    localStorage.setItem("roomno", JSON.stringify(+code));
+    window.location.href = "./polls.html";
+});
 
 
