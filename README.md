@@ -20,6 +20,7 @@ Easy polls is the ultimate Q&A and polling platform for live and virtual meeting
 
 ## Our Team Members ❤️
 - [Anandhu P A](https://www.linkedin.com/in/anandhu-p-a-953a30231/)
+- [Prashant Verma](https://www.linkedin.com/in/prashant-verma-b44738178/)
 
 ### Pages & Features 👇
 
