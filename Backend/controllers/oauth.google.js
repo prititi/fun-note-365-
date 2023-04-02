@@ -55,7 +55,7 @@ res.cookie("refreshToken",refreshToken);
 
 
 
-res.redirect("https://www.amazon.com/") //redirect to any page
+res.redirect("https://fun-note-365-hiqd.vercel.app/") //redirect to any page
 }
 
 );
