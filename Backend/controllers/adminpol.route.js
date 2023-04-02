@@ -38,5 +38,5 @@ eventRouter.get("/", async (req, res) => {
 });
 
 module.exports = {
-  eventRouter,
+  eventRouter
 };

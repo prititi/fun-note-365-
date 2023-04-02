@@ -166,6 +166,8 @@ function start_quizz() {
 
 // fetching functions
 async function fetch_save_pariticipents(obj) {
+  
+  loding_container.style.display="block";
   const url = `${baseurl}quiz/saveParticipent`;
   try {
     const response = await fetch(url, {
@@ -176,6 +178,7 @@ async function fetch_save_pariticipents(obj) {
       },
     });
     const data = await response.json();
+    loding_container.style.display="none";
     // alert(data.msg);
     swal({
       title: `${data.msg}`,
@@ -190,6 +193,7 @@ async function fetch_save_pariticipents(obj) {
 }
 
 async function fetch_start_quiz(roomname) {
+  loding_container.style.display="block";
   const url = `${baseurl}quiz/startQuiz/${roomname}`;
   try {
     const response = await fetch(url, {
@@ -199,6 +203,7 @@ async function fetch_start_quiz(roomname) {
       },
     });
     const data = await response.json();
+    loding_container.style.display="none";
     if (data.ok) {
       quizData = data.quiz.quiz;
       // alert(data.msg);
