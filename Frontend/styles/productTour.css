@@ -270,122 +270,10 @@
  
   
 /* -------------------main content of website---------------------- */
-
-
-
-
-
-
-
-  /* ----------------styles for footer ----------------------- */
-  #footer{
-    background-color: #673AB7;
-    color: white;
-    padding-bottom: 20px;
-    margin-top: 20px;
-  }
-  #footer a{
-    color: white;
-  }
-  #footer a:hover{
-    color: rgb(238, 10, 124);
-    transform: scale3d(1.1,1.1,1.1);
-    transition: ease-in-out 0.4s;
-  }
-  #footersubcontainer{
-    width: 100%;
-    text-align: center;
-    color: white;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    line-height: 2;
-  }
-  
-  #footersubcontainer a{
-    color: white;
-    text-decoration: underline; 
-  }
-  #footersubcontainer a:nth-child(2){
-    margin-left: 15px;
-  }
-  #footerbase{
-    display: flex;
-    justify-content: space-between;
-    margin: 0px 4%;
-    line-height: 2;
-  }
-  #footerbase>div:nth-child(1){
-    display: flex;
-    width: 50%;
-    justify-content: space-between;
-  }
-  .aboutus a{
-    display: block;
-  }
-  #socilmedia{
-    display: flex;
-    justify-content: space-between;
-  }
-  #copyrights{
-    display:flex;
-    justify-content: center;
-    text-align: center;
-    font-size: 14px;
-    margin-top: 10px;
-  }
-  #easypolls{
-    margin-left: 15px;
-  }
-  
-  /* -----------------media quries----------------- */
-  
-
-/* footer responsive */
-@media screen and (max-width: 650px) {
-    body {
-        font-size: 14px;
-      }
-      #fixedheadertop{
-        display: none;
-      }
-      #hiddenside{
-        display: block;
-      }
-      div.categories li{
-        font-size: 4vw;
-      }
-    #footersubcontainer div{
-      display: block;
-      margin-top: 10px;
-    }
-  
-    #footerbase{
-      flex-direction: column;
-      margin: 0;
-      text-align: center;
-    }
-  
-    #footerbase > div:nth-child(1){
-      flex-direction: column;
-      width: 100%;
-      justify-content: center;
-    }
-  
-    #footerbase > div:nth-child(1) .aboutus {
-      margin-bottom: 20px;
-    }
-  
-    #socilmedia{
-      margin-bottom: 20px;
-    }
-  
-  }
-  
-
-
 /* mid section............................................................................... */
 
 #main{
+  width: 100%;
     display: block;
     display: flex;
     position:relative;
@@ -666,5 +554,148 @@ discover h1{
     border:  1px solid black;
 }
 
+@media screen and (max-width: 650px) {
+  body{
+    font-size: 14px;
+  }
+  #main{
+    /* width: 100%; */
+    flex-direction: column;
+    justify-content: center;
+  }
+  #sidebarcontainer{
+    display: block;
+    width: 100%;
+  }
+  .mainSection h1{
+    width: 100%;
+    margin: 2px 0px 26px 331px;
+    /* display: block; */
+    /* text-align: center; */
+  }
+  .mainSection p{
+    width: 100%;
+    margin: 2px 0px 26px 331px;
+    /* display: block; */
+    /* text-align: center; */
+  }
+  #bannerImg{
+    width: 50%;
+    margin: auto;
+  }
+}
+
+
+
+
+
+
+
+
+  /* ----------------styles for footer ----------------------- */
+  #footer{
+    background-color: #673AB7;
+    color: white;
+    padding-bottom: 20px;
+    margin-top: 20px;
+  }
+  #footer a{
+    color: white;
+  }
+  #footer a:hover{
+    color: rgb(238, 10, 124);
+    transform: scale3d(1.1,1.1,1.1);
+    transition: ease-in-out 0.4s;
+  }
+  #footersubcontainer{
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 2;
+  }
+  
+  #footersubcontainer a{
+    color: white;
+    text-decoration: underline; 
+  }
+  #footersubcontainer a:nth-child(2){
+    margin-left: 15px;
+  }
+  #footerbase{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 4%;
+    line-height: 2;
+  }
+  #footerbase>div:nth-child(1){
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+  }
+  .aboutus a{
+    display: block;
+  }
+  #socilmedia{
+    display: flex;
+    justify-content: space-between;
+  }
+  #copyrights{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  #easypolls{
+    margin-left: 15px;
+  }
+  
+  
+  /* -----------------media quries----------------- */
+  
+
+/* footer responsive */
+@media screen and (max-width: 650px) {
+    body {
+        font-size: 14px;
+      }
+      #fixedheadertop{
+        display: none;
+      }
+      #hiddenside{
+        display: block;
+      }
+      div.categories li{
+        font-size: 4vw;
+      }
+    #footersubcontainer div{
+      display: block;
+      margin-top: 10px;
+    }
+  
+    #footerbase{
+      flex-direction: column;
+      margin: 0;
+      text-align: center;
+    }
+  
+    #footerbase > div:nth-child(1){
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+    }
+  
+    #footerbase > div:nth-child(1) .aboutus {
+      margin-bottom: 20px;
+    }
+  
+    #socilmedia{
+      margin-bottom: 20px;
+    }
+  
+  }
+  
 
 
