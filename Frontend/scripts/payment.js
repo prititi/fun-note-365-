@@ -113,7 +113,7 @@ function submit(){
 
 
 //payment info
-
+let loding_container = document.getElementById("loding_container");
 let cardName = document.getElementById("nameOnCard").value;
 let cardNumber = document.getElementById("cardNumber").value;
 let expiryMonth = document.getElementById("ExpMonth").value;
@@ -145,7 +145,9 @@ pincode : document.getElementById("pincode").value,
 country : document.getElementById("country").value,
 state : document.getElementById("state").value,
     }
-    
+    // making loding animation to show up
+  loding_container.style.display="block";
+
     let response = await fetch(`${baseUrl}/payment`, {
         method: 'PATCH',
         body: JSON.stringify({
@@ -162,6 +164,8 @@ state : document.getElementById("state").value,
     
         let data = await response.json();
         //alert(JSON.stringify(data,null,2));
+        // as soon as we get the response from server making the loding animation hidden
+    loding_container.style.display="none";
         Swal.fire({
             icon: 'success',
             title: `congrats ${data.name}`,
@@ -169,6 +173,9 @@ state : document.getElementById("state").value,
             footer: `you have upgraded to ${data.plan.type} plan`
           })
    
+          setTimeout(() => {
+            window.location.href="./index.html"
+          },2000);
    
 
     
