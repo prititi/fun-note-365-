@@ -1,7 +1,7 @@
 
 let baseUrl = "https://fun-chat-ht6d.onrender.com"
 let form = document.querySelector("#form");
-
+let loding_container = document.getElementById("loding_container");
 
 //google auth 
 let googleBtn = document.querySelector("#google");
@@ -20,6 +20,7 @@ storeEventCode()
 form.addEventListener("submit",async(e)=>{
 try{
 e.preventDefault();
+
 let name = form.name.value;
 let email = form.email.value;
 let password=form.pw.value;
@@ -34,7 +35,8 @@ errorAlert("Please use a strong password with atleast 8 charectors")
 errorAlert("Please enter a valid email")
 }
 else {
-
+//loader start
+loding_container.style.display="block";
 let obj ={
     name : form.name.value,
     email : form.email.value,
@@ -50,6 +52,8 @@ let res = await fetch(`${baseUrl}/register`, {
     },
   });
   if(res.ok){
+    //loader end
+    loding_container.style.display="none";
     let data = await res.json();
     let authToken = data.authToken;
     sessionStorage.setItem("authToken", authToken);

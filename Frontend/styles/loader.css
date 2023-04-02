@@ -1,0 +1,28 @@
+/* ------------css for loding animation------------- */
+#loding_container{
+    display: none;
+    transition: ease-in-out 0.5s;
+  }
+  #loding_div{
+    position: fixed;
+    top: 200px;
+    left: 20%;
+    right: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 500;
+  }
+  #loding_div>img{
+    width: 120px;
+  }
+  #loding_div>h2{
+    text-align: center;
+    color: #ee0606;
+    font-size: 35px;
+    font-weight: bolder;
+  }
+  
+  
+  /* ------------css for loding animation Ended here ------------ */
