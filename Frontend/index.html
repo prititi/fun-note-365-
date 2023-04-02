@@ -403,9 +403,11 @@
 let userData = JSON.parse(localStorage.getItem("userData"));
 let profile = document.getElementById("profile");
 let preDiv = document.getElementById("registerdiv");
-
+preDiv.style.display="block"
+profile.style.display="none"
  if(userData){
-       preDiv.innerHTML=null
+       preDiv.style.display='none'
+       profile.style.display="flex"
        profile.innerHTML= ` <li><img style="width: 40px;border-radius:50%;" src="${userData.profilePic}" alt=""></li>
                     <li style="font-size: large;" class="categ">${userData.name}</li>
                     <div id="registerdiv">
