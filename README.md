@@ -19,9 +19,11 @@ Easy polls is the ultimate Q&A and polling platform for live and virtual meeting
 ---
 
 ## Our Team Members ❤️
-- [Priti Tiwari]()
+- [Priti Tiwari](https://www.linkedin.com/in/priti-tiwari-5149b8255/)
 - [Anandhu P A](https://www.linkedin.com/in/anandhu-p-a-953a30231/)
 - [Prashant Verma](https://www.linkedin.com/in/prashant-verma-b44738178/)
+- [Harshit Sahu]()
+- [Swapnil Solanki]()
 
 ### Pages & Features 👇
 
