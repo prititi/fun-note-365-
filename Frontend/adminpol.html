@@ -311,6 +311,7 @@
     }).then((result) => {
       if (result.isConfirmed) {
         localStorage.removeItem("userData");
+        localStorage.removeItem("authToken");
         Swal.fire(
           'Logout successfull!',
           
