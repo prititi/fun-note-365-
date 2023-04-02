@@ -1,0 +1,460 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background-image: url('https://www.yakketyyak.com/wp-content/uploads/2019/03/metrics.gif')
+}
+
+/*  */
+*{
+    padding: 0px;
+    margin: 0px;
+  }
+  body{
+    font-family: 'Oswald', sans-serif;
+    box-sizing: border-box;
+  }
+
+  /* -----------navbar css-------------- */
+  header ul,footer ul{
+    list-style-type: none;
+  }
+  header a, footer a{
+    text-decoration: none;
+  }
+  header{
+    position:fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  .fixedHeader{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    
+  }
+  #category_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color:#ECEFF1;
+  }
+  div.categories{
+    height: 65px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  div.categories li{
+    display: flex;
+    margin-right:-5px;
+    font-size: 1.5vw;
+    height: 70%;
+    align-items: center;
+  }
+  div.categories li.categ,div.categories li.active{
+    padding:13px;
+    font-weight: bold;
+  }
+  div.categories li.res_category{
+    padding:13px;
+    font-weight: bold;
+  }
+  div.categories li.res_category:hover{
+    cursor: pointer;
+    background: linear-gradient(90deg, rgb(86, 46, 196) 0%, rgb(35, 201, 203) 100%);
+    color:white;
+  }
+  div.categories li.categ:hover{
+    cursor: pointer;
+    background: linear-gradient(90deg, rgb(86, 46, 196) 0%, rgb(35, 201, 203) 100%);
+    color:white;
+  }
+  #navleftdiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .category_img{
+    width: 30%;
+    padding:0px 10px;
+    background-color:#FAFAFA;
+  }
+  .category_img>a>img{
+    margin-top: 3px;
+    height: 60px;
+  }
+  #registerdiv{
+    margin-right:20px ;
+    border-radius: 5px;
+  }
+  #registerdiv>a{
+    margin-right: 4px;
+    margin-left: 4px;
+    border: none;
+    font-size: 18px;
+    padding: 17px 15px;
+    color: white;
+    font-weight: bold;
+    background-color:#673AB7 ;
+    border-radius: 6px;
+  }
+  #registerdiv>a:hover{
+    color:#673AB7;
+    background-color: #B0BEC5;
+  }
+  /* Categories */
+  /* Box Dropdown */
+  div.boxDropdown{
+    width:50%;
+    position: absolute;
+    margin-top: -20px;
+    margin-left: 22%;
+    display:none; 
+    z-index:10;
+    background:rgb(209, 209, 209); 
+  }
+  div.boxDropdown > div{
+    display:flex;
+    background:white;
+    position: absolute;
+    z-index:10;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    left:-15px;
+    top:0;
+    flex-direction: row;
+  }
+  .category{
+    padding:0px 20px;
+    width: 150px;
+  }
+  
+  .category>ul>li{
+    font-size: 15px;
+    line-height: 2.5;
+    font-weight: bold;
+  }
+  .dropdown_img img{
+    height:450px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .dropdown_img{
+    margin-bottom: -4px;
+  }
+  .workingLinks{
+    font-weight: bold;
+  }
+  .boxDropdown ul li:hover{
+    transform: scale3d(1.1,1.1,1.1);
+    transition:ease-in-out .4s;
+    cursor: pointer;
+    color: #FF1744;
+}
+  /* navbar and dropdown styles ends here */
+
+  /* -------------------sidenavbar-------------- */
+  #hiddenside{
+    display: none;
+  }
+  #sidebarcontainer{
+    display: flex;
+    justify-content:space-between;
+    padding: 0 10px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
+  }
+  #sidebarcontainer  div.category_img img{
+    margin-right: 10px;
+  }
+    #sidebar .fa{
+        color: #E0E0E0;
+    }
+    #sidebar .newfa{
+        color: #0d0c0c;
+    }
+    #sidebar{
+      display: block;
+        position: fixed;
+        top:0;
+        width: 230px;
+        height: 100vh;
+        background:#3F51B5;
+        left: -230px;
+        transition: .6s;
+        z-index: 200;
+    }
+    #sidebar.inandout{
+        left: 0;
+    }
+    #sidebar div{
+        font-size: 22px;
+        color: gray;
+        text-align: left;
+       
+        line-height: 40px;
+        user-select: none;
+    }
+    #sidebar ul a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        line-height: 50px;
+        font-size: 20px;
+        color: white;
+        padding-left: 30px;
+        box-sizing: border-box;
+        border-top: 1px solid rgb(255,255,255,.1);
+        transition: .9s;
+    }
+   #sidebar ul li:hover{
+        padding-left: 15px;
+        transition:ease-in-out .4s;
+        cursor: pointer;
+    }
+    #sidebar ul a i{
+        margin-right: 30px;
+    }
+    .icolortoblack i{
+      color: #263238;
+    }
+    .sliderbtn{
+        position: absolute;
+        z-index: 20;
+        top: 19px;
+        right:-45px ;
+        width: 45px;
+        height: 35px;
+        outline: none;
+        border: none;
+        transition: .4s;
+    }
+    .hamburger{
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 30px;
+        height: 3px ;
+        background: #262626;
+    }
+    .hamburger::after{
+        top: 12px;
+        
+    }
+    .hamburger::before{
+        top: -12px;
+        
+    }
+    .hamburger::after,
+    .hamburger::before{
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 3px;
+    background: #262626;
+    left: 0;
+    transition: .6s;
+    z-index: 100;
+    
+    }
+    .sliderbtn.active .hamburger{
+       background: none;
+    }
+    .sliderbtn.active .hamburger::after{
+       transform: rotate(-45deg);
+       top: 0;
+       
+    }
+    .sliderbtn.active .hamburger::before{
+        transform: rotate(45deg);
+        top: 0;
+    }
+     /* -------------------sidenavbar styles ends here-------------- */
+ 
+  
+/* -------------------main content of website---------------------- */
+#maincontents{
+    position:relative;
+    margin-top: 90px;
+}
+
+
+
+
+
+
+  /* ----------------styles for footer ----------------------- */
+  #footer{
+    background-color: #673AB7;
+    color: white;
+    padding-bottom: 20px;
+    margin-top: 20px;
+  }
+  #footer a{
+    color: white;
+  }
+  #footer a:hover{
+    color: rgb(238, 10, 124);
+    transform: scale3d(1.1,1.1,1.1);
+    transition: ease-in-out 0.4s;
+  }
+  #footersubcontainer{
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 2;
+  }
+  
+  #footersubcontainer a{
+    color: white;
+    text-decoration: underline; 
+  }
+  #footersubcontainer a:nth-child(2){
+    margin-left: 15px;
+  }
+  #footerbase{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 4%;
+    line-height: 2;
+  }
+  #footerbase>div:nth-child(1){
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+  }
+  .aboutus a{
+    display: block;
+  }
+  #socilmedia{
+    display: flex;
+    justify-content: space-between;
+  }
+  #copyrights{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  #easypolls{
+    margin-left: 15px;
+  }
+  
+  /* -----------------media quries----------------- */
+  
+
+/* footer responsive */
+@media screen and (max-width: 650px) {
+    body {
+        font-size: 14px;
+      }
+      #fixedheadertop{
+        display: none;
+      }
+      #hiddenside{
+        display: block;
+      }
+      div.categories li{
+        font-size: 4vw;
+      }
+    #footersubcontainer div{
+      display: block;
+      margin-top: 10px;
+    }
+  
+    #footerbase{
+      flex-direction: column;
+      margin: 0;
+      text-align: center;
+    }
+  
+    #footerbase > div:nth-child(1){
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+    }
+  
+    #footerbase > div:nth-child(1) .aboutus {
+      margin-bottom: 20px;
+    }
+  
+    #socilmedia{
+      margin-bottom: 20px;
+    }
+  
+  }
+  
+
+
+
+
+
+/* nav end */
+
+
+#parent{
+    margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+    background-color: black;
+    width: 600px;
+    /* margin: auto; */
+    background-color:transparent;
+    align-items: center;
+    text-align: center;
+    box-shadow: rgba(9, 240, 248, 0.16) 10px 10px 100px 100px, rgba(9, 243, 243, 0.06) 0px 0px 0px 1px;
+    /* border: 5px dotted black; */
+}
+ .i{
+    
+    background-color:lightblue;
+    font-size: larger;
+    font-weight: bolder;
+    border-radius: 3px;
+    display: block;
+    margin: auto;
+    height: 30px;
+    margin-top: 20px;
+    width: 50%;
+    border: none;
+    text-align: center;
+    align-items: center;
+    color: black;
+    border-radius: 6px;
+    /* background-image: url('https://www.oliverwyman.com/content/dam/oliver-wyman/v2/tmp/education-mobile.gif'); */
+    /* padding: 10px; */
+ }
+ h2{
+    width: 50%;
+    margin: auto;
+    color:lightblue;
+ }
+ #submit{
+    
+    width: 120px;
+    margin-bottom: 10px;
+ }
+
+ .i:hover{
+    /* background-color: tomato; */
+    width: 50%;
+    height: 50px;
+    border: none;
+
+ }
+
+ .i::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+ }
