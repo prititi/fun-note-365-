@@ -46,7 +46,14 @@ googleBtn.addEventListener("click",(e)=>{
           title: `${result.value.msg}`,
           imageUrl: result.value.userData.profilePic
         })
-        setTimeout(()=>{ window.location.href='./index.html'},2000)
+        setTimeout(()=>{
+          if(result.value.userData.email=="admin@gmail.com"){ window.location.href='./adminpage/admin.html'}
+          else{ 
+          
+            window.location.href='./index.html'}
+          
+          
+          },2000)
        
       }
     })
@@ -88,6 +95,7 @@ let obj ={
     password:form.pw.value,
     
 }
+sessionStorage.setItem("email",form.email.value)
 
 let res = await fetch(`${baseUrl}/login`, {
     method: 'POST',
@@ -102,8 +110,11 @@ let res = await fetch(`${baseUrl}/login`, {
     let refreshToken = data.refreshToken;
     localStorage.setItem("authToken", authToken);
     localStorage.setItem("refreshToken", refreshToken);
-    alert("login successfull");
-    window.location.href = "./index.html";
+    
+    //alert("login successfull");
+    if(sessionStorage.getItem("email")=="admin@gmail.com"){window.location.href = "./adminpage/admin.html"}
+    else{window.location.href = "./index.html"}
+    
   }
   else {
    if(res.status==401){
