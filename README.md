@@ -50,6 +50,8 @@ Easy polls is the ultimate Q&A and polling platform for live and virtual meeting
 - `MongoDB` 
 - `socket.io`
 - `ws`
+- `JWT authentication`
+- `bcrypt`
 
 # 1) Landing Page:
 ![Screenshot (26)](https://user-images.githubusercontent.com/115465871/221416513-e4328ee4-5d40-4194-a481-74568733ff26.png)
