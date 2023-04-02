@@ -60,11 +60,23 @@ userInfoDiv.innerHTML=`                        <div id="userInfoDiv" class="user
 
 
     <li class="activity">Payment:  <label style="background-color: rgb(214, 47, 5);color: white;border-radius: 5px;padding: 0px 7px;" class="label label-info">₹ ${plan.price}</label> </li>
-    <li id="changePlan" class="activity"> <label style="background-color: rgb(138, 0, 0);color: white;border-radius: 5px;padding: 5px 15px;margin: 40px;cursor: pointer;" class="label label-info">Change Plan</label> </li>
+    <li id="changePlan" onclick="submit()" class="activity"> <label style="background-color: rgb(138, 0, 0);color: white;border-radius: 5px;padding: 5px 15px;margin: 40px;cursor: pointer;" class="label label-info">Change Plan</label> </li>
     
 </ul>
 </div>`
 
+
+}
+
+function submit(){
+  Swal.fire(
+    'You can change plan 😊....',
+    '',
+    'success'
+  )
+  setTimeout(() => {
+    window.location.href= "./pricing.html"
+  }, 3000);
 
 }
 
