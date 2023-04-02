@@ -1,10 +1,10 @@
 let room=localStorage.getItem("roomno")
-let baseUrl="http://localhost:8500"
+let baseUrl="https://fun-chat-ht6d.onrender.com"
 let token= localStorage.getItem("token")
 
 let responseForm=document.getElementById("response-form")
 
-const socket = io("http://localhost:8500" , {transports : ["websocket"]})
+const socket = io("https://fun-chat-ht6d.onrender.com" , {transports : ["websocket"]})
 
 socket.emit("joinRoom",{room})
 

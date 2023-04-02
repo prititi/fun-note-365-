@@ -24,7 +24,7 @@ for (let x = 0; x < boxDropdown.length; x++) {
 
 
 
-let baseUrl="http://localhost:8500"
+let baseUrl="https://fun-chat-ht6d.onrender.com"
 
 async function fetchEvent(){
   try {
