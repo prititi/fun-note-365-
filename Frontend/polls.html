@@ -6,74 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./styles/index.css">
+    <!-- <link rel="stylesheet" href="./styles/index.css"> -->
     <link rel="stylesheet" href="./styles/polls.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <script>
+        $(document).ready(function () {
+            $('.sliderbtn').click(function () {
+                $('.sliderbtn').toggleClass('active');
+                $('#sidebar').toggleClass('inandout');
+            })
+        })
+    </script>
 </head>
 
 <body>
 
 
 
-    <header>
-        <div id="hiddenside">
-            <div id="sidebarcontainer">
-                <div>
-                    <div id="sidebar">
-                        <div>
-                            <button class="sliderbtn" id="sliderbutton">
-                                <div class="hamburger">
-                                </div>
-                            </button>
-                            <ul>
-                                <li style="background-color: #CFD8DC;"><a href="./index.html"><i
-                                            class="fa fa-bars newfa"></i><img src="./images/E.png"
-                                            style="width: 150px;height: 45px;position: absolute;" alt=""></a></li>
-                                <li><a href="./index.html"><i class="fa fa-house"></i>Home</a></li>
-                                <li id="men_p"><a href="" target="_blank" class="icolortoblack"><i
-                                            class="fa-solid fa-signal fa"></i>Live Polls</a></li>
-                                <li id="women_P"><a href="" target="_blank" class="icolortoblack"><i
-                                            class="fa-solid fa-square-poll-vertical fa"></i>Live Q&A</a></li>
-                                <li id="kid_P"><a href="" target="_blank" class="icolortoblack"><i
-                                            class="fa-solid fa-list fa"></i>Qizzes</a></li>
-                                <li id="fot_w"><a href="" target="_blank" class="icolortoblack"><i
-                                            class="fa-solid fa-sack-dollar fa"></i>Pricing</a></li>
-                                <li><a href=""><i class="fa-solid fa-pen-to-square fa"></i>Surveys</a></li>
-                                <li><a href="" class="icolortoblack"><i class="fa-solid fa-user-secret fa"></i>Admin
-                                        Panel</a></li>
-                                <li><a href=""><i class="fa fa-address-card"></i>Sign Up</a></li>
-                                <li><a href=""><i class="fa fa-right-to-bracket"></i>Log In</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="category_img">
-                        <a href="./index.html"><img src="./images/E.png" /></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="fixedHeader" id="fixedheadertop">
-            <div id="category_container">
-                <div id="navleftdiv">
-                    <div class="category_img">
-                        <a href="./index.html"><img src="./images/E.png" /></a>
-                    </div>
-                    <div class="categories">
-                        <li class="categ">Products</li>
-                        <li class="categ">Solutions</li>
-                        <li class="res_category">Resources</li>
-                        <li class="res_category">Pricing</li>
-                    </div>
-                </div>
-                <div id="registerdiv">
-                    <a href="">Log In</a>
-                    <a href="">Sign Up</a>
-                </div>
-            </div>
 
+<<<<<<< HEAD
+=======
             <div class="boxDropdown">
                 <div>
                     <div class="category">
@@ -112,6 +66,7 @@
             </div>
         </div>
     </header>
+>>>>>>> 473c3fc732a1d18ae594cd2fba5fbc77daffe9d1
 
 
     <div class="outer">
