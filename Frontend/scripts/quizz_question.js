@@ -1,7 +1,7 @@
 let baseurl = "https://fun-chat-ht6d.onrender.com/";
 // let baseurl = "http://localhost:8500/";
-const userid = "prashant@9305";
-const permitted_quiz_rooms = 3;
+const userid = JSON.parse(localStorage.getItem("userData"))._id;
+const permitted_quiz_rooms =JSON.parse(localStorage.getItem("userData")).plan.limit;
 
 
 let loding_container = document.getElementById("loding_container");
@@ -354,7 +354,7 @@ async function fetch_create_quiz(obj) {
       // alert(`${data.msg} and link:http://127.0.0.1:5502/Frontend/quizz.html`)
       swal({
         title: `${data.msg}`,
-        text: "link:http://127.0.0.1:5502/Frontend/quizz.html",
+        text: "link: https://quiz-page-mu.vercel.app/",
         icon: "success",
       });
     } else {

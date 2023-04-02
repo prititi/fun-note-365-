@@ -1,5 +1,5 @@
 let baseurl = "https://fun-chat-ht6d.onrender.com/";
-const userid = "prashant@9305";
+let userid ;
 const dummyquestions = [
   {
     question: "Which of the following is a client site language?",
@@ -204,8 +204,10 @@ async function fetch_start_quiz(roomname) {
     });
     const data = await response.json();
     loding_container.style.display="none";
+    console.log(data)
     if (data.ok) {
       quizData = data.quiz.quiz;
+      userid= data.quiz.Author;
       // alert(data.msg);
       swal({
         title: `${data.msg}`,
