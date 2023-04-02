@@ -69,6 +69,7 @@
                     <div class="category_img">
                         <a href="./index.html"><img src="./images/E.png" /></a>
                     </div>
+                   
                     <div class="categories">
                         <li class="categ">Products</li>
                         <li class="categ">Solutions</li>
@@ -76,10 +77,21 @@
                         <li class="res_category"><a href="./pricing.html">Pricing</a></li>
                     </div>
                 </div>
+                <!--%%%%%%%%%%%%% updating data over here -->
                 <div id="registerdiv">
                     <a href="./login.html">Log In</a>
                     <a href="./signUp.html">Sign Up</a>
+                    
                 </div>
+
+                <div id="profile" class="categories">
+                    <!-- <li><img style="width: 40px;" src="https://t4.ftcdn.net/jpg/04/30/11/17/360_F_430111710_fXWQdohsNzMe679XSbn4LSjCvl3VtisP.jpg" alt=""></li>
+                    <li style="font-size: large;" class="categ">Anandhu</li>
+                    <div id="registerdiv">
+                        <a href="./signUp.html">Sign Up</a>
+                    </div> -->
+                </div>  
+            
             </div>
 
             <div class="boxDropdown">
@@ -385,6 +397,46 @@
     </footer>
 
 </body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="./scripts/index.js"></script>
+<script>
+let userData = JSON.parse(localStorage.getItem("userData"));
+let profile = document.getElementById("profile");
+let preDiv = document.getElementById("registerdiv");
 
+ if(userData){
+       preDiv.innerHTML=null
+       profile.innerHTML= ` <li><img style="width: 40px;border-radius:50%;" src="${userData.profilePic}" alt=""></li>
+                    <li style="font-size: large;" class="categ">${userData.name}</li>
+                    <div id="registerdiv">
+                        <a onclick=signOut()>Logout</a>
+                    </div>`
+       
+ }
+
+//userDiv.innerHTML=`<li class="categ">Anandhu</li>`
+function signOut(){
+    Swal.fire({
+  title: 'Are you sure?',
+  text: "You won't be able to revert this!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, Logout!'
+}).then((result) => {
+  if (result.isConfirmed) {
+    localStorage.removeItem("userData");
+    Swal.fire(
+      'Logout successfull!',
+      
+      'success'
+    )
+    setTimeout(()=>{window.location.href="./index.html"},1000)
+  }
+})
+   
+}
+
+</script>
 </html>

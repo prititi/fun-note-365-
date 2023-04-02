@@ -4,7 +4,11 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors')
 const helmet = require("helmet");
 const morgan = require('morgan');
+
+const { connection  } = require('./configs/connection');
+
 const { connection} = require('./configs/connection');
+
 const { loginRouter } = require('./controllers/login');
 const { regRouter } = require('./controllers/register');
 const {userRouter}=require("./controllers/users");
@@ -109,7 +113,7 @@ httpServer.listen(process.env.port,async()=>{
     try{
     await connection;
     console.log("connected to remote db")
-    
+
     }
     catch(err){
         console.log("error | connection",err)

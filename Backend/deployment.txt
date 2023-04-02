@@ -1,5 +1,0 @@
-steps 
-
-* callback url replacement
-* login page or homepage attachment after google oauth
-*  
