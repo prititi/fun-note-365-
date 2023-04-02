@@ -48,6 +48,28 @@ quizRouter.get("/totalquizes/:Author", async (req, res) => {
     res.status(500).send({ msg: error.message, ok: false });
   }
 });
+quizRouter.get("/totalquizes", async (req, res) => {
+  try {
+    let roomExists = await Room.find();
+    if(!roomExists){
+     return res.status(200).send({
+        msg: `No One Has Created Any Quiz Rooms Yet` ,
+        count:0,
+        ok: false,
+      });
+    }
+    let roomWord = roomExists.length == 1 ? "Room" : "Rooms";
+    let message = `All Users Have Created ${roomExists.length} ${roomWord} Till Now`;
+    res.status(200).send({
+      msg: message,
+      count: roomExists.length,
+      rooms:roomExists,
+      ok: true
+    });
+  } catch (error) {
+    res.status(500).send({ msg: error.message, ok: false });
+  }
+});
 quizRouter.get("/startQuiz/:roomname", async (req, res) => {
   try {
     let Roomname = req.params.roomname;
@@ -99,7 +121,7 @@ quizRouter.get("/getParticipent/:author", async (req, res) => {
     let Author=req.params.author;
     let allpritcipents = await QuizResult.find({Author});
     res.status(200).send({
-      msg: `Details of all participents`,
+      msg: `Details of all participents of Quiz Rooms Created by ${Author}`,
       participents: allpritcipents,
       ok: true,
     });

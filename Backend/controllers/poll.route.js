@@ -13,6 +13,15 @@ pollRouter.get("/:code", async (req, res) => {
     res.status(500).send("Internal server error");
   }
 });
+pollRouter.get("/getallpolls", async (req, res) => {
+  try {
+    const polls = await PollsModel.find();
+    res.send(polls);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal server error");
+  }
+});
 
 pollRouter.get("/response/:code", async (req, res) => {
   try {

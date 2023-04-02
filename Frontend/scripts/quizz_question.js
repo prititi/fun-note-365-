@@ -1,6 +1,10 @@
 let baseurl = "https://fun-chat-ht6d.onrender.com/";
+// let baseurl = "http://localhost:8500/";
 const userid = "prashant@9305";
 const permitted_quiz_rooms = 3;
+
+
+let loding_container = document.getElementById("loding_container");
 let add_new_que = document.getElementById("add_ques");
 let create_quizz = document.getElementById("create_quizz");
 let question_form = document.getElementById("quizz_form");
@@ -327,6 +331,7 @@ deleteqbtn.addEventListener("click", (e) => {
 // fetching functions
 
 async function fetch_create_quiz(obj) {
+  loding_container.style.display="block";
   const url = `${baseurl}quiz/createQuiz`;
   try {
     const response = await fetch(url, {
@@ -337,6 +342,7 @@ async function fetch_create_quiz(obj) {
       },
     });
     const data = await response.json();
+    loding_container.style.display="none";
     if (data.ok) {
       questionarr = [];
       preview_of_ques(questionarr);
@@ -365,6 +371,8 @@ async function fetch_create_quiz(obj) {
 }
 
 async function fetch_total_quiz(userid) {
+  // making loding animation to show up
+  loding_container.style.display="block";
   const url = `${baseurl}quiz/totalquizes/${userid}`;
   try {
     const response = await fetch(url, {
@@ -374,6 +382,8 @@ async function fetch_total_quiz(userid) {
       },
     });
     const data = await response.json();
+    // as soon as we get the response from server making the loding animation hidden
+    loding_container.style.display="none";
     // count of quiz rooms user has created;
     if (data.count <= permitted_quiz_rooms) {
       return true;
@@ -449,6 +459,7 @@ delete_qr.addEventListener("click", () => {
 });
 
 async function fetch_previous_quiz(userid) {
+  loding_container.style.display="block";
   const url = `${baseurl}quiz/totalquizes/${userid}`;
   try {
     const response = await fetch(url, {
@@ -458,6 +469,7 @@ async function fetch_previous_quiz(userid) {
       },
     });
     const data = await response.json();
+    loding_container.style.display="none";
     //here call the rendring function
     if (data.rooms.length > 0) {
       renderQuiz(data.rooms);
@@ -539,6 +551,7 @@ function renderQuiz(Data) {
 // js for displaying ranking
 
 async function fetch_rankings(room_quizz) {
+  loding_container.style.display="block";
   // const url = `${baseurl}quiz/getParticipent/${userid}`;
   const url = `${baseurl}quiz/getParticipent`;
   try {
@@ -549,6 +562,7 @@ async function fetch_rankings(room_quizz) {
       },
     });
     const data = await response.json();
+    loding_container.style.display="none";
     //here call the rendring function
     if (data.participents.length > 0) {
       renderRanks(data.participents);
@@ -610,6 +624,7 @@ function renderRanks(participants) {
 // js for deleting quizz rooms
 
 async function fetch_delete_quiz(roomName) {
+  loding_container.style.display="block";
   const url = `${baseurl}quiz/expireQuiz/${roomName}`;
   try {
     const response = await fetch(url, {
@@ -619,6 +634,7 @@ async function fetch_delete_quiz(roomName) {
       },
     });
     const data = await response.json();
+    loding_container.style.display="none";
     //here call the rendring function
     // alert(data.msg);
     swal({

@@ -13,6 +13,16 @@ userRouter.get('/',authenticate,async(req,res)=>{
     }catch(err){res.status(500);console.log("err | get | users ",err)}
    
 })
+userRouter.get('/getallusers',async(req,res)=>{
+    try{
+        
+        let userData = await UserModel.find();
+        console.log(userData)
+        res.send(userData);
+       
+    }catch(err){res.status(500);console.log("err | get | users ",err)}
+   
+})
 
 
 
