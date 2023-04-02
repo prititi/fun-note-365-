@@ -1,7 +1,7 @@
 const loginRouter = require('express').Router();
 const bcrypt = require("bcrypt");
 const jwt = require('jsonwebtoken');
-const cookieParser = require('cookie-parser');
+
 require('dotenv').config();
 const {UserModel}=require('../Models/user.model')
 
@@ -24,8 +24,7 @@ loginRouter.post("/",async(req,res)=>{
     const  authToken = jwt.sign({ userId: userData._id }, process.env.normalKey,{ expiresIn: '1h' });
     const  refreshToken = jwt.sign({ userId: userData._id }, process.env.refreshKey,{ expiresIn: "21 days" });
 
-    res.cookie('authToken',authToken)
-    res.cookie("refreshToken",refreshToken);
+    
     res.send({msg:`Hi ${userData.name}, Welcome back`,authToken,refreshToken})
     
     //________token send ___________
@@ -50,8 +49,8 @@ loginRouter.get("/:email",async(req,res)=>{
     const  authToken = jwt.sign({ userId: userData._id }, process.env.normalKey,{ expiresIn: '1h' });
     const  refreshToken = jwt.sign({ userId: userData._id }, process.env.refreshKey,{ expiresIn: "21 days" });
 
-    res.cookie('authToken',authToken,{expires:new Date(Date.now()+50000000)})
-    res.cookie("refreshToken",refreshToken);
+    //res.cookie('authToken',authToken,{expires:new Date(Date.now()+50000000)})
+    //res.cookie("refreshToken",refreshToken);
     res.send({msg:`Hi ${userData.name}, Welcome back`,authToken,refreshToken,userData})
     
     //________token send ___________

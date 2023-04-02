@@ -560,6 +560,7 @@ div.boxDropdown>div {
 .heading8>p {
   font-size: auto;
   width: 1000px;
+  margin: auto;
   /* border: 1px solid red; */
   font-weight: 100;
   font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
