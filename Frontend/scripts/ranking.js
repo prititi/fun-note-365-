@@ -13,6 +13,7 @@ const opt4 = document.getElementById("opt4").value;
     console.log(obj);
 
     socket.emit("details",obj)
+    window.location.href="./adminpol.html"
 })
 
 console.log("Hello ")
