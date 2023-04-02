@@ -1,6 +1,6 @@
 let navbar= document.getElementById("navbar");
 let pollData=JSON.parse(localStorage.getItem("polldata"));
-let baseUrl="http://localhost:8500";
+let baseUrl="https://fun-chat-ht6d.onrender.com";
 
 function createnav(){
     navbar.innerHTML=
@@ -111,7 +111,7 @@ showpolltext();
 
 
 
-const socket = io("http://localhost:8500" , {transports : ["websocket"]});
+const socket = io("https://fun-chat-ht6d.onrender.com" , {transports : ["websocket"]});
 
 let room=pollData.code+"";
 
