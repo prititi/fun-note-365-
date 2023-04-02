@@ -7,7 +7,7 @@ const morgan = require('morgan');
 
 const { connection  } = require('./configs/connection');
 
-const { connection} = require('./configs/connection');
+// const { connection} = require('./configs/connection');
 
 const { loginRouter } = require('./controllers/login');
 const { regRouter } = require('./controllers/register');
