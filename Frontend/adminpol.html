@@ -231,3 +231,22 @@
 
 <script src="./scripts/adminpol.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    let authToken = localStorage.getItem("authToken");
+    if (authToken) { }
+    else {
+        Swal.fire({
+            title: 'Login to Your account to visit this page',
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+        })
+
+        setTimeout(() => { window.location.href = "./login.html" }, 2000)
+
+
+    }
+</script>
