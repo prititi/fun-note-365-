@@ -17,8 +17,8 @@ function closeSidebar() {
 }
 
 
-// let baseurl = "https://fun-chat-ht6d.onrender.com/";
-let baseurl = "http://localhost:8500/";
+let baseurl = "https://fun-chat-ht6d.onrender.com/";
+// let baseurl = "http://localhost:8500/";
 
 const previousQuizes = document.getElementById("previous_quizes");
 const participantList = document.getElementById("participant-list");
