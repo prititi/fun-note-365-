@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>signUp</title>
-       
+    <link rel="stylesheet" href="./styles/loader.css">
+    <style>
+
+    </style>
 <!-- cdns start -->
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -22,8 +25,47 @@
     <link rel="stylesheet" href="styles/signup.css">
 
 <!-- vanilla css start     -->
+<style>
+/* ------------css for loding animation------------- */
+#loding_container{
+    display: none;
+    transition: ease-in-out 0.5s;
+  }
+  #loding_div{
+    position: fixed;
+    top: 200px;
+    left: 20%;
+    right: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 500;
+  }
+  #loding_div>img{
+    width: 120px;
+  }
+  #loding_div>h2{
+    text-align: center;
+    color: #ee0606;
+    font-size: 35px;
+    font-weight: bolder;
+  }
+   /* ------------css for loding animation Ended here ------------ */
+</style>
+  
+ 
 </head>
 <body>
+  <!-- loader -->
+  <div id="loding_container">
+    <div id="loding_div">
+      <img src="./images/loding.gif" alt="" srcset="">
+      <h2>Please Wait...</h2>
+    </div>
+  </div>
+
+
 <div  class="container">
     <div id="left">
         <h1>Joining as a participant?</h1>

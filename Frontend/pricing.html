@@ -270,7 +270,46 @@
 <!-- footer ends  -->
 
 </body>
-
+<script>
+    let userData = JSON.parse(localStorage.getItem("userData"));
+    let profile = document.getElementById("profile");
+    let preDiv = document.getElementById("registerdiv");
+    
+     if(userData){
+           preDiv.innerHTML=null
+           profile.innerHTML= ` <li><img style="width: 40px;border-radius:50%;" src="${userData.profilePic}" alt=""></li>
+                        <li style="font-size: large;" class="categ">${userData.name}</li>
+                        <div id="registerdiv">
+                            <a onclick=signOut()>Logout</a>
+                        </div>`
+           
+     }
+    
+    //userDiv.innerHTML=`<li class="categ">Anandhu</li>`
+    function signOut(){
+        Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, Logout!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem("userData");
+        Swal.fire(
+          'Logout successfull!',
+          
+          'success'
+        )
+        setTimeout(()=>{window.location.href="./index.html"},1000)
+      }
+    })
+       
+    }
+    
+    </script>
 <!-- vanilla js --><script src="scripts/pricing.js"></script> 
 <!-- vanilla js --><script src="scripts/components.js"></script> 
 <!-- MDB js --><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js" ></script>
