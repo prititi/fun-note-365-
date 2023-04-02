@@ -1,5 +1,6 @@
 
-let baseUrl = "https://fun-chat-ht6d.onrender.com"
+//let baseUrl = "https://fun-chat-ht6d.onrender.com"
+let baseUrl = "http://localhost:8500"
 let form = document.querySelector("#form");
 storeEventCode()
 
