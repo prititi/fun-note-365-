@@ -54,7 +54,8 @@ Easy polls is the ultimate Q&A and polling platform for live and virtual meeting
 - `bcrypt`
 
 # 1) Landing Page:
-![Screenshot (26)](https://user-images.githubusercontent.com/115465871/221416513-e4328ee4-5d40-4194-a481-74568733ff26.png)
+
+![Screenshot (26)](https://user-images.githubusercontent.com/115460521/229361557-dd1d29bf-dd19-4c81-8528-df4813497e36.png)
 
 
 # 2) Signup Page & Login page :
