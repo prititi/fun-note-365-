@@ -9,7 +9,16 @@
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/adminpolled.css">
     <script src="https://kit.fontawesome.com/3e90fa2a97.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js"></script>
 
+    <script>
+        $(document).ready(function () {
+            $('.sliderbtn').click(function () {
+                $('.sliderbtn').toggleClass('active');
+                $('#sidebar').toggleClass('inandout');
+            })
+        })
+    </script>
 </head>
 
 <body>
@@ -29,19 +38,19 @@
                                             class="fa fa-bars newfa"></i><img src="./images/E.png"
                                             style="width: 150px;height: 45px;position: absolute;" alt=""></a></li>
                                 <li><a href="./index.html"><i class="fa fa-house"></i>Home</a></li>
-                                <li id="men_p"><a href="" target="_blank" class="icolortoblack"><i
+                                <li id="men_p"><a href="./rating.html" target="_blank" class="icolortoblack"><i
                                             class="fa-solid fa-signal fa"></i>Live Polls</a></li>
                                 <li id="women_P"><a href="" target="_blank" class="icolortoblack"><i
                                             class="fa-solid fa-square-poll-vertical fa"></i>Live Q&A</a></li>
-                                <li id="kid_P"><a href="" target="_blank" class="icolortoblack"><i
+                                <li id="kid_P"><a href="./quizz_question.html" target="_blank" class="icolortoblack"><i
                                             class="fa-solid fa-list fa"></i>Qizzes</a></li>
-                                <li id="fot_w"><a href="" target="_blank" class="icolortoblack"><i
+                                <li id="fot_w"><a href="./pricing.html" target="_blank" class="icolortoblack"><i
                                             class="fa-solid fa-sack-dollar fa"></i>Pricing</a></li>
                                 <li><a href=""><i class="fa-solid fa-pen-to-square fa"></i>Surveys</a></li>
                                 <li><a href="" class="icolortoblack"><i class="fa-solid fa-user-secret fa"></i>Admin
                                         Panel</a></li>
-                                <li><a href=""><i class="fa fa-address-card"></i>Sign Up</a></li>
-                                <li><a href=""><i class="fa fa-right-to-bracket"></i>Log In</a></li>
+                                <li><a href="./signUp.html"><i class="fa fa-address-card"></i>Sign Up</a></li>
+                                <li><a href="./login.html"><i class="fa fa-right-to-bracket"></i>Log In</a></li>
                             </ul>
                         </div>
                     </div>
@@ -59,17 +68,29 @@
                     <div class="category_img">
                         <a href="./index.html"><img src="./images/E.png" /></a>
                     </div>
+                   
                     <div class="categories">
                         <li class="categ">Products</li>
                         <li class="categ">Solutions</li>
                         <li class="res_category">Resources</li>
-                        <li class="res_category">Pricing</li>
+                        <li class="res_category"><a href="./pricing.html">Pricing</a></li>
                     </div>
                 </div>
+                <!--%%%%%%%%%%%%% updating data over here -->
                 <div id="registerdiv">
-                    <a href="">Log In</a>
-                    <a href="">Sign Up</a>
+                    <a href="./login.html">Log In</a>
+                    <a href="./signUp.html">Sign Up</a>
+                    
                 </div>
+
+                <div id="profile" class="categories">
+                    <!-- <li><img style="width: 40px;" src="https://t4.ftcdn.net/jpg/04/30/11/17/360_F_430111710_fXWQdohsNzMe679XSbn4LSjCvl3VtisP.jpg" alt=""></li>
+                    <li style="font-size: large;" class="categ">Anandhu</li>
+                    <div id="registerdiv">
+                        <a href="./signUp.html">Sign Up</a>
+                    </div> -->
+                </div>  
+            
             </div>
 
             <div class="boxDropdown">
@@ -79,9 +100,17 @@
                             <li><a href="./productTour.html">Product Tour</a></li>
                             <li><a href="./rating.html">Live Polls</a></li>
                             <li><a href="./adminpolled.html">Live Q&A</a></li>
+<<<<<<< HEAD
+                           
                             <li><a href="./quizz_question.html">Create Quiz</a></li>
                             <li><a href="./quizz.html"> Quiz</a></li>
                             <li><a href="./Rankindex.html">Ranking</a></li>
+                           
+=======
+                            <li><a href="./quizz_question.html">Create Quiz</a></li>
+                            <li><a href="./quizz.html"> Quiz</a></li>
+                            <li><a href="./Rankindex.html">Ranking</a></li>
+>>>>>>> 473c3fc732a1d18ae594cd2fba5fbc77daffe9d1
                         </ul>
                     </div>
                     <div class="dropdown_img">
@@ -190,3 +219,47 @@
 
     }
 </script>
+
+
+<script>
+    let userData = JSON.parse(localStorage.getItem("userData"));
+    let profile = document.getElementById("profile");
+    let preDiv = document.getElementById("registerdiv");
+    preDiv.style.display="block"
+    profile.style.display="none"
+     if(userData){
+           preDiv.style.display='none'
+           profile.style.display="flex"
+           profile.innerHTML= ` <li><img style="width: 40px;border-radius:50%;" src="${userData.profilePic}" alt=""></li>
+                        <li style="font-size: large;" class="categ">${userData.name}</li>
+                        <div id="registerdiv">
+                            <a onclick=signOut()>Logout</a>
+                        </div>`
+           
+     }
+    
+    //userDiv.innerHTML=`<li class="categ">Anandhu</li>`
+    function signOut(){
+        Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, Logout!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem("userData");
+        Swal.fire(
+          'Logout successfull!',
+          
+          'success'
+        )
+        setTimeout(()=>{window.location.href="./index.html"},1000)
+      }
+    })
+       
+    }
+    
+    </script>
