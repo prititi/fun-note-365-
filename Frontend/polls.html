@@ -78,14 +78,12 @@
                 <div>
                     <div class="category">
                         <ul>
-                            <li>Product Tour</li>
-                            <li>Live Polls</li>
-                            <li>Live Q&A</li>
-                            <li>Word Cloud</li>
-                            <li>Quizzes</li>
-                            <li>Surveys</li>
-                            <li>Analytics</li>
-                            <li>Integration</li>
+                            <li><a href="./productTour.html">Product Tour</a></li>
+                            <li><a href="./rating.html">Live Polls</a></li>
+                            <li><a href="./adminpolled.html">Live Q&A</a></li>
+                            <li><a href="./quizz_question.html">Create Quiz</a></li>
+                            <li><a href="./quizz.html"> Quiz</a></li>
+                            <li><a href="./Rankindex.html">Ranking</a></li>
                         </ul>
                     </div>
                     <div class="dropdown_img">
@@ -151,4 +149,24 @@
     crossorigin="anonymous"></script>
 
 <script src="./scripts/poll.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    let authToken = localStorage.getItem("authToken");
+    if (authToken) { }
+    else {
+        Swal.fire({
+            title: 'Login to Your account to visit this page',
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+        })
+
+        setTimeout(() => { window.location.href = "./login.html" }, 2000)
+
+
+    }
+</script>
