@@ -14,12 +14,14 @@ socket.on("message",(msg)=>{
     console.log(msg)
 })
 
+
 responseForm.addEventListener("submit",(event)=>{
     event.preventDefault()
     let res=document.getElementById("res").value;
     socket.emit("response",res)
     alert("Response Added")
     res=""
+    location.href="./polls.html"
 })
 
 async function getpoll(){
