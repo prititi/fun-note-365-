@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/adminpoll.css">
     <script src="https://kit.fontawesome.com/3e90fa2a97.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 </head>
 
@@ -113,114 +115,119 @@
         </div>
     </header>
 
-
-    <div id="events">
-        <div>
-            <button style="color: #2339b8;  border-bottom:3px solid #2339b8;">Live Polls</button>
-            <button>Audience Q&A</button>
-            <button>Analytics</button>
-        </div>
-    </div>
-    <div id="live-polls">
-
-
-        <div id="crete-pollbox">
-            <h4>When do you want to use EasyPoll?</h4>
-                <div id="date">
-                    <div>
-                        <label for="" >Start date</label>
-                        <br>
-                        <input type="date" id="start-date" >
-                    </div>
-                    <div>
-                        <label for="" id="end-date-label">End date</label>
-                        <br>
-                        <input type="date" name="" id="end-date">
-                    </div>
-                </div> 
-                <br>
-                <p>Give Your Poll a name</p>
-                <input type="text" placeholder="Poll Name" id="poll-name">
-                <br>
-                <button id="participate">Anyone with the code or link can participate</button>
-                <button id="cancel">Cancel</button>
-                <button id="submit">Create Poll</button>
-
-        </div>
-
-
-
-
-
-
-        <div id="child1">
-            <h2>Create Your Polls</h2>
-            <p>Engage your audience with live polls, surveys or quizzes.</p>
-            <input type="text" id="open-text" placeholder="What Would you like to ask?*">
-            <br>
-            <button id="launch"><i style="margin-right: 7px; color: rgb(55, 209, 55);"
-                    class="fa-solid fa-play"></i>Launch</button>
-            <button id="save">Save</button>
-        </div>
-
-
-
-        <div id="child3">
-            <h1>Create your polls</h1>
-            <p>Engage your audience with live polls, surveys or quizzes.</p>
-           
+    <div id="maincontainer">
+        <div id="events">
             <div>
-                <div>
-                    <img src="" alt="">
-                    <p>multiple choice</p>
-                </div>
-                <div>
-                    <img src="" alt="">
-                    <p>Word Cloud</p>
-                </div>
-                <div>
-                    <img src="" alt="">
-                    <p>Quiz</p>
-                </div>
-                <div>
-                    <img src="" alt="">
-                    <p>Rating</p>
-                </div>
-                <div id="create-poll">
-                    <img src="" alt="">
-                    <p>Open Text</p>
-                </div>
-                <div>
-                    <img src="" alt="">
-                    <p>Ranking</p>
-                </div>
+                <button style="color: #2339b8;  border-bottom:3px solid #2339b8;">Live Polls</button>
+                <button>Audience Q&A</button>
+                <button>Analytics</button>
             </div>
-            
-
         </div>
-
-
-
-
-        <div id="child2">
-            <h2>Your Slido event is active</h2>
-            <br>
-            <p>Create and launch polls to collect responses.</p>
-            <br>
-            <p id="code">Your participants can interact with your Slido
-                event by joining at Slido.com with the code
-                #2533203</p>
-            <button id="share-link">Share link</button>
-            <button id="present">Present</button>
-            <p style="margin-top: 20px;">Not sure where to start? <a href="#" style="color: grey;">Watch tutorial</a>
-            </p>
+        <div id="live-polls">
+    
+    
+            <div id="crete-pollbox">
+                <h4>When do you want to use EasyPoll?</h4>
+                    <div id="date">
+                        <div>
+                            <label for="" >Start date</label>
+                            <br>
+                            <input type="date" id="start-date" >
+                        </div>
+                        <div>
+                            <label for="" id="end-date-label">End date</label>
+                            <br>
+                            <input type="date" name="" id="end-date">
+                        </div>
+                    </div> 
+                    <br>
+                    <p>Give Your Poll a name</p>
+                    <input type="text" placeholder="Poll Name" id="poll-name">
+                    <br>
+                    <button id="participate">Anyone with the code or link can participate</button>
+                    <button id="cancel">Cancel</button>
+                    <button id="submit">Create Poll</button>
+    
+            </div>
+    
+    
+    
+    
+    
+    
+            <div id="child1">
+                <h2>Create Your Polls</h2>
+                <p>Engage your audience with live polls, surveys or quizzes.</p>
+                <input type="text" id="open-text" placeholder="What Would you like to ask?*">
+                <br>
+                <button id="launch"><i style="margin-right: 7px; color: rgb(55, 209, 55);"
+                        class="fa-solid fa-play"></i>Launch</button>
+                <button id="save">Save</button>
+            </div>
+    
+    
+    
+            <div id="child3">
+                <h1>Create your polls</h1>
+                <p>Engage your audience with live polls, surveys or quizzes.</p>
+               
+                <div>
+                    <div>
+                        <img src="./logo/multiplechoice.png" alt="">
+                        <p>multiple choice</p>
+                    </div>
+                    <div>
+                        <img src="./logo/wordcloud.png" alt="">
+                        <p>Word Cloud</p>
+                    </div>
+    
+                    <div id="Quiz">
+                        <img src="./logo/quiz.png" alt="">
+                        <p>Quiz</p>
+                    </div>
+                    <div id="Rating">
+                        <img src="./logo/rating.png" alt="">
+                        <p>Rating</p>
+    
+                    </div>
+                    <div id="create-poll">
+                        <img src="./logo/opentext.png" alt="">
+                        <p>Open Text</p>
+                    </div>
+                    <div>
+                        <img src="./logo/ranking.png" alt="">
+                        <p>Ranking</p>
+                    </div>
+                </div>
+                
+    
+            </div>
+    
+    
+    
+    
+            <div id="child2">
+                <h2>Your Slido event is active</h2>
+                <br>
+                <p>Create and launch polls to collect responses.</p>
+                <br>
+                <p id="code">Your participants can interact with your Slido
+                    event by joining at Slido.com with the code
+                    #2533203</p>
+                <button id="share-link">Share link</button>
+                <button id="present">Present</button>
+                <p style="margin-top: 20px;">Not sure where to start? <a href="#" style="color: grey;">Watch tutorial</a>
+                </p>
+            </div>
+    
+    
+    
         </div>
-
-
-
     </div>
+
 </body>
 
 </html>
 
 <script src="./scripts/adminpol.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

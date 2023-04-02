@@ -1,18 +1,29 @@
 *{
     box-sizing: border-box;
+    
 }
-
+body{
+    background-image: url("../productimages/voting\ gif2.gif");
+    background-repeat: none;
+    background-size: cover;
+    
+}
 .outer{
     display: flex;
     justify-content: space-between;
     /* border: 1px solid red; */
     background-color: rgb(35,103,166);
-    margin-top: 70px;
+    /* background-color: black; */
+    margin-top: 66px;
+    height: 63px;
+    margin-bottom: 30px;
+    
 }
 h2{
     color: antiquewhite;
     font-size: large;
     font-weight: 200;
+    margin-top: 15px;
 }
 .store{
     display: flex;
@@ -25,12 +36,13 @@ h2{
     
 } 
 .nav>h2{
-    margin-left: 10px;
+    margin-left: 30px;
+    margin-top: 15px;
 }
 .nav-mid{
     display: flex;
     justify-content: space-between;
-
+    margin-top: 3px;
 }
 .nav-mid>h2{
     margin-left: 10px;
@@ -54,6 +66,10 @@ h2{
     margin-top: 100px;
     border-radius: 20px;
     font-size: 20px;
+    background-image: url("../productimages/questions.jpg");
+    background-repeat: none;
+    background-size: 55%;
+    
 }
 
 .display{
@@ -72,12 +88,61 @@ h2{
  #res{
     width: 300px;
     height: 40px;
+    
 }
 #sub{
-  width: 100px;
-  height: 30px;
-   margin-top: 10px;
-   margin-left: 100px;
-   border-radius: 6px;
-   border: 1px solid yellowgreen;
+    border: none;
+    /* border-radius: 10px; */
+    background-color: black;
+    color: whitesmoke;
+    font-weight:bold;
+    padding: 8px;
+    margin-top: 40px;
+    margin-left: 88px;
+    width: 46%;
+    height: 47px;
+    border-radius: 4px;
+  
+    
+}
+#sub:focus {
+      outline: none;
+  }
+  
+#sub:hover {
+      transform: scale(1.1);
+      background-color: #ff1744;
+      /* background:linear-gradient(to right,#0288D1,#81D4FA); */
+} 
+
+input{
+    border: 3px solid black;
+    /* text-align: center; */
+    margin-left: 20px;
+    font-weight: bold;
+    color: black;
+    font-size: 14px;
+   
+}
+
+@media screen and (max-width: 1368px){
+    .outer{
+        display: block;
+    }
+    .nav-mid{
+        margin-left: 57px;
+        margin-top: -10px;
+        width: 13%;
+    }
+    h2{
+        width: 39%;
+        margin-top: -14px;
+        margin-left: 160px;
+    }
+    body{
+     
+        display: block;
+        background: none;
+    }
+   
 }

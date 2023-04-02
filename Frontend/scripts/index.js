@@ -19,13 +19,10 @@ for (let x = 0; x < boxDropdown.length; x++) {
     })
 }
 
-
-let codeBtn=document.getElementById("code-btn")
-
-codeBtn.addEventListener("click",()=>{
-    let code= document.getElementById("code").value;
-    localStorage.setItem("roomno",JSON.stringify(+code))
-    window.location.href=""
-})
-
+const codeBtn = document.getElementById("code-btn");
+codeBtn.addEventListener("click", () => {
+    const code = document.getElementById("code").value;
+    localStorage.setItem("roomno", JSON.stringify(+code));
+    window.location.href = "./polls.html";
+});
 

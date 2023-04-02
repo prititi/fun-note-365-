@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+   
   },
   "keywords": [],
   "author": "",
@@ -25,7 +25,6 @@
     "nodemon": "^2.0.22",
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0",
-    "redis": "^4.6.5",
     "socket.io": "^4.6.1",
     "uuid": "^9.0.0",
     "ws": "^8.13.0"

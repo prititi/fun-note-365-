@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #parent{
+            width: 600px;
+            margin: auto;
+            background-color: beige;
+        }
+         .i{
+            
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+            width: 50%;
+         }
+         h2{
+            width: 50%;
+            margin: auto;
+         }
+    </style>
+</head>
+<body> 
+      <div id="parent">
+        <h2>Enter your question here</h2>
+    <input class='i' type="text" placeholder="room no" id="room">
+    <input class='i' type="text" placeholder="question" id="question">
+    <input class='i' type="text" placeholder="opt1" id="opt1">
+    <input class='i' type="text" placeholder="opt2" id="opt2">
+    <input class='i' type="text" placeholder="opt3" id="opt3">
+    <input class='i' type="text" placeholder="opt4" id="opt4">
+    <button class="i" id="submit">submit</button>
+</div>
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+    
+</body>
+</html>
+<script src="Rankadmin.js"></script>
