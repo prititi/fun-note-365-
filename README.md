@@ -30,6 +30,13 @@ Easy polls is the ultimate Q&A and polling platform for live and virtual meeting
 - `Home Page`: Nav Bar with dropdowns, sliding banners & slider for offer.
 - `Sign-Up`: User details are stored in mongo DB.
 - `Sign-In`: User authentication to check whether the user's phone number and password match with details existing in the database.
+- `Events` : User can create an events.
+- `Pricing` : If user want to by the plan for one moths you can easy buy.
+- `Quiz` : User can create multiple Quiz.
+- `Ranking`: According to ans user can create the rank.
+- `Rating` : It is as like voting application you can give rate at a perticular person or which topic you want.
+- `Q&A` : User can ask the questions to the perticular student or employee in this Q&A thing.
+- `Admin Page` : In this page we can get all the users data,quiz data and many things.
 
 
 
@@ -41,5 +48,8 @@ Easy polls is the ultimate Q&A and polling platform for live and virtual meeting
 - `Node JS`
 - `Express JS`
 - `MongoDB` 
+- `socket.io`
+- `ws`
+
 
 Thanks you for Checking our Project
