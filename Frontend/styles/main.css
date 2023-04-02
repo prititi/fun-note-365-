@@ -16,11 +16,11 @@ header {
     width: 100%;
     padding: 70px;
     background: url('../productimages/voting\ gif.gif') no-repeat;
-    /* background-size: cover; */
+    background-size: cover;
     background-position: center;
     height: 370px;
     background-repeat: none;
-    background-size: 100% 100vh;
+    /* background-size: cover; */
 }
 
 h1 {
@@ -70,7 +70,7 @@ h1 {
     border: 2px solid rgba(0, 0, 0, 0.7);
     box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.7);
     transition: 400ms;
-    background:linear-gradient(to right,#E1F5FE,#81D4FA);
+    background:linear-gradient(to right,#E1F5FE,#81D4FA);;
     color: black;
     font-weight: 700;
 }
@@ -105,4 +105,14 @@ canvas#myChart {
     height: 47px;
     font-size: 20px;
     
+}
+@media screen and (max-width: 650px){
+    #back{
+        margin: 30px 0px 0px 63px;
+    }
+}
+@media screen and (max-width: 1180px){
+    #back{
+        margin: 30px -100px 0px 107px;
+    }
 }

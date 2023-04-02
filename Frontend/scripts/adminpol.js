@@ -121,7 +121,10 @@ let Quiz= document.getElementById("Quiz")
 Quiz.addEventListener("click",()=>{
   window.location.href="./quizz_question.html"
 })
-
+let Ranking= document.getElementById("Ranking")
+Ranking.addEventListener("click",()=>{
+  window.location.href="./Rankadmin.html"
+})
 
 
 
