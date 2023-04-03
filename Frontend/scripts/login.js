@@ -1,4 +1,4 @@
-let obj =  {
+let obj1 =  {
   plan: {
     type: "Advanced",
     payment: 1,
@@ -6,13 +6,13 @@ let obj =  {
   },
   _id: "6428675acdb88f71aea8cae5",
   name: "user",
-  email: "anandhupa131@gmail.com",
+  email: "user@gmail.com",
   password: "$2b$10$.xLIVhnBpOWL6YKqqllwceGBk1VD/Jp1gslCE8qp6FwcWFwSPurKC",
   profilePic: "https://lh3.googleusercontent.com/a/AGNmyxbaY_SYMZezdC-GdwxX61i019DnBjYgNHn2-sfl=s96-c",
   createdAt: "2023-04-01T17:18:18.442Z",
   updatedAt: "2023-04-03T09:33:39.271Z"
 }
-obj = JSON.stringify(obj);
+ 
 
 
 //let baseUrl = "https://fun-chat-ht6d.onrender.com"
@@ -127,7 +127,8 @@ let res = await fetch(`${baseUrl}/login`, {
     let refreshToken = data.refreshToken;
     localStorage.setItem("authToken", authToken);
     localStorage.setItem("refreshToken", refreshToken);
-    localStorage.setItem("userData",obj)
+    localStorage.setItem("done","done")
+    localStorage.setItem("userData",JSON.stringify(obj1))
     //alert("login successfull");
     if(sessionStorage.getItem("email")=="admin@gmail.com"){window.location.href = "./adminpage/admin.html"}
     else{window.location.href = "./index.html"}
