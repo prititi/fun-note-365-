@@ -123,7 +123,8 @@ Quiz.addEventListener("click",()=>{
 })
 let Ranking= document.getElementById("Ranking")
 Ranking.addEventListener("click",()=>{
-  window.location.href="./Rankadmin.html"
+  window.location.href="./Rankindex.html"
+  // alert("we are currently having some issue with it.")
 })
 
 
