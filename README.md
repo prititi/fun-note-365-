@@ -4,7 +4,7 @@ Easy polls is the ultimate Q&A and polling platform for live and virtual meeting
 
 ## Deployment
 
-This project is deployed on vercel here - [Easy Polls](https://fun-note-365.vercel.app/)
+This project is deployed on vercel here - [Easy Polls](https://fun-note-365-ten.vercel.app/)
 
 
 
