@@ -1,3 +1,19 @@
+let obj1 =  {
+  plan: {
+    type: "Advanced",
+    payment: 1,
+    limit: 5
+  },
+  _id: "6428675acdb88f71aea8cae5",
+  name: "user",
+  email: "user@gmail.com",
+  password: "$2b$10$.xLIVhnBpOWL6YKqqllwceGBk1VD/Jp1gslCE8qp6FwcWFwSPurKC",
+  profilePic: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fprofile_5234205&psig=AOvVaw0ittOayedNVctiWEnWI_g_&ust=1680602722711000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCPDY5pS7jf4CFQAAAAAdAAAAABAJ",
+  createdAt: "2023-04-01T17:18:18.442Z",
+  updatedAt: "2023-04-03T09:33:39.271Z"
+}
+ 
+
 
 //let baseUrl = "https://fun-chat-ht6d.onrender.com"
 // let baseUrl = "http://localhost:8500"
@@ -111,7 +127,8 @@ let res = await fetch(`${baseUrl}/login`, {
     let refreshToken = data.refreshToken;
     localStorage.setItem("authToken", authToken);
     localStorage.setItem("refreshToken", refreshToken);
-    
+    localStorage.setItem("done","done")
+    localStorage.setItem("userData",JSON.stringify(obj1))
     //alert("login successfull");
     if(sessionStorage.getItem("email")=="admin@gmail.com"){window.location.href = "./adminpage/admin.html"}
     else{window.location.href = "./index.html"}
