@@ -1,6 +1,6 @@
 //https://fun-chat-ht6d.onrender.com ----------new
 //https://fun-chat-ht6d.onrender.com ----------old
-let baseUrl = "https://fun-chat-ht6d.onrender.com"
+let baseUrl = "https://adventurous-teal-dungarees.cyclic.app"
 let form = document.querySelector("#form");
 let loding_container = document.getElementById("loding_container");
 

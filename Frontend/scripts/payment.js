@@ -1,4 +1,4 @@
-let baseUrl = "http://localhost:8500";
+let baseUrl = "https://adventurous-teal-dungarees.cyclic.app";
 let plan = localStorage.getItem("plan");
 plan = JSON.parse(plan);
 console.log(plan)
