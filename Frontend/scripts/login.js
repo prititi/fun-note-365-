@@ -8,7 +8,7 @@ let obj1 =  {
   name: "user",
   email: "user@gmail.com",
   password: "$2b$10$.xLIVhnBpOWL6YKqqllwceGBk1VD/Jp1gslCE8qp6FwcWFwSPurKC",
-  profilePic: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fprofile_5234205&psig=AOvVaw0ittOayedNVctiWEnWI_g_&ust=1680602722711000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCPDY5pS7jf4CFQAAAAAdAAAAABAJ",
+  profilePic: "https://i.pinimg.com/originals/7d/34/d9/7d34d9d53640af5cfd2614c57dfa7f13.png",
   createdAt: "2023-04-01T17:18:18.442Z",
   updatedAt: "2023-04-03T09:33:39.271Z"
 }
