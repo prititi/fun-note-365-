@@ -433,6 +433,7 @@ const participantList = document.getElementById("participant-list");
 master_quizz.addEventListener("click", () => {
   if (quizz_cont.style.display == "block") {
     master_quizz.innerText = "Create Quiz";
+    loding_container.style.display="none";
     quizz_cont.style.display = "none";
   } else {
     quizz_cont.style.display = "block";
@@ -442,6 +443,7 @@ master_quizz.addEventListener("click", () => {
 master_room.addEventListener("click", () => {
   if (previousQuizes.style.display == "block") {
     master_room.innerText = "Previous Quizs and Quiz Rooms";
+    loding_container.style.display="none";
     previousQuizes.style.display = "none";
   } else {
     previousQuizes.style.display = "block";
@@ -452,6 +454,7 @@ master_room.addEventListener("click", () => {
 ranking_btn.addEventListener("click", () => {
   if (participantList.style.display == "block") {
     ranking_btn.innerText = "See Rankings of Quiz Participents";
+    loding_container.style.display="none";
     participantList.style.display = "none";
   } else {
     participantList.style.display = "block";
@@ -462,6 +465,7 @@ ranking_btn.addEventListener("click", () => {
 delete_qr.addEventListener("click", () => {
   if (deletesubquiz.style.display == "block") {
     delete_qr.innerText = "Delete a Quiz / Quiz Room";
+    loding_container.style.display="none";
     deletesubquiz.style.display = "none";
   } else {
     deletesubquiz.style.display = "block";
