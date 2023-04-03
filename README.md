@@ -58,21 +58,29 @@ Easy polls is the ultimate Q&A and polling platform for live and virtual meeting
 ![Screenshot (26)](https://user-images.githubusercontent.com/115460521/229361557-dd1d29bf-dd19-4c81-8528-df4813497e36.png)
 
 
-# 2) Signup Page & Login page :
+# 2) Signup Page :
 
-# 3) Description Page:
+# 3) Login page :
 
-
-# 4) Package Page:
-
-# 5) Package Page:
-
-# 6) Checkout Page:
+# 4) Products Tour Page:
 
 
-# 7) Admin Page:
+# 5) Events:
+
+# 6)  Quiz :
+
+# 7) Rating :
 
 
+# 8) Open text :
+
+# 9) Ranking :
+
+# 10) Pricing :
+
+# 11) Checkout :
+
+# 12) Admin :
 
 
 
