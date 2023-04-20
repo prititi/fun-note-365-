@@ -54,6 +54,10 @@ Easy polls is the ultimate Q&A and polling platform for live and virtual meeting
 - `JWT authentication`
 - `bcrypt`
 
+# 0) USER FLOW:
+
+![USERFLOW 1](https://user-images.githubusercontent.com/115460521/230265186-f477a162-a49b-4229-b440-48cda1f31bb1.png)
+
 # 1) Landing Page:
 
 ![Screenshot (26)](https://user-images.githubusercontent.com/115460521/229415801-c8196852-907d-492f-8f1b-8c51cdd2d4b9.png)

@@ -8,7 +8,9 @@ let obj1 =  {
   name: "user",
   email: "user@gmail.com",
   password: "$2b$10$.xLIVhnBpOWL6YKqqllwceGBk1VD/Jp1gslCE8qp6FwcWFwSPurKC",
+
   profilePic: "https://i.pinimg.com/originals/7d/34/d9/7d34d9d53640af5cfd2614c57dfa7f13.png",
+
   createdAt: "2023-04-01T17:18:18.442Z",
   updatedAt: "2023-04-03T09:33:39.271Z"
 }
